@@ -1,5 +1,5 @@
 
-* Session 1: #####**Background & Basics**
+* Session 1: **Background & Basics**
 
  Image may have single or multiple channels. Channel is similar to a container of **like** features or information.
  For eg: a normal image will have 3 channels like Red, Green, Blue.
@@ -18,8 +18,16 @@ Usually Kernels are randomly initialized. It's not set to zeros, which otherwise
 **What is a CNN?**
 CNN stands for Convolutional Neural Network, belongs to the class of Deep Neural Networks which is used to analyze visual imagery.
 
+![](https://cdn-images-1.medium.com/fit/t/1600/480/1*vkQ0hXDaQv57sALXAJquxA.jpeg)
+
 *Hierarchy of Feature Detection by CNN*
 1. Edges & Gradients
 2. Textures and Patterns
 3. Parts of Object
 4. Object Identifiers
+
+![](https://i.stack.imgur.com/5yGWY.png)
+Te left block shows learned kernels in the initial layers. Add Data transformation point
+
+
+This is very important feature of convolutional neural networks: At different layers the network learns to detect stuff at different levels of abstraction. 
