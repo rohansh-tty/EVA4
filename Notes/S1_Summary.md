@@ -27,7 +27,6 @@ CNN stands for Convolutional Neural Network, belongs to the class of Deep Neural
 4. Object Identifiers
 
 ![](https://i.stack.imgur.com/5yGWY.png)
-Te left block shows learned kernels in the initial layers. Add Data transformation point
 
-
+*The left block shows learned kernels in the initial layers.
 This is very important feature of convolutional neural networks: At different layers the network learns to detect stuff at different levels of abstraction. 
