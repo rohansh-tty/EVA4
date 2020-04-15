@@ -1,5 +1,5 @@
 
-* Session 1: Background & Basics
+* Session 1: #####**Background & Basics**
 
  Image may have single or multiple channels. Channel is similar to a container of **like** features or information.
  For eg: a normal image will have 3 channels like Red, Green, Blue.
