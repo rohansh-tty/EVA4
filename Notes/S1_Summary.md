@@ -33,7 +33,6 @@ This is very important feature of convolutional neural networks: At different la
 Layers also seem to transform the data( depending on Kernel used) in certain way. In general, the way these layers transform input data is by parameters. 
 
 **Receptive Field**
-Receptive Field inshort RF( w.r.t indiviual sensory neuron) 
 The receptive field is defined as the region in the input space that a particular CNN’s feature is looking at. 
 
 ![Receptive Field in CNN](https://miro.medium.com/max/4146/1*mModSYik9cD9XJNemdTraw.png)
