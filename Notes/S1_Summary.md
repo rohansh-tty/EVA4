@@ -18,6 +18,9 @@ Usually Kernels are randomly initialized. It's not set to zeros, which otherwise
 **What is a CNN?**
 CNN stands for Convolutional Neural Network, belongs to the class of Deep Neural Networks which is used to analyze visual imagery.
 
+![](https://qph.fs.quoracdn.net/main-qimg-cb67424008b8291ec3fe72dd55ff7171)
+
+
 ![](https://cdn-images-1.medium.com/fit/t/1600/480/1*vkQ0hXDaQv57sALXAJquxA.jpeg)
 
 *Hierarchy of Feature Detection by CNN*
