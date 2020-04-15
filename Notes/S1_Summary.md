@@ -29,12 +29,10 @@ CNN stands for Convolutional Neural Network, belongs to the class of Deep Neural
 ![](https://i.stack.imgur.com/5yGWY.png)
 
 *The left block shows learned kernels in the initial layers. While middle blocks seems to be kernels present in middle. And the right one displays parts of objects learned at final third of layers of convnet. 
-This is very important feature of convolutional neural networks: At different layers the network learns to detect stuff at different levels of abstraction.*
+This is very important feature of convolutional neural networks.*
 
-Layers also seem to transform the data( depending on the Kernels used) in certain way. In general, the way these layers transform input data is by parameters(weights, kernel values etc). 
 
-**Receptive Field**
-The receptive field is defined as the region in the input space that a particular CNN’s feature is looking at. 
+**Receptive Field**: The receptive field is defined as the region in the input space that a particular CNN’s feature is looking at. 
 
 ![Receptive Field in CNN](https://miro.medium.com/max/4146/1*mModSYik9cD9XJNemdTraw.png)
 
