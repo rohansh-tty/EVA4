@@ -14,7 +14,7 @@ Kernels are feature extractors. There are different types of kernels which have 
 Usually Even shaped kernels lack line of symmetry, for example if a 2x2 kernel is used to detect a vertical edge, it can detect edge but it won't have its other portion or there's no symmetry. And this is why most of kernels used are of odd sized ones i.e 3x3, 5x5 etc. Also 3x3 kernels can act as a base component for large sized kernels.
 
 | Serial No  | Kernel Size | Number of Parameters |
-| ------------- | ------------- |
+| ------------- | ------------- | ------------- |
 | 1  | 3x3  | 9 |
 | 2  | 5x5  | 25 |
 | 3  | 7x7  | 49 |
