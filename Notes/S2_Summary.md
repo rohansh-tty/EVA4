@@ -14,3 +14,10 @@ According to ![Wikipedia](https://en.wikipedia.org/wiki/Convolution), In mathema
 In CNN, Convolution is a image related operation between an image( later a convoluted one) and a Kernel that produces a convoluted image with shape calculated using the below formula.
 
 ![](https://miro.medium.com/max/660/0*_r70kZaBlXSyZzz5.)
+
+
+* **Why do we add more layers? ** 
+ 
+In initial layers of CNN, it detects small features like **Edges and Gradients**. They then *make something complex out of it* and this loop goes on. 
+
+![MNIST Data](https://external-preview.redd.it/Dhrpp8M4X9BpyFOKGpD6uxl2aFRC3fBS-akgcZ2cxYw.gif?format=png8&s=8a9143099e235e11018e7adcadcb7b7973f5e4c1)
