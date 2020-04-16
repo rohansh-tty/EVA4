@@ -3,7 +3,6 @@
 
  Image may have single or multiple channels. Channel is similar to a container of **like** features or information.
  For eg: a normal image will have 3 channels like Red, Green, Blue.
-![](https://pointeradvertising.com/wp-content/uploads/2013/06/RGB-CMYK-When-Where.gif)
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRL5E2fITF8Qr1Bz8dPqxC7zr_2QckxzVqHuh8oYTA12hzmU3Nv&usqp=CAU)
 
 
