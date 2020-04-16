@@ -10,19 +10,18 @@ Kernels are feature extractors. There are different types of kernels which have 
  
 **2. Why should we (nearly) always use 3x3 kernels?**
 
-3x3 Kernel
 
 Usually Even shaped kernels lack line of symmetry, for example if a 2x2 kernel is used to detect a vertical edge, it can detect edge but it won't have its other portion or there's no symmetry. And this is why most of kernels used are of odd sized ones i.e 3x3, 5x5 etc. Also 3x3 kernels can act as a base component for large sized kernels.
 
-Serial No 		Kernel Size 	 Number of Parameters
-		
-1 	3x3 		9
-2 	5x5 		25
-3 	7x7 		49
-4(Instead of 5x5) 	2*(3x3) 	18
-5(Instead of 7x7) 	3*(3x3) 	27
+| Serial No  | Kernel Size | Number of Parameters |
+| ------------- | ------------- |
+| 1  | 3x3  | 9 |
+| 2  | 5x5  | 25 |
+| 3  | 7x7  | 49 |
+| 4  | (inplace of 5x5) 2*(3x3)  | 18 |
+| 5  | (inplace of 7x7) 3*(3x3)  | 27 |
 
- 
+
 
 **3. How many times to we need to perform 3x3 convolutions operations to reach close to 1x1 from 199x199 (type each layer output like 199x199 > 197x197...)?**
 
