@@ -29,10 +29,10 @@ In initial layers of CNN, it detects small features like **Edges and Gradients**
 * **Intuition behind CNN Hierarchy**
 Here I'm gonna relate CNN Hierarchy with *Words/Sentence* analogy
 
- 1.Edges & Gradients   <----->  Letters
- 2.Textures & Patterns <----->  Words
- 3.Parts of Object     <----->  Sentences/Phrases
- 4.Object Identifiers  <----->  Paragraphs
- 5.Complete Object     <----->  Pages
+ 1. Edges & Gradients   <----->  Letters
+ 2. Textures & Patterns <----->  Words
+ 3. Parts of Object     <----->  Sentences/Phrases
+ 4. Object Identifiers  <----->  Paragraphs
+ 5. Complete Object     <----->  Pages
  
  
