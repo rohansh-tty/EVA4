@@ -26,4 +26,13 @@ In initial layers of CNN, it detects small features like **Edges and Gradients**
 ![MNIST Data](https://external-preview.redd.it/Dhrpp8M4X9BpyFOKGpD6uxl2aFRC3fBS-akgcZ2cxYw.gif?format=png8&s=8a9143099e235e11018e7adcadcb7b7973f5e4c1)
 
 
+* **Intuition behind CNN Hierarchy**
+Here I'm gonna relate CNN Hierarchy with *Words/Sentence* analogy
 
+ * Edges & Gradients   <----->  Letters
+ * Textures & Patterns <----->  Words
+ * Parts of Object     <----->  Sentences/Phrases
+ * Object Identifiers  <----->  Paragraphs
+ * Complete Object     <----->  Pages
+ 
+ 
