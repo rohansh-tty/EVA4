@@ -29,7 +29,7 @@
 **Main Task**
 
 
-    WRITE MNIST DIGIT CLASSIFIER AGAIN SUCH THAT IT ACHIEVES
+    WRITE MNIST HANDWRITTEN DIGIT CLASSIFIER AGAIN SUCH THAT IT ACHIEVES
         99.4% validation accuracy
         Less than 20k Parameters
         You can use anything from above you want. 
