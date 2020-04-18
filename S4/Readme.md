@@ -23,8 +23,11 @@
     How do we know our network is not going well, comparatively, very early
     Batch Size, and effects of batch size
     etc (you can add more if we missed it here)
+    
+    
+    
+**Main Task**
 
-Refer to this code: COLABLINK (Links to an external site.)
 
     WRITE IT AGAIN SUCH THAT IT ACHIEVES
         99.4% validation accuracy
