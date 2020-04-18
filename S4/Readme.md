@@ -14,7 +14,7 @@
 ###### Assignment Solution: ![S4-Solution](https://github.com/Gilf641/EVA4/blob/master/S4/S4-Assignment-Solution.ipynb)
 
 
-* Model Keypoints:
+**Model Keypoints**
 1. 3 Convolution Blocks
 2. BatchNormalization after each layer
 3. Dropout at the end of each block
