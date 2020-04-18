@@ -48,7 +48,7 @@
 5. 17,594 Parameters
 5. Global Average Pooling at last
 
-
+Accuracy: 99.42% 
 
 
 
