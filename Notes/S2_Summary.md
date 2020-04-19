@@ -45,7 +45,7 @@ Here I'm gonna relate CNN Hierarchy with *Words/Sentence* analogy
  
  GPUs usually work on Parallel Computing Concept. Modern GPUs have around 1000 cores and they've organized 16 or 32 SIMD(Single Instruction Multiple Data) blocks. Say for eg if you want to compute 1+1, you will be allotted with 32 cores to compute this thing. Later at the end 31 results will be discarded.  
  
-GPUs are really bad at doing one thing at a time. I like to think of it as a **multitasker**.
+GPUs are really bad at doing one thing at a time. I like to think of it as a **Multitasker**.
 
 **CPU v/s GPU**
 
