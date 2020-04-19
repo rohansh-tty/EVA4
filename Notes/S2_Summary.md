@@ -69,9 +69,10 @@ MaxPooling in CNN is like a Transition layer. It filters information, thereby do
 
 MaxPooling reduces the number of parameters and thereby increases the speed of computations.
 
-* **What else MaxPooling does to the CNN?**
+* **What else MaxPooling adds to the CNN?**
 
 1. Shift Invariance
 2. Rotational Invariance
 3. Scale Invariance
 4. Translational Invariance
+
