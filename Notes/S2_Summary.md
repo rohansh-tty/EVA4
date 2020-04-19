@@ -51,3 +51,8 @@ GPUs are really bad at doing one thing at a time. I like to think of it as a **m
 
 Think of it this way: If you want to operate a single instruction on multiple pieces of data in this case GPUs are better than CPU. And if you want to do multiple things on one piece of data, CPUs are far better.
 
+
+* More detail on Convolution
+The values you get as a result of convolution is simply put the confidence of the feature existing in that particular image. And you can amplify a particular feature by multiplying a positive number while you deamplify others. 
+
+![Convolution Operation](https://miro.medium.com/max/3412/1*xBkRA7cVyXGHIrtngV3qlg.png)
