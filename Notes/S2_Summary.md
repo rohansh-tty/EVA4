@@ -41,10 +41,13 @@ Here I'm gonna relate CNN Hierarchy with *Words/Sentence* analogy
  ![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQKZSnL0Wmsbq4THsaOHxIxyOa0FYulCN5t3UUwNWfVrIWNqdQf&usqp=CAU)
  
 
- *Since we're gonna use GPUs for running heavy models, we might need to understand how they work?*
+ *Since we're gonna use GPUs for running heavy models, we might need to understand how they actually work?*
  
- GPUs usually work on Parallel Computing Concept. Modern GPUs have around 1000 cores and they've organized 16 or 32 SIMD(Single Instruction Multiple Data) blocks. Say for eg if you want to compute 1+1, you will be alloted with 32 cores to compute this thing. Later at the end 31 results will be discarded.  
+ GPUs usually work on Parallel Computing Concept. Modern GPUs have around 1000 cores and they've organized 16 or 32 SIMD(Single Instruction Multiple Data) blocks. Say for eg if you want to compute 1+1, you will be allotted with 32 cores to compute this thing. Later at the end 31 results will be discarded.  
+ 
+GPUs are really bad at doing one thing at a time. I like to think of it as a **multitasker**.
 
 **CPU v/s GPU**
 
-Think of it this way: If you want to operate a single instruction on multiple pieces of data in this case GPUs are better than CPU. And if you want to do multiple things on one piece of data, CPUs are far better.  
+Think of it this way: If you want to operate a single instruction on multiple pieces of data in this case GPUs are better than CPU. And if you want to do multiple things on one piece of data, CPUs are far better.
+
