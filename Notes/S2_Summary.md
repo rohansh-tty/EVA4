@@ -58,3 +58,13 @@ Think of it this way: If you want to operate a single instruction on multiple pi
 The values you get as a result of convolution is simply put the confidence of the feature existing in that particular image. And you can amplify a particular feature by multiplying a positive number while you deamplify others. 
 
 ![Convolution Operation](https://miro.medium.com/max/3412/1*xBkRA7cVyXGHIrtngV3qlg.png)
+
+
+
+* **MaxPooling**
+
+MaxPooling in CNN is like a Transition layer. It filters information, thereby downsampling the channel size. 
+
+![MaxPooling with PoolSize = 2](https://computersciencewiki.org/images/8/8a/MaxpoolSample2.png)
+
+MaxPooling reduces the number of parameters and thereby increases the speed of computations.
