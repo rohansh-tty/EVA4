@@ -44,3 +44,14 @@ This is very important feature of convolutional neural networks.*
 
 ![Receptive Field in CNN](https://miro.medium.com/max/4146/1*mModSYik9cD9XJNemdTraw.png)
 
+We had to do an exercise to calculate Receptive Field for images of different sizes. Like you zoom into a portion of required image size and then calculate the number of pixels till you find a change in color gradient. One can use Paint or Krita(Linux Users)
+
+*Note: We're performing this exercise based on our assumption that Size of Image = Size of the Object
+
+| Image Size  | Receptive Field |
+| ------------- | ------------- |
+| 400 x 400   | 11 x 11  |
+| 200 x 200  | 9 x 9  |
+| 32 x 32  | 7 x 7  |
+| 28 x 28  | 5 x 5  |
+
