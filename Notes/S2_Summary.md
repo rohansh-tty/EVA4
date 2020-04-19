@@ -36,6 +36,12 @@ Here I'm gonna relate CNN Hierarchy with *Words/Sentence* analogy
  5. Complete Object     <----->  Pages
  
  
- * Since we're gonna use GPUs for running heavy models, we might need to understand how they work?
+ * **GPUs**
+ 
+ ![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQKZSnL0Wmsbq4THsaOHxIxyOa0FYulCN5t3UUwNWfVrIWNqdQf&usqp=CAU)
+ 
+
+ *Since we're gonna use GPUs for running heavy models, we might need to understand how they work?*
+ 
  GPUs usually work on Parallel Computing Concept. Modern GPUs have around 1000 cores and they've organized 16 or 32 SIMD(Single Instruction Multiple Data) blocks. Say for eg if you want to compute 1+1, you will be alloted with 32 cores to compute this thing. Later at the end 31 results will be discarded.  
  
