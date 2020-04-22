@@ -9,3 +9,6 @@ Here in this sub-repo I'm gonna share few important things related to Computer V
 2. Why do we have to normalize images before passing it into CNN?
 
 If we don't divide the feature values/pixels by 255 then the range of feature values in the training vectors would be different. 
+
+3. What's an Epoch? And how is it different from Iterations?
+
