@@ -12,3 +12,5 @@ If we don't divide the feature values/pixels by 255 then the range of feature va
 
 3. What's an Epoch? And how is it different from Iterations?
 
+
+
