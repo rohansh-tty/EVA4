@@ -15,11 +15,11 @@ CNNs follow the hierarchy strictly like first Edges & Gradients are detected, th
 394x394x128 | (3x3x128)x256 | 392x392x256  |RF of 9X9
 392x392x256 | (3x3x256)x512 | 390x390x512  |RF of 11X11
 MaxPooling
-195x195x512 | (?x?x512)x32    | ?x?x32| RF of 22x22
-.. 3x3x32x64| (?x?x512)x32   |   |RF of 24x24
-.. 3x3x64x128| (?x?x512)x32   |  |RF of 26x26
-.. 3x3x128x256| (?x?x512)x32  | |RF of 38x28
-.. 3x3x256x512 |  (?x?x512)x32   |  |RF of 30x30
+195x195x512 | **(?x?x512)x32**   | **?x?x32** | RF of 22x22
+.. 3x3x32x64| (3x3x32)x64   |   |RF of 24x24
+.. 3x3x64x128| (3x3x64)x128   |  |RF of 26x26
+.. 3x3x128x256| (3x3x128)x256  | |RF of 38x28
+.. 3x3x256x512 |  (3x3x256)x512   |  |RF of 30x30
 
 
 
