@@ -7,19 +7,6 @@ CNNs follow the hierarchy strictly like first Edges & Gradients are detected, th
 * But the problem arises when you try to decrease the number of channels after MaxPooling Layers. And this can be solved using 3x3 Kernel. But it's not effecient since there's sudden surge in number of params after MaxPool Layer. 
 
 
-400x400x3     | (3x3x3)x32        | 398x398x32     RF of 3x3
-398x398x32   | (3x3x32)x64      | 396x396x64    RF of 5X5
-396x396x64   | (3x3x64)x128    | 394x394x128  RF of 7X7
-394x394x128 | (3x3x128)x256 | 392x392x256  RF of 9X9
-392x392x256 | (3x3x256)x512 | 390x390x512  RF of 11X11
-MaxPooling
-195x195x512 | (?x?x512)x32    | ?x?x32 RF of 22x22
-.. 3x3x32x64                    RF of 24x24
-.. 3x3x64x128                  RF of 26x26
-.. 3x3x128x256               RF of 38x28
-.. 3x3x256x512                RF of 30x30
-
-
 | Input  | Kernel | Output | Receptive Field |
 | ------------- | ------------- | ------------- | ------------- |
 400x400x3     | (3x3x3)x32        | 398x398x32   |  RF of 3x3
@@ -29,15 +16,14 @@ MaxPooling
 392x392x256 | (3x3x256)x512 | 390x390x512  |RF of 11X11
 MaxPooling
 195x195x512 | (?x?x512)x32    | ?x?x32| RF of 22x22
-.. 3x3x32x64|                 |   |RF of 24x24
-.. 3x3x64x128|                |  |RF of 26x26
-.. 3x3x128x256|              | |RF of 38x28
-.. 3x3x256x512 |             |  |RF of 30x30
+.. 3x3x32x64| (?x?x512)x32   |   |RF of 24x24
+.. 3x3x64x128| (?x?x512)x32   |  |RF of 26x26
+.. 3x3x128x256| (?x?x512)x32  | |RF of 38x28
+.. 3x3x256x512 |  (?x?x512)x32   |  |RF of 30x30
 
 
 
 
 
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+
 
