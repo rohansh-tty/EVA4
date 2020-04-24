@@ -47,5 +47,6 @@ When an image gets convoluted with 1x1 kernel, what's actually happening is that
 
 
 
+**Features of 1x1 Convolution**
 
 
