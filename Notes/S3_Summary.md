@@ -29,18 +29,18 @@ In this case we implement **1x1 Kernel** instead of 3x3
 
 But the reason behind using this is important. There are 3 different reasons why it's replaced.
 
-**1. Number of parameters is computationally less**
+1. Number of parameters is computationally less
 
 This is one of the main reason it's implemented. If you use 3x3 kernel after MaxPooling layer, then number of parameters is 9 times more than what we get when convoluted with 1x1 Kernel. 
 ![Difference b/w using 1x1 & 3x3 Kernel](https://i.stack.imgur.com/4ki2u.png)
 
 
-**2. Computationally Faster**
+2. Computationally Faster
 
 Since the number of parameters is less when convoluted using 1x1 kernel, the computation process becomes fast. 
 
 
-**3. Easy and Simple Computation**
+3. Easy and Simple Computation
 
 When an image gets convoluted with 1x1 kernel, what's actually happening is that a particular value of 1x1 kernel gets multiplied to each and every pixel of the input image. And this is a simple multiplication. So 1x1 convolution makes process easy and simple
 
