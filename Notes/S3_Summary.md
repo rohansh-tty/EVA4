@@ -22,6 +22,9 @@ MaxPooling
 .. 3x3x256x512 |  (3x3x256)x512   |  |RF of 30x30
 
 
+In this case we implement 1x1 Kernel instead of 3x3 Kernel. But why that's important. 
+
+
 
 
 
