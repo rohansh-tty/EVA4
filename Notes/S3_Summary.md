@@ -22,7 +22,13 @@ MaxPooling
 .. 3x3x256x512 |  (3x3x256)x512   |  |RF of 30x30
 
 
-In this case we implement 1x1 Kernel instead of 3x3 Kernel. But why that's important. 
+In this case we implement 1x1 Kernel instead of 3x3 Kernel. But the reason behind using this is important. There are 3 different reasons why it's replaced.
+* Number of parameters is computationally less.
+This is one of the main reason it's implemented. If you use 3x3 kernel after MaxPooling layer, then number of parameters is 9 times more than what we get when convoluted with 1x1 Kernel. 
+
+
+* Computationally Faster.
+* Easy and Simple Computation. 
 
 
 
