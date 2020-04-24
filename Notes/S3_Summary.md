@@ -49,4 +49,9 @@ When an image gets convoluted with 1x1 kernel, what's actually happening is that
 
 **Features of 1x1 Convolution**
 
+*1x1 Kernel helps in filtering features.
+*1x1 is computation less expensive. 
+*1x1 Convolution is similar to multiplying the whole channel with just 1 number here it's pixel value.
+
+
 
