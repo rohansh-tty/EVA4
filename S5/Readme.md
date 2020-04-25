@@ -87,7 +87,7 @@ Assignment Task:
 * Target: *Improve both the Train & Test Accuracies(>99.2%)*
 * Strategy: Increase number of channels and also convolve till 5x5.
 * Model Info: 
-	* DropOut = 0.1(used once).
+	* DropOut = 0.05(used once).
 	* BatchNormalization after every Conv layer.
 * Result: 
 	* Total Parameters: 9,688
