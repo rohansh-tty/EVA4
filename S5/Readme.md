@@ -20,7 +20,7 @@ Assignment Task:
 
 **Model 1**
 
-![File Link]https://github.com/Gilf641/EVA4/blob/master/S5/S5_Assignment_Solution1.ipynb)
+![File Link](https://github.com/Gilf641/EVA4/blob/master/S5/S5_Assignment_Solution1.ipynb)
 
 * Target: *MNIST Digit Classifier with <10k Parameters.*
 * Strategy: Restrict max number of channels to 32. 
