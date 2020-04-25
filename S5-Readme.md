@@ -22,7 +22,7 @@ Assignment Task:
 
 
 
-* Target: MNIST Digit Classifier with <10k Parameters.
+* Target: *MNIST Digit Classifier with <10k Parameters.*
 * Strategy: Restrict max number of channels to 32. 
 * Model Info: 
 	* DropOut = 0.1(used once).
@@ -42,7 +42,7 @@ Assignment Task:
 **Model 1**
 
 
-* Target: No Overfitting but a Simple model.(S4 Model as Base)
+* Target: *No Overfitting but a Simple model.*
 * Strategy: Use Data Augmentation technique, Rotating Input images by 5-7 Degrees to improve Test Accuracy. Use Dropout of 10% to avoid Overfitting.
 * Model Info: 
 	* DropOut = 0.1(used once).
@@ -63,7 +63,7 @@ Assignment Task:
 
 
 
-* Target: Improve Test and Train Accuracy.
+* Target: *Improve Test and Train Accuracy.*
 * Strategy: Convolve deeper upto channel size of 6x6.
 * Model Info: 
 	* DropOut = 0.1(used once).
@@ -79,9 +79,9 @@ Assignment Task:
 	* Got stuck in 99.1 - 99.3 loop. Couldn't push forward with this architecture, so try convolving till channel size equals 5x5.
 
 
-**Model 3**  # Different Architecture
+**Model 3** 
 
-* Target: Improve both the Train & Test Accuracies(>99.2%)
+* Target: *Improve both the Train & Test Accuracies(>99.2%)*
 * Strategy: Increase number of channels and also convolve till 5x5.
 * Model Info: 
 	* DropOut = 0.1(used once).
@@ -101,7 +101,7 @@ Assignment Task:
 
 **Model 4**
 
-* Target: Improve the model results i.e Get Model Accuracy >= 99.4% on a consistent basis & Avoid Overfitting
+* Target: *Improve the model results i.e Get Model Accuracy >= 99.4% on a consistent basis & Avoid Overfitting.*
 * Strategy: Experiment with different LR Schedules especially with ReduceLROnPlateau & StepLR and for overfitting slightly increase the Dropout value.
 * Model Info: 
 	* DropOut = 0.1(used once).
