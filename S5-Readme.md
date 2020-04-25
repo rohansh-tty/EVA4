@@ -24,11 +24,9 @@ Assignment Task:
 
 * Target: MNIST Digit Classifier with <10k Parameters.
 * Strategy: Restrict max number of channels to 32. 
-
 * Model Info: 
 	* DropOut = 0.1(used once).
 	* BatchNormalization after every Conv layer.
-
 * Result: 
 	* Total Parameters: 7,216
 	* Highest Train Accuracy: 98.83%
@@ -44,10 +42,8 @@ Assignment Task:
 **Model 1**
 
 
-
 * Target: No Overfitting but a Simple model.(S4 Model as Base)
 * Strategy: Use Data Augmentation technique, Rotating Input images by 5-7 Degrees to improve Test Accuracy. Use Dropout of 10% to avoid Overfitting.
-
 * Model Info: 
 	* DropOut = 0.1(used once).
 	* BatchNormalization after every Conv layer.
@@ -69,11 +65,9 @@ Assignment Task:
 
 * Target: Improve Test and Train Accuracy.
 * Strategy: Convolve deeper upto channel size of 6x6.
-
 * Model Info: 
 	* DropOut = 0.1(used once).
 	* BatchNormalization after every Conv layer.
-
 * Result: 
 	* Total Parameters: 8,870 
 	* Highest Train Accuracy: 98.97%
@@ -89,11 +83,9 @@ Assignment Task:
 
 * Target: Improve both the Train & Test Accuracies(>99.2%)
 * Strategy: Increase number of channels and also convolve till 5x5.
-
 * Model Info: 
 	* DropOut = 0.1(used once).
 	* BatchNormalization after every Conv layer.
-
 * Result: 
 	* Total Parameters: 9,688
 	* Highest Train Accuracy: 99.31%(15th Epoch)
@@ -111,11 +103,9 @@ Assignment Task:
 
 * Target: Improve the model results i.e Get Model Accuracy >= 99.4% on a consistent basis & Avoid Overfitting
 * Strategy: Experiment with different LR Schedules especially with ReduceLROnPlateau & StepLR and for overfitting slightly increase the Dropout value.
-
 * Model Info: 
 	* DropOut = 0.1(used once).
 	* BatchNormalization after every Conv layer.
-
 * Result: 
 	* Total Parameters: 9,108
 	* Highest Train Accuracy: 99.40%
