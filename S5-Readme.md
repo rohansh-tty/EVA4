@@ -67,7 +67,7 @@ Assignment Task:
 * Target: *Improve Test and Train Accuracy.*
 * Strategy: Convolve deeper upto channel size of 6x6.
 * Model Info: 
-	* DropOut = 0.1(used once).
+	* DropOut = 0.1(used twice).
 	* BatchNormalization after every Conv layer.
 * Result: 
 	* Total Parameters: 8,870 
