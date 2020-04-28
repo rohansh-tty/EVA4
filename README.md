@@ -14,3 +14,5 @@ Till now 6 sessions are completed. I will briefly summarise what I have learned 
 * Session 2: ![Neural Network Concepts & Pytorch 101 for Vision](https://github.com/Gilf641/EVA4/blob/master/Notes/S2_Summary.md)
 * Session 3: ![Kernels, Activations and Layers](https://github.com/Gilf641/EVA4/blob/master/Notes/S3_Summary.md)
 * Session 4: CNN Architectural Basics
+* Session 5: Coding Drill Down
+* Session 6: Batch Normalization & Regularization
