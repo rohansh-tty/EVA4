@@ -20,7 +20,7 @@ Task:
 
 I have modified my 5th Assignment code & tuned the model to work on above mentioned conditions. Since I was frequently getting this *Buffered data was truncated after reaching the output size limit* error it forced me to run my iterator twice and also reduce the epochs to 24(only for GBN part).
 
-**![S6 Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S6_AssignmentSolution.ipynb)**
+**![S6 Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S6/S6_AssignmentSolution.ipynb)**
 
 
 ## Data Visualization
