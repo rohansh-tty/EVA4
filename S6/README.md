@@ -42,3 +42,7 @@ I have modified my 5th Assignment code & tuned the model to work on above mentio
 
 
 * Explain your observation w.r.t. L1 and L2's performance in the regularization of your model.
+
+1. I have taken both L1 factor & weight_decay(for L2) as 1e-5. 
+2. In the BN model with L1 regularization I saw a dip in validation accuracy at end. Whereas for L2 regularization, there was a spike in accuracy which it maintained till the end of 24 epochs. 
+3. In terms of Validation Loss, one can notice the fluctuation in the curve for L1 model, while L2 it was true at the initial epochs
