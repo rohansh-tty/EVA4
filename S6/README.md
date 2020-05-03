@@ -32,11 +32,11 @@ I have modified my 5th Assignment code & tuned the model to work on above mentio
 
 ![](https://github.com/Gilf641/EVA4/blob/master/S6/validationloss_BN_GBN.png)
 
-* 25 misclassified images for "without L1/L2 with BN
+* 25 misclassified images for without L1/L2 with BN
 ![](https://github.com/Gilf641/EVA4/blob/master/S6/withoutL1_L2_BN(1).png)
 
 
-* 25 misclassified images for "without L1/L2 with GBN
+* 25 misclassified images for without L1/L2 with GBN
 ![](https://github.com/Gilf641/EVA4/blob/master/S6/withoutL1_L2_GBN(1).png)
 
 
