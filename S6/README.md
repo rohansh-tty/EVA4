@@ -17,3 +17,6 @@ Task:
     *draw ONE graph to show the loss change curves for all 8 jobs above. This graph must have proper legends and it should be clear what we are looking at. 
     *find any 25 misclassified images for "without L1/L2 with BN" AND "without L1/L2 with GBN" model. You should be using the saved model from the above jobs. 
     and L2 models. You MUST show the actual and predicted class names.
+
+
+![Assignment File](https://github.com/Gilf641/EVA4/blob/master/S6/S6_Assignment_Solution.ipynb)
