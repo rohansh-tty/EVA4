@@ -22,4 +22,11 @@ I have modified my 5th Assignment code & tuned the model to work on above mentio
 
 * ![Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S6/S6_Assignment_Solution.ipynb)
 
+* Validation Accuracy for all 8 jobs above
 
+![](https://github.com/Gilf641/EVA4/blob/master/S6/validationacc_BN_GBN.png)
+
+
+* Validation Loss for all 8 jobs above
+
+![](https://github.com/Gilf641/EVA4/blob/master/S6/validationloss_BN_GBN.png)
