@@ -18,5 +18,8 @@ Task:
     *find any 25 misclassified images for "without L1/L2 with BN" AND "without L1/L2 with GBN" model. You should be using the saved model from the above jobs. 
     and L2 models. You MUST show the actual and predicted class names.
 
+I have modified my 5th Assignment code & tuned the model to work on above mentioned conditions. Since I was frequently getting this *Buffered data was truncated after reaching the output size limit* error it forced me to run my iterator twice and also reduce the epochs to 24(only for GBN part).
 
-![Assignment File](https://github.com/Gilf641/EVA4/blob/master/S6/S6_Assignment_Solution.ipynb)
+* ![Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S6/S6_Assignment_Solution.ipynb)
+
+
