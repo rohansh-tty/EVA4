@@ -28,8 +28,11 @@
 
 From math, this is the equation for straight line
 > y = mx + c 
+
 And for this c is useful only when x = 0
+
 This is the equation for multiple regression 
 > y = m1x1 + m2x2 + m3x3 + m4x4 + m5x5 + ... + mnxn + c (where mn is the nth coeffecient, xn is the indepenedent variable while c is bias
+
 For this particular equation, c aka bias is useful only when all independent variables are equal to zero which is not possible. 
 
