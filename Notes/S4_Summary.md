@@ -12,3 +12,8 @@
 
 
 * Why flattening 2D image to 1D(single vector) doesn't make any sense?
+
+![](https://github.com/Gilf641/Test/blob/master/ezgif-6-07ff0eb0db4e.gif)
+1. It's stripping away information. Operating a CNN using this kind of data makes learning pretty hard. 
+2. Slight shift in object can result in different vector which inturn will predict wrong answer.
+3. While looking 2D data we're focusing on Spatial data, after we convert 2D to 1D we've lost spatial information. Without Spatial Information it would really hard to train a Vision DNN. 
