@@ -38,3 +38,10 @@ This is the equation for multiple regression
 
 For this particular equation, c aka bias is useful only when all independent variables are equal to zero which is not possible.
 
+* Power of Convolution
+
+
+| Type of Layer| Total Connections | Weights |
+| ------------- | ------------- | ------------- |
+| Convolution Layer | 81  | 9 |
+| Fully Connected Layer | 225  | 225 |
