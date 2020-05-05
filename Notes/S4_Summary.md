@@ -48,3 +48,10 @@ Let's say for example we've color image of 5x5 now we're convolving with 9 kerne
 | ------------- | ------------- | ------------- |
 | Convolution Layer | 81  | 9 |
 | Fully Connected Layer | 225  | 225 |
+
+
+* Softmax 
+
+Softmax is an activation function that turns numbers aka logits into probabilities that sum to one. Softmax function outputs a vector that represents the probability distributions of potential class/es. It does some real work by creating a difference b/w the logits. 
+
+![](https://ljvmiranda921.github.io/assets/png/cs231n-ann/softmax.png)
