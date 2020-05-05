@@ -2,7 +2,7 @@
 
 * Fully Connected Layers
 
-![](https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/74_blog_image_1.png)
+![](https://pvsmt99345.i.lithium.com/t5/image/serverpage/image-id/42339i8BA3F2CCCEDE7458?v=1.0)
 
 > Each line you see is the weight we are training. Those circles are "temporary" values that will be stored. Once you train the model, lines are what all matter!
 
@@ -17,3 +17,9 @@
 1. It's stripping away information. Operating a CNN using this kind of data makes learning pretty hard. 
 2. Slight shift in object can result in different vector which inturn will predict wrong answer.
 3. While looking 2D data we're focusing on Spatial information, after we convert 2D to 1D we've lost spatial meaning. Without Spatial information it would really hard to train a Vision DNN. 
+
+
+* Why you shouldn't use 2D data for Fully Connected Layer/s?
+
+1. FCN is translationally variant for 2D. 
+2. 
