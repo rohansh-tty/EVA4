@@ -9,3 +9,6 @@
 1. Temporary in the sense, Circles represent values that are obtained by multiplying input with weights, since the inputs change, multiplying inputs with weights also change. 
 2. In broader sense, Circles represent calculated neuron value and these values will change for every input image.
 3. Also those lines(called Weights) in the above image are all what matters because we're training the model to find the right value. And they help in representing the density of connections which inturn indicates the type of model
+
+
+* Why flattening 2D image to 1D(single vector) doesn't make any sense?
