@@ -40,6 +40,7 @@ For this particular equation, c aka bias is useful only when all independent var
 
 * Power of Convolution
 
+![](https://miro.medium.com/max/1052/0*Asw1tDuRs3wTjwi7.gif)
 
 Let's say for example we've color image of 5x5 now we're convolving with 9 kernels of size 3x3 to get output of channel size 3x3. In this we've around 9 weights(kernels) and total number of connections equals to 81, while if you're doing FCN using 25 pixels and then having 9 neurons in next layer, that will sum up total connections and weight params to 225.
 
