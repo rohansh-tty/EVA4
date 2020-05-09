@@ -2,7 +2,7 @@
 
 Task: Your assignment 6 is:
 
-    Run this ![network](https://colab.research.google.com/drive/1qlewMtxcAJT6fIJdmMh8pSf2e-dh51Rw).  
+    Run this network.  
     Fix the network above:
         change the code such that it uses GPU
         change the architecture to C1C2C3C40 (basically 3 MPs)
@@ -31,7 +31,7 @@ Task: Your assignment 6 is:
 
 * **Library Documentation:**
 
-1.![image_transformations.py](https://github.com/Gilf641/EVA4/blob/master/S7/evaLibrary/image_transformations.py) : Applies required image transformation to both Test & Train dataset aka PreProcessing.
+1.![image_transformations.py](https://github.com/Gilf641/EVA4/blob/master/S7/evaLibrary/image_transformations.py) : Applies required image transformation to both Test & Train dataset aka Image PreProcessing.
 
 2.![cifar10_models.py](https://github.com/Gilf641/EVA4/blob/master/S7/evaLibrary/cifar10_models.py): Consists of 2 models i.e seafarNet & cfarResNet(don't mind the names...)
 
