@@ -28,7 +28,7 @@ Task: Your assignment 6 is:
 9. Built a Image Classifier similar to ResNet Architecture(maintaining same number of channels for each convolution block).
 
 
-* Library Documentation:
+* **Library Documentation:**
 
 1.![image_transformations.py](https://github.com/Gilf641/EVA4/blob/master/S7/evaLibrary/image_transformations.py) : Applies required image transformation to both Test & Train dataset aka PreProcessing.
 
