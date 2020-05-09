@@ -28,7 +28,7 @@ Task: Your assignment 6 is:
 9. Built a Image Classifier similar to ResNet Architecture(maintaining same number of channels for each convolution block).
 
 
-Library Documentation:
+* Library Documentation:
 
 * **image_transformations.py** : Applies required image transformation to both Test & Train dataset aka PreProcessing
 * **cifar10_models.py**: Consists of 2 models i.e seafarNet & cfarResNet(don't mind the names...)
