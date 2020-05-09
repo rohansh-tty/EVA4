@@ -15,7 +15,7 @@ Task: Your assignment 6 is:
         Attempt S7-Assignment Solution
         
         
-Model Features:
+* Model Features:
 
 1. Used GPU
 2. Receptive Field = 62
@@ -30,8 +30,10 @@ Model Features:
 
 Library Documentation:
 
-* image_transformations.py : Applies required image transformation to both Test & Train dataset aka PreProcessing
-* cifar10_models.py: Consists of 2 models i.e seafarNet & cfarResNet(don't mind the names...)
-* execute.py: Scripts to Test & Train the model.
+* **image_transformations.py** : Applies required image transformation to both Test & Train dataset aka PreProcessing
+* **cifar10_models.py**: Consists of 2 models i.e seafarNet & cfarResNet(don't mind the names...)
+* **execute.py**: Scripts to Test & Train the model.
+
+
 
 
