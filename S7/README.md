@@ -15,6 +15,9 @@ Task: Your assignment 6 is:
         Attempt S7-Assignment Solution
         
         
+Assignment Solution: ![CIFAR-10 Model](https://github.com/Gilf641/EVA4/blob/master/S7/S7_AssignmentSolution.ipynb)
+        
+        
 * **Model Features:**
 
 1. Used GPU
