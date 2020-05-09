@@ -2,7 +2,7 @@
 
 Task: Your assignment 6 is:
 
-    Run this network (Links to an external site.).  
+    Run this ![network](https://colab.research.google.com/drive/1qlewMtxcAJT6fIJdmMh8pSf2e-dh51Rw).  
     Fix the network above:
         change the code such that it uses GPU
         change the architecture to C1C2C3C40 (basically 3 MPs)
