@@ -30,9 +30,9 @@ Task: Your assignment 6 is:
 
 * Library Documentation:
 
-* **image_transformations.py** : Applies required image transformation to both Test & Train dataset aka PreProcessing
-* **cifar10_models.py**: Consists of 2 models i.e seafarNet & cfarResNet(don't mind the names...)
-* **execute.py**: Scripts to Test & Train the model.
+**image_transformations.py** : Applies required image transformation to both Test & Train dataset aka PreProcessing
+**cifar10_models.py**: Consists of 2 models i.e seafarNet & cfarResNet(don't mind the names...)
+**execute.py**: Scripts to Test & Train the model.
 
 
 
