@@ -19,6 +19,7 @@ Task: Your assignment 6 is:
 
 1. Used GPU
 2. Receptive Field = 62
+3. Total Params = 315,312
 3. Used Depthwise Separable Convolution
 4. Used Dilated Convolution
 5. Since the model was overfitting, I used Dropout of 10% with L1 & L2.
