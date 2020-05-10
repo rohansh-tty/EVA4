@@ -59,5 +59,5 @@ Softmax is an activation function that turns numbers aka logits into probabiliti
 ![](https://ljvmiranda921.github.io/assets/png/cs231n-ann/softmax.png)
 
 * Log_Softmax()
-The reason to use Log_Softmax() is because Softmax() is not compatible with NLL(Negative Log Likelihood) loss. 
+The reason to use Log_Softmax() is because Softmax() is not compatible with NLL(Negative Log Likelihood) loss. While log_softmax() works fine with NLL Loss
 
