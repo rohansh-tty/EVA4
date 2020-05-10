@@ -1,6 +1,6 @@
 # Architectural Basics
 
-* Fully Connected Layers
+* **Fully Connected Layers**
 
 ![](https://pvsmt99345.i.lithium.com/t5/image/serverpage/image-id/42339i8BA3F2CCCEDE7458?v=1.0)
 
@@ -11,7 +11,7 @@
 3. Also those lines(called Weights) in the above image are all what matters because we're training the model to find the right value. And they help in representing the density of connections which inturn indicates the type of model
 
 
-* Why flattening 2D image to 1D(single vector) doesn't make any sense?
+* **Why flattening 2D image to 1D(single vector) doesn't make any sense?**
 
 ![](https://github.com/Gilf641/Test/blob/master/ezgif-6-07ff0eb0db4e.gif)
 1. It's stripping away information. Operating a CNN using this kind of data makes learning pretty hard. 
@@ -19,12 +19,12 @@
 3. While looking 2D data we're focusing on Spatial information, after we convert 2D to 1D we've lost spatial meaning. Without Spatial information it would really hard to train a Vision DNN. 
 
 
-* Why you shouldn't use 2D data for Fully Connected Layer/s?
+* **Why you shouldn't use 2D data for Fully Connected Layer/s?**
 
 1. FCN is translationally variant for 2D. 
 2. 1D form of data works best for FCN.
 
-* Why not use bias?
+* **Why not use bias?**
 
 From math, this is the equation for straight line
 > y = mx + c 
@@ -38,7 +38,7 @@ This is the equation for multiple regression
 
 For this particular equation, c aka bias is useful only when all independent variables are equal to zero which is not possible.
 
-* Power of Convolution
+* **Power of Convolution**
 
 ![](https://miro.medium.com/max/1052/0*Asw1tDuRs3wTjwi7.gif)
 
@@ -50,7 +50,7 @@ Let's say for example we've color image of 5x5 now we're convolving with 9 kerne
 | Fully Connected Layer | 225  | 225 |
 
 
-* Softmax 
+* **Softmax** 
 
 ![](https://i.ytimg.com/vi/lvNdl7yg4Pg/maxresdefault.jpg)
 
@@ -58,6 +58,11 @@ Softmax is an activation function that turns numbers aka logits into probabiliti
 
 ![](https://ljvmiranda921.github.io/assets/png/cs231n-ann/softmax.png)
 
-* Log_Softmax()
-The reason to use Log_Softmax() is because Softmax() is not compatible with NLL(Negative Log Likelihood) loss. While log_softmax() works fine with NLL Loss
+* **Log_Softmax()**
+The reason to use Log_Softmax() is because Softmax() is not compatible with NLL(Negative Log Likelihood) loss. While log_softmax() works fine with NLL Loss.
+
+Formula for log_softmax:
+
+>> log(exp(xi)/exp(x).sum)
+
 
