@@ -38,8 +38,14 @@ Assignment Solution: ![CIFAR-10 Model](https://github.com/Gilf641/EVA4/blob/mast
 
 2.![cifar10_models.py](https://github.com/Gilf641/EVA4/blob/master/S7/evaLibrary/cifar10_models.py): Consists of 2 models i.e seafarNet & cfarResNet(don't mind the names...)
 
-3.![execute.py](https://github.com/Gilf641/EVA4/blob/master/S7/evaLibrary/cifar10_models.py): Scripts to Test & Train the model.
+3.![execute.py](https://github.com/Gilf641/EVA4/blob/master/S7/evaLibrary/execute.py): Scripts to Test & Train the model.
+
+4.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S7/evaLibrary/DataLoaders.py): Scripts to load the dataloaders.
+
+5.![visualizeData.py](https://github.com/Gilf641/EVA4/blob/master/S7/evaLibrary/visualizeData.py): Consists of helper functions to plot images from dataset & misclassified images
 
 
+* **Misclassfied Images**
+![](https://github.com/Gilf641/EVA4/blob/master/S7/CIFAR10(2).png)
 
 
