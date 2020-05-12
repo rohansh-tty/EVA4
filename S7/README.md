@@ -45,7 +45,10 @@ Assignment Solution: ![CIFAR-10 Model](https://github.com/Gilf641/EVA4/blob/mast
 5.![visualizeData.py](https://github.com/Gilf641/EVA4/blob/master/S7/evaLibrary/visualizeData.py): Consists of helper functions to plot images from dataset & misclassified images
 
 
+
 * **Misclassfied Images**
+
+
 ![](https://github.com/Gilf641/EVA4/blob/master/S7/CIFAR10(2).png)
 
 
