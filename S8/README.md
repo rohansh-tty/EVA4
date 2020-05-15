@@ -18,8 +18,25 @@ Assignment Solution: ![ResNet Model]()
 3. Total Params: 11,173,962
 4. Used L1 & L2 since the model was Overfitting. 
 5. Also Trained the model a bit harder by adding few Image Augmentation Techniques like RandomRotation, HorizonatalFlip & Vertical Flip.
-6. Ran the model for 20 Epochs with 
+6. Used CrossEntropyLoss() to calculate loss value.
+7. Ran the model for 20 Epochs with 
 
         * Highest Train Accuracy: 91.84% 
 
         * Test Accuracy: 89.22% 
+
+
+
+* **Library Documentation:**
+
+1.![image_transformations.py]() : Applies required image transformation to both Test & Train dataset aka Image PreProcessing.
+
+2.![resNet.py](): Consists of 2 models i.e seafarNet & cfarResNet(don't mind the names...)
+
+3.![execute.py](): Scripts to Test & Train the model.
+
+4.![DataLoaders.py](): Scripts to load the dataloaders.
+
+5.![visualizeData.py](): Consists of helper functions to plot images from dataset & misclassified images
+
+6.![]()
