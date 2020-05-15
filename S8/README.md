@@ -19,5 +19,7 @@ Assignment Solution: ![ResNet Model]()
 4. Used L1 & L2 since the model was Overfitting. 
 5. Also Trained the model a bit harder by adding few Image Augmentation Techniques like RandomRotation, HorizonatalFlip & Vertical Flip.
 6. Ran the model for 20 Epochs with 
+
         * Highest Train Accuracy: 91.84% 
+
         * Test Accuracy: 89.22% 
