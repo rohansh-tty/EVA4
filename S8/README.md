@@ -1,6 +1,6 @@
 # S8 Assignment
 
-Assignment task: 
+Task: 
 
     Go through this repository: https://github.com/kuangliu/pytorch-cifar (Links to an external site.)
     Extract the ResNet18 model from this repository and add it to your API/repo. 
