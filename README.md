@@ -17,3 +17,4 @@ Till now 6 sessions are completed. I will briefly summarise what I have learned 
 * Session 5: Coding Drill Down
 * Session 6: Batch Normalization & Regularization
 * Session 7: Advanced Convolutions
+* Session 8: Receptive Fields & Network Architectures
