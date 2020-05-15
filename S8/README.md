@@ -29,14 +29,14 @@ Assignment Solution: ![ResNet Model]()
 
 * **Library Documentation:**
 
-1.![image_transformations.py]() : Applies required image transformation to both Test & Train dataset aka Image PreProcessing.
+1.![image_transformations.py](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/image_transformations.py) : Applies required image transformation to both Test & Train dataset aka Image PreProcessing.
 
-2.![resNet.py](): Consists of 2 models i.e seafarNet & cfarResNet(don't mind the names...)
+2.![resNet.py](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/resNet.py): Consists of 2 models i.e seafarNet & cfarResNet(don't mind the names...)
 
-3.![execute.py](): Scripts to Test & Train the model.
+3.![execute.py](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/execute.py): Scripts to Test & Train the model.
 
-4.![DataLoaders.py](): Scripts to load the dataloaders.
+4.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/DataLoaders.py): Scripts to load the dataloaders.
 
-5.![visualizeData.py](): Consists of helper functions to plot images from dataset & misclassified images
+5.![visualizeData.py](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/visualizeData.py): Consists of helper functions to plot images from dataset & misclassified images
 
-6.![]()
+6.![rohan_library](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/rohan_library.py): Imports all the required libraries at once.
