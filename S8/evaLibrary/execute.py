@@ -7,7 +7,7 @@ import torch
 class Test_Train():
   def __init__(self):
 
-# # This is to hold all the values and plot some graphs to extract few good insights.
+#  This is to hold all the values and plot some graphs to extract few good insights.
     self.train_losses = []
     self.test_losses = []
     self.train_acc = []
@@ -46,8 +46,7 @@ class Test_Train():
       loss.backward()   # backward pass: compute gradient of the loss with respect to model parameters
       optimizer.step()   # perform a single optimization step (parameter update)
 
-      # Update pbar-tqdm
-    
+      # Update pbar-tqdm  
       pred = y_pred.argmax(dim=1, keepdim=True)  # get the index of the max log-probability
       correct += pred.eq(target.view_as(pred)).sum().item()
       processed += len(data)
