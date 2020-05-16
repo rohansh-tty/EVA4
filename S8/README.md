@@ -44,4 +44,4 @@ Assignment Solution: ![ResNet Model]()
 
 * Misclassified Images
 
-![](https://github.com/Gilf641/EVA4/blob/master/S8/Misclassified Ones.png)
+![](https://github.com/Gilf641/EVA4/blob/master/S8/Misclassified%20Ones.png)
