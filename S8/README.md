@@ -40,3 +40,8 @@ Assignment Solution: ![ResNet Model]()
 5.![visualizeData.py](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/visualizeData.py): Consists of helper functions to plot images from dataset & misclassified images
 
 6.![rohan_library](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/rohan_library.py): Imports all the required libraries at once.
+
+
+* Misclassified Images
+
+![](https://github.com/Gilf641/EVA4/blob/master/S8/Misclassified Ones.png)
