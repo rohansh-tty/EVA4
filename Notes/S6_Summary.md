@@ -1,6 +1,6 @@
 # Batch Normalization & Regularization
 
-S5 was more of Coding than concepts. So I will add few theory concepts learned from S5 in S6.
+S5 was more of Coding than Concepts. So I will add few theory concepts learned from S5 in S6.
 
 
 Let's start with
@@ -8,7 +8,7 @@ Let's start with
 
 ![](https://blog.aryatra.com/wp-content/uploads/2017/02/Problem-Solving-Albert-Einstein-Quotes.jpg)
 
-* Receptive Field Calculation
+* **Receptive Field Calculation**
 
 
 Receptive Field usually determines the frequency of the information. RF of a layer depends upon the Stride used in previous layers and the Kernel Size. 
