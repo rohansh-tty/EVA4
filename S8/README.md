@@ -17,13 +17,13 @@ Task:
 2. ResNet Variant: ResNet18
 3. Total Params: 11,173,962
 4. Since the model was Overfitting I used L1 & L2
-5. Also Trained the model a bit harder by adding few Image Augmentation Techniques like RandomRotation, HorizonatalFlip & Vertical Flip.
+5. Also Trained the model a bit harder by adding few Image Augmentation Techniques like RandomRotation, HorizonatalFlip & Vertical Flip. Didn't make the mistake of adding all transformations together, but experimented with the first one, analysed the  model performance, later added second and lastly included the third one. 
 6. Used CrossEntropyLoss() to calculate loss value.
 7. Ran the model for 20 Epochs with 
 
         * Highest Train Accuracy: 91.84% 
 
-        * Test Accuracy: 89.22% 
+        * Corresponding Test Accuracy: 89.22% 
 
 
 
