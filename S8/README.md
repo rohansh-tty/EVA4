@@ -9,7 +9,7 @@ Task:
     Once done finish S8-Assignment-Solution
 
 
-## **Assignment Solution**: ![ResNet Model](https://github.com/Gilf641/EVA4/blob/master/S8/S8_AssignmentSolution.ipynb)
+###### **Assignment Solution**: ![ResNet Model](https://github.com/Gilf641/EVA4/blob/master/S8/S8_AssignmentSolution.ipynb)
 
 * **Model Features:**
 
@@ -27,7 +27,7 @@ Task:
 
 
 
-## **Library Documentation:**
+###### **Library Documentation:**
 
 1.![image_transformations.py](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/image_transformations.py) : Applies required image transformation to both Test & Train dataset aka Image PreProcessing.
 
