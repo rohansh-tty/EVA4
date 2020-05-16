@@ -9,14 +9,14 @@ Task:
     Once done finish S8-Assignment-Solution
 
 
-Assignment Solution: ![ResNet Model]()
+**Assignment Solution**: ![ResNet Model](https://github.com/Gilf641/EVA4/blob/master/S8/S8_AssignmentSolution.ipynb)
 
-* Model Features:
+* **Model Features:**
 
 1. Used GPU
 2. ResNet Variant: ResNet18
 3. Total Params: 11,173,962
-4. Used L1 & L2 since the model was Overfitting. 
+4. Since the model was Overfitting I used L1 & L2
 5. Also Trained the model a bit harder by adding few Image Augmentation Techniques like RandomRotation, HorizonatalFlip & Vertical Flip.
 6. Used CrossEntropyLoss() to calculate loss value.
 7. Ran the model for 20 Epochs with 
