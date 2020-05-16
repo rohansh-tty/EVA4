@@ -26,8 +26,16 @@ Task:
         * Corresponding Test Accuracy: 89.22% 
 
 * **Model Analysis:**
+1. Lot of fluctuations in Validation Loss values. 
+2. Not that Overfit Model
+3. In Misclassified Images, one can see that most of images are either hidden / occluded / oriented in different way. Also in some images the class deciding portions is kinda dark. Eg: AirPlane Image (2nd Row, 4th Column) with it's wings, rear parts are not that visible. Front portion of Truck( 5th row, 2nd column)is excluded.
 
 
+
+
+
+
+https://github.com/Gilf641/EVA4/blob/master/S8/S8_AssignmentSolution.ipynb
 ## **Library Documentation:**
 
 1.![image_transformations.py](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/image_transformations.py) : Applies required image transformation to both Test & Train dataset aka Image PreProcessing.
