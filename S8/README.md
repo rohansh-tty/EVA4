@@ -9,9 +9,9 @@ Task:
     Once done finish S8-Assignment-Solution
 
 
-###### **Assignment Solution**: ![ResNet Model](https://github.com/Gilf641/EVA4/blob/master/S8/S8_AssignmentSolution.ipynb)
+**Assignment Solution**: ![ResNet Model](https://github.com/Gilf641/EVA4/blob/master/S8/S8_AssignmentSolution.ipynb)
 
-* **Model Features:**
+## **Model Features:**
 
 1. Used GPU
 2. ResNet Variant: ResNet18
@@ -27,7 +27,7 @@ Task:
 
 
 
-###### **Library Documentation:**
+## **Library Documentation:**
 
 1.![image_transformations.py](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/image_transformations.py) : Applies required image transformation to both Test & Train dataset aka Image PreProcessing.
 
@@ -42,6 +42,6 @@ Task:
 6.![rohan_library](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/rohan_library.py): Imports all the required libraries at once.
 
 
-* **Misclassified Images**
+## **Misclassified Images**
 
 ![](https://github.com/Gilf641/EVA4/blob/master/S8/Misclassified%20Ones.png)
