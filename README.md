@@ -1,5 +1,5 @@
 # EVA4 - TSAI
-*This repo is related to EVA Program(Extensive Vision AI) offered by The School of AI, Bangalore. Consists of Assignments(& Solutions), Notes, Related Projects etc.*
+*This repo is related to EVA Program(Extensive Vision AI) offered by The School of AI, Bangalore. It consists of Assignments(& Solutions), Notes, Projects related to the course etc.*
 
 
 18 Sessions spanned over 15 weeks, 2 hours per session is what will make Phase 1. This would be covering tons of research papers and their implementations i.e InceptionNet, ResNet, DenseNet, EfficientNet etc.
