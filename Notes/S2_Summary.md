@@ -63,7 +63,7 @@ The values you get as a result of convolution is simply put the confidence of th
 
 * **MaxPooling**
 
-MaxPooling in CNN is like a Transition layer. It filters information, thereby downsampling the channel size. 
+MaxPooling in CNN is like a Transition layer. It filters information, while simultaneously downsampling the channel size. 
 
 ![MaxPooling with PoolSize = 2](https://computersciencewiki.org/images/8/8a/MaxpoolSample2.png)
 

@@ -9,34 +9,47 @@ Task:
     Once done finish S8-Assignment-Solution
 
 
-Assignment Solution: ![ResNet Model]()
+**Assignment Solution**: ![ResNet Model](https://github.com/Gilf641/EVA4/blob/master/S8/S8_AssignmentSolution.ipynb)
 
-* Model Features:
+## **Model Features:**
 
 1. Used GPU
 2. ResNet Variant: ResNet18
 3. Total Params: 11,173,962
-4. Used L1 & L2 since the model was Overfitting. 
-5. Also Trained the model a bit harder by adding few Image Augmentation Techniques like RandomRotation, HorizonatalFlip & Vertical Flip.
+4. Since the model was Overfitting I used L1 & L2
+5. Also Trained the model a bit harder by adding few Image Augmentation Techniques like RandomRotation, HorizonatalFlip & Vertical Flip. Didn't make the mistake of adding all transformations together, but experimented with the first one, analysed the  model performance, later added second and lastly included the third one. 
 6. Used CrossEntropyLoss() to calculate loss value.
 7. Ran the model for 20 Epochs with 
 
         * Highest Train Accuracy: 91.84% 
 
-        * Test Accuracy: 89.22% 
+        * Corresponding Test Accuracy: 89.22% 
+
+* **Model Analysis:**
+1. Lot of fluctuations in Validation Loss values. 
+2. Not that Overfit Model.
+3. In Misclassified Images, one can see that most of images are either hidden / occluded / oriented in different way. Also in some images the class deciding portions is kinda dark. Eg: AirPlane Image (2nd Row, 4th Column) with it's wings, rear parts are not that visible. Front portion of Truck( 5th row, 2nd column)is excluded.
 
 
 
-* **Library Documentation:**
 
-1.![image_transformations.py]() : Applies required image transformation to both Test & Train dataset aka Image PreProcessing.
 
-2.![resNet.py](): Consists of 2 models i.e seafarNet & cfarResNet(don't mind the names...)
 
-3.![execute.py](): Scripts to Test & Train the model.
+## **Library Documentation:**
 
-4.![DataLoaders.py](): Scripts to load the dataloaders.
+1.![image_transformations.py](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/image_transformations.py) : Applies required image transformation to both Test & Train dataset aka Image PreProcessing.
 
-5.![visualizeData.py](): Consists of helper functions to plot images from dataset & misclassified images
+2.![resNet.py](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/resNet.py): Consists of 2 models i.e seafarNet & cfarResNet(don't mind the names...)
 
-6.![]()
+3.![execute.py](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/execute.py): Scripts to Test & Train the model.
+
+4.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/DataLoaders.py): Scripts to load the dataloaders.
+
+5.![visualizeData.py](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/visualizeData.py): Consists of helper functions to plot images from dataset & misclassified images
+
+6.![rohan_library](https://github.com/Gilf641/EVA4/blob/master/S8/evaLibrary/rohan_library.py): Imports all the required libraries at once.
+
+
+## **Misclassified Images**
+
+![](https://github.com/Gilf641/EVA4/blob/master/S8/Misclassified%20Ones.png)
