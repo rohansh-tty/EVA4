@@ -76,7 +76,7 @@ test_loader = torch.utils.data.DataLoader(
                     ])),
     batch_size=batch_size, shuffle=True, **kwargs)
 
-
+# Pre-Train & Test Code
 from tqdm import tqdm
 def train(model, device, train_loader, optimizer, epoch):
     model.train()
