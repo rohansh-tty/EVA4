@@ -1,4 +1,4 @@
-# Transformations 
+# ImageTransformations 
 from torchvision import transforms
 
 
