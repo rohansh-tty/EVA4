@@ -18,4 +18,5 @@ Till now 9 sessions are completed. I will briefly summarise what I have learned 
 * Session 6: Batch Normalization & Regularization
 * Session 7: Advanced Convolutions
 * Session 8: Receptive Fields & Network Architectures
+* Session 9: Data Augmentation
 
