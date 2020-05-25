@@ -15,7 +15,7 @@ Till now 9 sessions are completed. I will briefly summarise what I have learned 
 * Session 3: ![Kernels, Activations and Layers](https://github.com/Gilf641/EVA4/blob/master/Notes/S3_Summary.md)
 * Session 4: ![CNN Architectural Basics](https://github.com/Gilf641/EVA4/blob/master/Notes/S4_Summary.md)
 * Session 5: Coding Drill Down
-* Session 6: Batch Normalization & Regularization
+* Session 6: ![Batch Normalization & Regularization](https://github.com/Gilf641/EVA4/blob/master/Notes/S6_Summary.md)
 * Session 7: Advanced Convolutions
 * Session 8: Receptive Fields & Network Architectures
 * Session 9: Data Augmentation
