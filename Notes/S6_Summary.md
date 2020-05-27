@@ -23,9 +23,14 @@ Receptive Field usually determines the frequency of the information. RF of a lay
 
 ![](https://imgs.developpaper.com/imgs/Q4wXPf.png)
 
-2. So in general a neuron in a higher layer has a wider perspective and will have look at a larger portion of the image, while a lower layer neuron will have a small perspective and will represent a small portion of the original image. 
+2. So in general a neuron in a higher layer has a wider perspective and will have look at a larger portion of the image, while a lower layer neuron will have a small perspective and will represent a small part of the original image. 
 
 3. In this way, each successive layer is capable of learning increasingly abstract features of the original image. The use of receptive fields in this fashion is thought to give CNNs an advantage in recognizing visual patterns when compared to other types of neural networks.
 
+
+
+
 * Formula to calculate Receptive Field
+
+
 ![](https://i0.wp.com/syncedreview.com/wp-content/uploads/2017/05/32.png?resize=372%2C171&ssl=1)
