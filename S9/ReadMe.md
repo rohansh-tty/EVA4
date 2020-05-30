@@ -9,7 +9,7 @@ Task:
     Target Accuracy is 87%
     Submit answers to S9-Assignment-Solution. 
 
-**Assignment Solution**: 
+**Assignment Solution**: ![S9 Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S9/S9Final.ipynb)
 
 ## **Model Features:**
 
@@ -38,4 +38,22 @@ Task:
 
 ## **Library Documentation:**
 
+1.![alb2.py](https://github.com/Gilf641/EVA4/blob/master/S9/evaLibrary/alb2.py) : Applies required image transformation to both Test & Train dataset using Albumentations library.
+
+2.![resNet.py](https://github.com/Gilf641/EVA4/blob/master/S9/evaLibrary/resNet.py): Consists of ResNet variants
+
+3.![execute.py](https://github.com/Gilf641/EVA4/blob/master/S9/evaLibrary/execute.py): Scripts to Test & Train the model.
+
+4.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S9/evaLibrary/DataLoaders.py): Scripts to load the dataloaders.
+
+5.![displayData.py](https://github.com/Gilf641/EVA4/blob/master/S9/evaLibrary/visualizeData.py): Consists of helper functions to plot images from dataset & misclassified images
+
+6.![rohan_library](https://github.com/Gilf641/EVA4/blob/master/S9/evaLibrary/rohan_library.py): Imports all the required libraries at once.
+
+7.![Gradcam](https://github.com/Gilf641/EVA4/blob/master/S9/evaLibrary/Gradcam.py): Consists of Gradcam class & other related functions.
+
+
+
 ## **Misclassified Images**
+
+![](https://github.com/Gilf641/EVA4/blob/master/S9/Misclassfied.png)
