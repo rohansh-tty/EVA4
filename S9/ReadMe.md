@@ -28,12 +28,10 @@ Task:
 
 * **Model Analysis:**
 1. Lot of fluctuations in Validation Loss values. 
-2. Not that Overfit Model.
-3. In Misclassified Images, one can see that most of images are either hidden / occluded / oriented in different way. Also in some images the class deciding portions is kinda dark. Eg: AirPlane Image (2nd Row, 4th Column) with it's wings, rear parts are not that visible. Front portion of Truck( 5th row, 2nd column)is excluded.
+2. Clearly an Overfit Model.
 
-
-
-
+* **Future Work**
+1. Fix Overfitting by adding some more training data.
 
 
 ## **Library Documentation:**
@@ -57,3 +55,5 @@ Task:
 ## **Misclassified Images**
 
 ![](https://github.com/Gilf641/EVA4/blob/master/S9/Misclassfied.png)
+
+
