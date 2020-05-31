@@ -1,6 +1,6 @@
 # Batch Normalization & Regularization
 
-S5 was more of Coding than Concepts. So I will add few theory concepts learned from S5 in S6.
+S5 was more of Coding drill. So I will add few theory concepts learned from S5 in S6.
 
 
 Let's start with
