@@ -9,7 +9,7 @@ Task:
     Target Accuracy is 87%
     Submit answers to S9-Assignment-Solution. 
 
-**Assignment Solution**: ![S9 Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S9/S9Final.ipynb)
+**Assignment Solution**: ![S9 Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S9-V2/S9Final-V2.ipynb)
 
 ## **Model Features:**
 
@@ -21,9 +21,9 @@ Task:
 6. Used CrossEntropyLoss() to calculate loss value.
 7. Ran the model for 15 Epochs with 
 
-        * Highest Train Accuracy: 91.84% 
+        * Highest Train Accuracy: 92.56% 
 
-        * Corresponding Test Accuracy: 89.22% 
+        * Corresponding Test Accuracy: 88.13% 
 8. Implemented GradCam using this as a ![reference](https://github.com/GunhoChoi/Grad-CAM-Pytorch)
 
 * **Model Analysis:**
@@ -36,24 +36,26 @@ Task:
 
 ## **Library Documentation:**
 
-1.![alb2.py](https://github.com/Gilf641/EVA4/blob/master/S9/evaLibrary/alb2.py) : Applies required image transformation to both Test & Train dataset using Albumentations library.
+1.![AlbTestTransforms.py](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/AlbTestTransforms.py) : Applies required image transformation to Test dataset using Albumentations library.
 
-2.![resNet.py](https://github.com/Gilf641/EVA4/blob/master/S9/evaLibrary/resNet.py): Consists of ResNet variants
+2.![AlbTrainTransforms.py](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/AlbTrainTransforms.py) : Applies required image transformation to Train dataset using Albumentations library.
 
-3.![execute.py](https://github.com/Gilf641/EVA4/blob/master/S9/evaLibrary/execute.py): Scripts to Test & Train the model.
+3.![resNet.py](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/resNet.py): Consists of ResNet variants
 
-4.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S9/evaLibrary/DataLoaders.py): Scripts to load the dataloaders.
+4.![execute.py](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/execute.py): Scripts to Test & Train the model.
 
-5.![displayData.py](https://github.com/Gilf641/EVA4/blob/master/S9/evaLibrary/visualizeData.py): Consists of helper functions to plot images from dataset & misclassified images
+5.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/DataLoaders.py): Scripts to load the dataloaders.
 
-6.![rohan_library](https://github.com/Gilf641/EVA4/blob/master/S9/evaLibrary/rohan_library.py): Imports all the required libraries at once.
+6.![displayData.py](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/visualizeData.py): Consists of helper functions to plot images from dataset & misclassified images
 
-7.![Gradcam](https://github.com/Gilf641/EVA4/blob/master/S9/evaLibrary/Gradcam.py): Consists of Gradcam class & other related functions.
+7.![rohan_library](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/rohan_library.py): Imports all the required libraries at once.
+
+8.![Gradcam](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/Gradcam.py): Consists of Gradcam class & other related functions.
 
 
 
 ## **Misclassified Images**
 
-![](https://github.com/Gilf641/EVA4/blob/master/S9/Misclassfied.png)
+![](https://github.com/Gilf641/EVA4/blob/master/S9-V2/Misclassfied.png)
 
 
