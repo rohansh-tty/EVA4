@@ -27,13 +27,14 @@ Assignment:
 3. Total Params: 11,173,962
 4. Implemented MMDA, used Albumentations since it's easy to integrate with PyTorch.
 5. Also Trained the model a bit harder by adding Image Augmentation Techniques like Rotation, HorizonatalFlip, Vertical Flip & Cutout.  
-6. Used CrossEntropyLoss() to calculate loss value.
-7. Ran the model for 50 Epochs with 
+6. Best Learning Rate: 0.009
+7. Used CrossEntropyLoss() to calculate loss value.
+8. Ran the model for 50 Epochs with 
 
         * Highest Validation Accuracy: 88.91% (50th Epoch)
         
-8. Implemented GradCam.
-9. Plotted GradCam for 25 Misclassified Images
+9. Implemented GradCam.
+10. Plotted GradCam for 25 Misclassified Images
 
 
 ## **Library Documentation:**
