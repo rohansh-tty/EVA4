@@ -18,7 +18,7 @@ Assignment:
     Submit
 
 
-**Assignment Solution**: ![S10 Assignment Solution]()
+**Assignment Solution**: ![S10 Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S10_Assignment(GradCamFix).ipynb)
 
 ## **Model Features:**
 
