@@ -20,7 +20,7 @@ Assignment:
 
 **Assignment Solution**: ![S10 Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S10_Assignment(GradCamFix).ipynb)
 
-*S10 Assignment Solution file is not in this folder. Because of repeated RELOAD error I couldn't save it inside. The assignment solution is outside named S10_Assignment(GradCamFix).ipynb 
+*S10 Assignment Solution file is not in this folder. Because of the repeated RELOAD error I couldn't save it inside. The assignment solution is outside S10 Folder, named S10_Assignment(GradCamFix).ipynb, the file link is mentioned above.*
 
 
 ## **Model Features:**
