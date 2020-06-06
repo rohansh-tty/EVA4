@@ -59,7 +59,7 @@ Assignment:
 
 ## **Misclassified Images**
 
-![](https://github.com/Gilf641/EVA4/blob/master/S10/Misclassfied.png)
+![](https://github.com/Gilf641/EVA4/blob/master/S10/GradCam-MisclassifiedImages.png)
 
 ## Model Logs
 0%|          | 0/391 [00:00<?, ?it/s]EPOCH:  1
