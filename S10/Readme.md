@@ -58,7 +58,9 @@ Assignment:
 9.![LR Finder](https://github.com/Gilf641/EVA4/blob/master/S10/evaLibrary/LRFinder.py): LR finder using FastAI Approach
 
 ## **Misclassified Images**
+![](https://github.com/Gilf641/EVA4/blob/master/S10/Images/MisclassifedOnes.jpeg)
 
+## **GradCam for Misclassified Images**
 ![](https://github.com/Gilf641/EVA4/blob/master/S10/Images/GradCamPlot.jpeg)
 
 ## Model Logs
