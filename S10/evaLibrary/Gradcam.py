@@ -115,78 +115,38 @@ def GRADCAM(images, device, labels, model, target_layers):
   return layers, probs, ids
 
 
-def PLOT(gcam_layers, images, target_labels, predicted_labels, class_labels, unnormalize, paper_cmap=False):
 
-    images = images.cpu()
-
-    # changing the format from BatchSize, Channel, Height, Width  -------> BatchSize, Height, Width, Channel
-    images = images.permute(0,2,3,1)
-    target_labels = target_labels.cpu()
-
-    fig, axs = plt.subplots(nrows=len(images), ncols=len(
-        gcam_layers.keys())+2, figsize=((len(gcam_layers.keys()) + 2)*3, len(images)*3))
-    fig.suptitle("Grad-CAM", fontsize=16)
-
-    for image_idx, image in enumerate(images):
-
-        un_img = unnormalize(image.permute(2,0,1)).permute(1,2,0)
-        axs[image_idx, 0].text(
-            0.5, 0.5, f'predicted: {class_labels[predicted_labels[image_idx][0] ]}\nactual: {class_labels[target_labels[image_idx]] }', horizontalalignment='center', verticalalignment='center', fontsize=14, )
-        axs[image_idx, 0].axis('off')
-
-        axs[image_idx, 1].imshow(
-            (un_img.numpy() * 255).astype(np.uint8),  interpolation='bilinear')
-        axs[image_idx, 1].axis('off')
-
-        for layer_idx, layer_name in enumerate(gcam_layers.keys()):
-            _layer = gcam_layers[layer_name][image_idx].cpu().numpy()[0]
-            heatmap = 1 - _layer
-            heatmap = np.uint8(255*heatmap) # check without multiplying with 255
-            heatmap_img = cv2.applyColorMap(heatmap, cv2.COLORMAP_JET)
-
-            superimposed_img = cv2.addWeighted(un_img.numpy()*255).astype(np.uint8), 0.6, heatmap_img, 0.4, 0) # didn't understand addWeighted thing
-            axs[image_idx, layer_idx +
-                2].imshow(superimposed_img, interpolation='bilinear')
-            axs[image_idx, layer_idx+2].set_title(f'layer: {layer_name}')
-            axs[image_idx, layer_idx+2].axis('off')
-
-    plt.tight_layout()
-    plt.subplots_adjust(top=0.95, wspace=0.2, hspace=0.2)
-    plt.show()
-
-        # continue from here....
-
-
-
-
-
-
-
-
-
-
-
-
-
+def PLOT(gcam_layers, images, target_layers, image_size, unnormalize, tc, pc):
+    """
+    ***Arguments***:
+    gcam_layers:
+    images: set of images(both correctly classified and misclassified)
+    target_layers: set of layers where you want to plot GradCAM
+    image_size: size of image
+    unnormalize: de/unnormalizing the image
+    tc: actual/target class labels
+    pc: predicted class labels
+    """
 
     c = len(images)+1
     r = len(target_layers)+2
-    fig = plt.figure(figsize=(32,14))
+    fig = plt.figure(figsize=(32,25))
     fig.subplots_adjust(hspace=0.01, wspace=0.01)
     ax = plt.subplot(r, c, 1)
-    ax.text(0.3,-0.5, "INPUT", fontsize=14)
+    ax.text(0.3,-0.5, "INPUT", fontsize=10)
     plt.axis('off')
     for i in range(len(target_layers)):
       target_layer = target_layers[i]
       ax = plt.subplot(r, c, c*(i+1)+1)
-      ax.text(0.3,-0.5, target_layer, fontsize=14)
+      ax.text(0.3,-0.5, target_layer, fontsize=10)
       plt.axis('off')
+      ax.set_aspect('equal')
 
       for j in range(len(images)):
         img = np.uint8(255*unnormalize(images[j].view(image_size)))
         if i==0:
           ax = plt.subplot(r, c, j+2)
-          ax.text(0, 0.2, f"pred={class_names[predicted[j][0]]}\n[actual={class_names[labels[j]]}]", fontsize=14)
+          ax.text(0, 0.2, f'pred={pc[j]}\nactual={tc[j]}', fontsize=8)
           plt.axis('off')
           plt.subplot(r, c, c+j+2)
           plt.imshow(img, interpolation='bilinear')
