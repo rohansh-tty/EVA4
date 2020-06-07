@@ -6,13 +6,10 @@ try:
 	from torchvision import datasets, transforms
 	import matplotlib.pyplot as plt
 	from torch.optim.lr_scheduler import OneCycleLR
+	from torch.optim.lr_scheduler import ReduceLROnPlateau
 	import torchvision
 	import numpy as np
 	import sys
-	from albumentations import Compose, RandomCrop, Normalize, HorizontalFlip, VerticalFlip, Resize,Rotate #, Cutout
-	from albumentations.pytorch import ToTensor
-	import numpy as np
-
 
 except Exception as e:
 	print(e)

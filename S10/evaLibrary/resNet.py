@@ -6,7 +6,7 @@ import torch.nn.functional as F
 
 class BasicBlock(nn.Module):
     expansion = 1
-    
+
     def __init__(self, in_planes, planes, stride=1):
         super(BasicBlock, self).__init__()
         self.conv1 = nn.Conv2d(
@@ -122,5 +122,3 @@ def test():
     net = ResNet18()
     y = net(torch.randn(1, 3, 32, 32))
     print(y.size())
-
-

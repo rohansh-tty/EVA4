@@ -1,4 +1,4 @@
-from albumentations import Compose, RandomCrop, Normalize, HorizontalFlip, VerticalFlip, Resize,Rotate #, Cutout
+from albumentations import Compose, RandomCrop, Normalize, HorizontalFlip, VerticalFlip, Resize,Rotate , Cutout
 from albumentations.pytorch import ToTensor
 import numpy as np
 
@@ -10,10 +10,8 @@ class train_transforms():
             Rotate((-10.0, 10.0)),
             HorizontalFlip(p=0.5),
             VerticalFlip(p=0.5),
-            Normalize(
-                mean=[0.5, 0.5, 0.5],
-                std=[0.5, 0.5, 0.5]
-            ),
+            Cutout(num_holes = 8, max_h_size = 8, max_w_size = 8),
+            Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]),
             ToTensor()
         ])# this is train transforms
 
