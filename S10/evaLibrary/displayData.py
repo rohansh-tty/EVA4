@@ -10,7 +10,7 @@ channel_stdevs = (0.5, 0.5, 0.5)
 
 def unnormalize(img):
   img = img.numpy().astype(dtype=np.float32)
-  
+
   for i in range(img.shape[0]):
     img[i] = (img[i]*channel_stdevs[i])+channel_means[i] # if not unnormalized then the resulting images will be dark and not visible
   return np.transpose(img, (1,2,0))
@@ -19,7 +19,7 @@ class_names = ('airplane','automobile','bird','cat','deer','dog','frog','horse',
 
 def classImages(dataiterator):
   num_classes = 10
-  # display 10 images from each category. 
+  # display 10 images from each category.
   images, labels = iter(dataiterator).next()
   # channel_means = (0.5, 0.5, 0.5)
   # channel_stdevs = (0.5, 0.5, 0.5)
@@ -53,7 +53,7 @@ def classImages(dataiterator):
 #         fig = plt.figure(figsize=(25, 4))
 #         # display 20 images
 #         for i in range(len(classes)):
-#           # for idx in np.arange(5):          
+#           # for idx in np.arange(5):
 #             ax = fig.add_subplot(2, 20 / 2, i + 1, xticks=[], yticks=[])
 #             imshow(images[i])
 #             ax.set_title(classes[labels[i]])
@@ -73,24 +73,24 @@ def plotImage(img):
 
 # Misclassified Images
 from google.colab import files
-def misclassifiedOnes(model, testLoader, data, filename):
+def misclassifiedOnes(model, testLoader, data,filename):
 
   #model: ModelName
   #data: Incorrect Classes in Test() of Test_Train class
   #filename: Pass on the filename with which you want to save misclassified images
-  
+
   classes = ('plane', 'car', 'bird', 'cat',
            'deer', 'dog', 'frog', 'horse', 'ship', 'truck') # classs names in the dataset
 
   use_cuda = torch.cuda.is_available()
   device = torch.device("cuda" if use_cuda else "cpu")
   model = model.to(device)
-  dataiter = iter(testLoader) 
+  dataiter = iter(testLoader)
   count = 0
-  
+
   # Initialize plot
   fig = plt.figure(figsize=(13,13))
-  
+
   row_count = -1
   fig, axs = plt.subplots(5, 5, figsize=(10, 10))
   fig.tight_layout()
@@ -100,7 +100,7 @@ def misclassifiedOnes(model, testLoader, data, filename):
     # If 25 samples have been stored, break out of loop
     if idx > 24:
       break
-        
+
     rgb_image = np.transpose(result['image'], (1, 2, 0)) / 2 + 0.5
     label = result['label'].item()
     prediction = result['prediction'].item()
@@ -111,7 +111,7 @@ def misclassifiedOnes(model, testLoader, data, filename):
     axs[row_count][idx % 5].axis('off')
     axs[row_count][idx % 5].set_title(f'Label: {classes[label]}\nPrediction: {classes[prediction]}')
     axs[row_count][idx % 5].imshow(rgb_image)
-    
+
   # save the plot
   plt.savefig(filename)
   files.download(filename)
@@ -124,19 +124,19 @@ def correctlyClassifed(model, testLoader, data,filename):
   #model: ModelName
   #data: Correct Classes in Test() of Test_Train class
   #filename: Pass on the filename with which you want to save misclassified images
-  
+
   classes = ('plane', 'car', 'bird', 'cat',
            'deer', 'dog', 'frog', 'horse', 'ship', 'truck') # classs names in the dataset
 
   use_cuda = torch.cuda.is_available()
   device = torch.device("cuda" if use_cuda else "cpu")
   model = model.to(device)
-  dataiter = iter(testLoader) 
+  dataiter = iter(testLoader)
   count = 0
-  
+
   # Initialize plot
   fig = plt.figure(figsize=(13,13))
-  
+
   row_count = -1
   fig, axs = plt.subplots(5, 5, figsize=(10, 10))
   fig.tight_layout()
@@ -146,7 +146,7 @@ def correctlyClassifed(model, testLoader, data,filename):
     # If 25 samples have been stored, break out of loop
     if idx > 24:
       break
-        
+
     rgb_image = np.transpose(result['image'], (1, 2, 0)) / 2 + 0.5
     label = result['label'].item()
     prediction = result['prediction'].item()
@@ -157,7 +157,27 @@ def correctlyClassifed(model, testLoader, data,filename):
     axs[row_count][idx % 5].axis('off')
     axs[row_count][idx % 5].set_title(f'Label: {classes[label]}\nPrediction: {classes[prediction]}')
     axs[row_count][idx % 5].imshow(rgb_image)
-    
+
   # save the plot
   plt.savefig(filename)
   files.download(filename)
+
+
+
+# Training & Validation Curves
+def plot_curve(elements, title, y_label = 'Accuracy', Figsize = (8,8)):
+    """
+    elements: Contains Training and Testing variables of the Model like Accuracy or Loss
+    title: Plot title
+    y_label: Y-axis Label, Accuracy by default
+    FigSize: Size of the Plot
+    """
+    with plt.style.context('fivethirtyeight'):
+        fig = plt.figure(figsize=Figsize)
+        ax = plt.subplot()
+        for elem in elements:
+            ax.plot(elem[0], label=elem[1])
+            ax.set(xlabel='Epochs', ylabel=y_label)
+            plt.title(title)
+        ax.legend()
+    plt.show()
