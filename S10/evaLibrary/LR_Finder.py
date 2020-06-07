@@ -80,42 +80,42 @@ class ValDataLoaderIter(DataLoaderIter):
 
 
 class LRFinder(object):
-    def __init__(self, model, optimizer, criterion, device=None, memory_cache = True, cache_dir = None):
-        self.optimizer = optimizer # check whether the optimizer is attached to the scheduler
-        self._check_for_scheduler()
+        def __init__(self, model, optimizer, criterion, device=None, memory_cache = True, cache_dir = None):
+          self.optimizer = optimizer # check whether the optimizer is attached to the scheduler
+          # self._check_for_scheduler()
 
-        self.model = model
-        self.criterion = criterion
-        self.history = {'LR':[], 'Loss':[]}
-        self.bestLoss = None
-        self.memory_cache = memory_cache
+          self.model = model
+          self.criterion = criterion
+          self.history = {'lr':[], 'loss':[]}
+          self.bestLoss = None
+          self.memory_cache = memory_cache
 
-        # Save the original state of model & optimizer(MODEL & OPTIMIZER STATE BEFORE THE LR FINDER PROCESS)
-        self.model_device = next(self.model.parameters()).device
-        self.state_cacher = StateCacher(memory_cache, cache_dir= cache_dir)
-        self.state_cacher.store('Model', self.model.state_dict())
-        self.state_cacher.store('Optimizer', self.optimizer.state_dict())
+          # Save the original state of model & optimizer(MODEL & OPTIMIZER STATE BEFORE THE LR FINDER PROCESS)
+          self.model_device = next(self.model.parameters()).device
+          self.state_cacher = StateCacher(memory_cache, cache_dir= cache_dir)
+          self.state_cacher.store('Model', self.model.state_dict())
+          self.state_cacher.store('Optimizer', self.optimizer.state_dict())
 
-        # If device is none then change it to default model_device
-        if device:
-            self.device = device
-        else:
-            self.device = self.model_device
+          # If device is none then change it to default model_device
+          if device:
+              self.device = device
+          else:
+              self.device = self.model_device
 
         def reset(self):
             """ Restores Model & Optimizer to their initial states"""
             self.model.load_state_dict(self.state_cacher.retrieve('Model'))
-            self.optimizer.load_state_dict(self.state_cacher_retrieve('Optimizer'))
+            self.optimizer.load_state_dict(self.state_cacher.retrieve('Optimizer'))
             self.model.to(self.device) # CHANGED FROM self.model_device to self.device
 
-        
+
         def range_test(
                     self, train_loader,  val_loader=None,
-                    start_lr=None, end_lr=10, num_iter=100, 
-                    step_mode='linear', smooth_f=0.05, diverge_th=5, 
+                    start_lr=None, end_lr=10, num_iter=100,
+                    step_mode='linear', smooth_f=0.05, diverge_th=5,
                     accumulation_steps = 1, non_blocking_transfer = True):
-                    
-            self.history = {'LR':[], 'Loss':[]}
+
+            self.history = {'lr':[], 'loss':[]}
             self.bestLoss = None
 
             # move the model to the device
@@ -161,11 +161,12 @@ class LRFinder(object):
                         Expected types are `torch.utils.data.DataLoader`
                         or child of `ValDataLoaderIter`.""".format(type(val_loader)))
 
-            
+
             for iteration in tqdm(range(num_iter)):
                 # Train on batch and retrieve loss
-                loss = self._train_batch(train_iter, accumulation_steps, non_blocking_transfer=non_blocking_transfer,)
-           
+                # print(train_iter)
+                loss = self._train_batch(train_iter, accumulation_steps, non_blocking_transfer=non_blocking_transfer)
+
                 if val_loader:
                     loss = self._validate(
                     val_iter, non_blocking_transfer=non_blocking_transfer)
@@ -182,25 +183,22 @@ class LRFinder(object):
                         loss = smooth_f * loss + (1 - smooth_f) * self.history["loss"][-1]
                     if loss < self.bestLoss:
                         self.bestLoss = loss
-                
+
                 # check if the loss has diverged it needs to be stopped
                 self.history['loss'].append(loss)
                 if loss > diverge_th*self.bestLoss:
                     print('The loss has diverged, Stopping Early!')
                     break
-     
+
 
         def _set_learning_rate(self, new_lrs):
             if not isinstance(new_lrs, list):
-            new_lrs = [new_lrs] * len(self.optimizer.param_groups)
-        if len(new_lrs) != len(self.optimizer.param_groups):
-            raise ValueError(
-                "Length of `new_lrs` is not equal to the number of parameter groups "
-                + "in the given optimizer"
-            )
+              new_lrs = [new_lrs] * len(self.optimizer.param_groups)
+            if len(new_lrs) != len(self.optimizer.param_groups):
+                  raise ValueError("Length of `new_lrs` is not equal to the number of parameter groups "+"in the given optimizer")
 
-        for param_group, new_lr in zip(self.optimizer.param_groups, new_lrs):
-            param_group["lr"] = new_lr
+            for param_group, new_lr in zip(self.optimizer.param_groups, new_lrs):
+                param_group["lr"] = new_lr
 
 
         def _check_for_scheduler(self):
@@ -208,18 +206,15 @@ class LRFinder(object):
                 if "initial_lr" in param_group:
                     raise RuntimeError ("Optimizer has already a scheduler attached to it.")
 
-         def _train_batch(
-        self, train_iter, accumulation_steps, non_blocking_transfer=True
-    ):
-        self.model.train()
-        total_loss = None  # for late initialization
+        def _train_batch(self, train_iter, accumulation_steps, non_blocking_transfer=True):
+          self.model.train()
+          total_loss = None  # for late initialization
 
-        self.optimizer.zero_grad()
-        for i in range(accumulation_steps):
-            inputs, labels = next(train_iter)
-            inputs, labels = self._move_to_device(
-                inputs, labels, non_blocking=non_blocking_transfer
-            )
+          self.optimizer.zero_grad()
+          for i in range(accumulation_steps):
+            inputs, labels = train_iter.__next__()
+            inputs, labels = self._move_to_device(inputs, labels, non_blocking=non_blocking_transfer)
+
 
             # Forward pass
             outputs = self.model(inputs)
@@ -246,12 +241,11 @@ class LRFinder(object):
             else:
                 total_loss += loss
 
-        self.optimizer.step()
+            self.optimizer.step()
+            return total_loss.item()
 
-        return total_loss.item()
-
-    def _move_to_device(self, inputs, labels, non_blocking=True):
-        def move(obj, device, non_blocking=True):
+        def _move_to_device(self, inputs, labels, non_blocking=True):
+          def move(obj, device, non_blocking=True):
             if hasattr(obj, "to"):
                 return obj.to(device, non_blocking=non_blocking)
             elif isinstance(obj, tuple):
@@ -263,90 +257,90 @@ class LRFinder(object):
             else:
                 return obj
 
-        inputs = move(inputs, self.device, non_blocking=non_blocking)
-        labels = move(labels, self.device, non_blocking=non_blocking)
-        return inputs, labels
+          inputs = move(inputs, self.device, non_blocking=non_blocking)
+          labels = move(labels, self.device, non_blocking=non_blocking)
+          return inputs, labels
 
-    def _validate(self, val_iter, non_blocking_transfer=True):
-        # Set model to evaluation mode and disable gradient computation
-        running_loss = 0
-        self.model.eval()
-        with torch.no_grad():
-            for inputs, labels in val_iter:
-                # Move data to the correct device
-                inputs, labels = self._move_to_device(
-                    inputs, labels, non_blocking=non_blocking_transfer
-                )
+        def _validate(self, val_iter, non_blocking_transfer=True):
+          # Set model to evaluation mode and disable gradient computation
+          running_loss = 0
+          self.model.eval()
+          with torch.no_grad():
+              for inputs, labels in val_iter:
+                  # Move data to the correct device
+                  inputs, labels = self._move_to_device(
+                      inputs, labels, non_blocking=non_blocking_transfer
+                  )
 
-                if isinstance(inputs, tuple) or isinstance(inputs, list):
-                    batch_size = inputs[0].size(0)
-                else:
-                    batch_size = inputs.size(0)
+                  if isinstance(inputs, tuple) or isinstance(inputs, list):
+                      batch_size = inputs[0].size(0)
+                  else:
+                      batch_size = inputs.size(0)
 
-                # Forward pass and loss computation
-                outputs = self.model(inputs)
-                loss = self.criterion(outputs, labels)
-                running_loss += loss.item() * batch_size
+                  # Forward pass and loss computation
+                  outputs = self.model(inputs)
+                  loss = self.criterion(outputs, labels)
+                  running_loss += loss.item() * batch_size
 
-        return running_loss / len(val_iter.dataset)
+          return running_loss / len(val_iter.dataset)
 
-    def plot(self, skip_start=10, skip_end=5, log_lr=True, show_lr=None, ax=None):
-        """Plots the learning rate range test.
-        Arguments:
-            skip_start (int, optional): number of batches to trim from the start.
-                Default: 10.
-            skip_end (int, optional): number of batches to trim from the start.
-                Default: 5.
-            log_lr (bool, optional): True to plot the learning rate in a logarithmic
-                scale; otherwise, plotted in a linear scale. Default: True.
-            show_lr (float, optional): if set, adds a vertical line to visualize the
-                specified learning rate. Default: None.
-            ax (matplotlib.axes.Axes, optional): the plot is created in the specified
-                matplotlib axes object and the figure is not be shown. If `None`, then
-                the figure and axes object are created in this method and the figure is
-                shown . Default: None.
-        Returns:
-            The matplotlib.axes.Axes object that contains the plot.
-        """
+        def plot(self, skip_start=10, skip_end=5, log_lr=True, show_lr=None, ax=None):
+          """Plots the learning rate range test.
+          Arguments:
+              skip_start (int, optional): number of batches to trim from the start.
+                  Default: 10.
+              skip_end (int, optional): number of batches to trim from the start.
+                  Default: 5.
+              log_lr (bool, optional): True to plot the learning rate in a logarithmic
+                  scale; otherwise, plotted in a linear scale. Default: True.
+              show_lr (float, optional): if set, adds a vertical line to visualize the
+                  specified learning rate. Default: None.
+              ax (matplotlib.axes.Axes, optional): the plot is created in the specified
+                  matplotlib axes object and the figure is not be shown. If `None`, then
+                  the figure and axes object are created in this method and the figure is
+                  shown . Default: None.
+          Returns:
+              The matplotlib.axes.Axes object that contains the plot.
+          """
 
-        if skip_start < 0:
-            raise ValueError("skip_start cannot be negative")
-        if skip_end < 0:
-            raise ValueError("skip_end cannot be negative")
-        if show_lr is not None and not isinstance(show_lr, float):
-            raise ValueError("show_lr must be float")
+          if skip_start < 0:
+              raise ValueError("skip_start cannot be negative")
+          if skip_end < 0:
+              raise ValueError("skip_end cannot be negative")
+          if show_lr is not None and not isinstance(show_lr, float):
+              raise ValueError("show_lr must be float")
 
-        # Get the data to plot from the history dictionary. Also, handle skip_end=0
-        # properly so the behaviour is the expected
-        lrs = self.history["lr"]
-        losses = self.history["loss"]
-        if skip_end == 0:
-            lrs = lrs[skip_start:]
-            losses = losses[skip_start:]
-        else:
-            lrs = lrs[skip_start:-skip_end]
-            losses = losses[skip_start:-skip_end]
+          # Get the data to plot from the history dictionary. Also, handle skip_end=0
+          # properly so the behaviour is the expected
+          lrs = self.history["lr"]
+          losses = self.history["loss"]
+          if skip_end == 0:
+              lrs = lrs[skip_start:]
+              losses = losses[skip_start:]
+          else:
+              lrs = lrs[skip_start:-skip_end]
+              losses = losses[skip_start:-skip_end]
 
-        # Create the figure and axes object if axes was not already given
-        fig = None
-        if ax is None:
-            fig, ax = plt.subplots()
+          # Create the figure and axes object if axes was not already given
+          fig = None
+          if ax is None:
+              fig, ax = plt.subplots()
 
-        # Plot loss as a function of the learning rate
-        ax.plot(lrs, losses)
-        if log_lr:
-            ax.set_xscale("log")
-        ax.set_xlabel("Learning rate")
-        ax.set_ylabel("Loss")
+          # Plot loss as a function of the learning rate
+          ax.plot(lrs, losses)
+          if log_lr:
+              ax.set_xscale("log")
+          ax.set_xlabel("Learning rate")
+          ax.set_ylabel("Loss")
 
-        if show_lr is not None:
-            ax.axvline(x=show_lr, color="red")
+          if show_lr is not None:
+              ax.axvline(x=show_lr, color="red")
 
-        # Show only if the figure was created internally
-        if fig is not None:
-            plt.show()
+          # Show only if the figure was created internally
+          if fig is not None:
+              plt.show()
 
-        return ax
+          return ax
 
 
 class LinearLR(_LRScheduler):
