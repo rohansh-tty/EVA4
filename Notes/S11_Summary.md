@@ -30,6 +30,8 @@ Step 2. **WarmUp Strategies**
 
 Since our variables/learnable params are initialized randomly, we need to start our training with a small learning rate, so that all these values can warm-up for sometime and align in proper direction.
 
+![](https://github.com/Gilf641/Test/blob/master/11s4.png)
+
 
 
 
