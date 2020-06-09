@@ -14,7 +14,6 @@ Selection of the optimal starting learning rate is the important. Because if you
 ![](https://www.bdhammel.com/assets/learning-rate/lr-types.png)
 
 
-After the setting of initial learning rate you have decay it in such a way you won't miss out on minima. If the learning rate remains unchanged, this would cause oscillation around the minima and it won't reach the point.
-
-
+After the setting of initial learning rate you have decay it in such a way you won't miss out on minima. If the learning rate remains unchanged, this would cause oscillation around the minima, which look similar to sharp noise in the accuracy curves. 
+The most efficient approach is to set a not so high learning rate during the initial training stages, so you can escape **local minima trap** and as the training progresses decay the learning rate by some factor **f**.
 
