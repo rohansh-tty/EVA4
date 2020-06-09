@@ -18,5 +18,10 @@ Selection of the optimal starting learning rate is the important. Because if you
 
 
 After the setting of initial learning rate you have decay it in such a way you won't miss out on minima. If the learning rate remains unchanged, this would cause oscillation around the minima, which look similar to sharp noise in the accuracy curves. 
-The most efficient approach is to set a not so high learning rate during the initial training stages, so you can escape **local minima trap** and as the training progresses decay the learning rate by some factor **f**.
+The most efficient approach is to set a not so high learning rate during the initial training stages, so you can escape **local minima trap** and as the training progresses decay the learning rate by some factor **f**. There are various methods for learning rate annealing i.e Step-Wise Annealing, Exponential Decay, Cosine Annealing etc.![Reference for LR Annealing Methods](https://cs231n.github.io/neural-networks-3/#anneal) 
+
+
+
+
+
 
