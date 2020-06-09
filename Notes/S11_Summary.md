@@ -18,7 +18,10 @@ Selection of the optimal starting learning rate is the important. Because if you
 
 
 After the setting of initial learning rate you have decay it in such a way you won't miss out on minima. If the learning rate remains unchanged, this would cause oscillation around the minima, which look similar to sharp noise in the accuracy curves. 
-The most efficient approach is to set a not so high learning rate during the initial training stages, so you can escape **local minima trap** and as the training progresses decay the learning rate by some factor **f**. There are various methods for learning rate annealing i.e Step-Wise Annealing, Exponential Decay, Cosine Annealing etc. ![LR Annealing Methods](https://cs231n.github.io/neural-networks-3/#anneal) 
+The most efficient approach is to set a not so high learning rate during the initial training stages, so you can escape **local minima trap** and as the training progresses decay the learning rate by some factor **f**. There are various methods for learning rate annealing i.e Step-Wise Annealing, Exponential Decay, Cosine Annealing etc. ![LR Annealing Methods](https://cs231n.github.io/neural-networks-3/#anneal). 
+
+Since there involves a lot of uncertainity in deciding when to actually reduce the learning rate, it makes a lot of sense to use something simpler like ![ReduceLROnPlateau](https://pytorch.org/docs/stable/optim.html#torch.optim.lr_scheduler.ReduceLROnPlateau). We move the task of deciding when to change to Pytorch/Keras etc. 
+
 
 
 
