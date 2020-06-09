@@ -1,5 +1,8 @@
 # Super-Convergence
 
+![](https://pngimage.net/wp-content/uploads/2018/06/superman-cartoon-png-1.png)
+
+
 *Research Paper*: ![Super-Convergence: Very Fast Training of Neural Networks Using Large Learning Rates by
 Leslie N. Smith, Nicholay Topin](https://arxiv.org/abs/1708.07120)
 
