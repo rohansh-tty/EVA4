@@ -11,10 +11,10 @@ When you implement Super-Convergence, large learning rates regularize the traini
 Selection of the optimal starting learning rate is the important. Because if you start with a lower learning rate then it would take a lot of time to reach minima and if you start with a higher learning rate then that it won't converge very well. 
 
 
-![](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1A5ufTTM2s0HovNyZmoeRID3XhzsWJ4_0kLMECkn8Fb6zl_kx&usqp=CAU)
+![](https://www.bdhammel.com/assets/learning-rate/lr-types.png)
 
 
-After the setting of initial learning rate you have decay it in such a way you won't miss out on minima. 
+After the setting of initial learning rate you have decay it in such a way you won't miss out on minima. If the learning rate remains unchanged, this would cause oscillation around the minima and it won't reach the point.
 
 
 
