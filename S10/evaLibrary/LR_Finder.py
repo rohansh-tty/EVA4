@@ -84,6 +84,7 @@ class ValDataLoaderIter(DataLoaderIter):
 
 
 class LRFinder(object):
+<<<<<<< HEAD
         def __init__(self,
                     model, 
                     optimizer, 
@@ -99,6 +100,9 @@ class LRFinder(object):
               device: Assigned model on which the model computation takes place.    
           """
           
+=======
+        def __init__(self, model, optimizer, criterion, device=None, memory_cache = True, cache_dir = None):
+>>>>>>> f50bf4c30e3ede8b810272bfb5c5e19934f88e70
           self.optimizer = optimizer # check whether the optimizer is attached to the scheduler
           # self._check_for_scheduler()
 
@@ -108,7 +112,11 @@ class LRFinder(object):
           self.bestLoss = None
           self.memory_cache = memory_cache
 
+<<<<<<< HEAD
           # Save the original state of model & optimizer
+=======
+          # Save the original state of model & optimizer(MODEL & OPTIMIZER STATE BEFORE THE LR FINDER PROCESS)
+>>>>>>> f50bf4c30e3ede8b810272bfb5c5e19934f88e70
           self.model_device = next(self.model.parameters()).device
           self.state_cacher = StateCacher(memory_cache, cache_dir= cache_dir)
           self.state_cacher.store('Model', self.model.state_dict())
@@ -124,6 +132,7 @@ class LRFinder(object):
             """ Restores Model & Optimizer to their initial states"""
             self.model.load_state_dict(self.state_cacher.retrieve('Model'))
             self.optimizer.load_state_dict(self.state_cacher.retrieve('Optimizer'))
+<<<<<<< HEAD
             self.model.to(self.device) # Changed from self.model_device to self.device
 
 
@@ -139,6 +148,16 @@ class LRFinder(object):
                     diverge_th=5,
                     accumulation_steps = 1,
                      non_blocking_transfer = True):
+=======
+            self.model.to(self.device) # CHANGED FROM self.model_device to self.device
+
+
+        def range_test(
+                    self, train_loader,  val_loader=None,
+                    start_lr=None, end_lr=10, num_iter=100,
+                    step_mode='linear', smooth_f=0.05, diverge_th=5,
+                    accumulation_steps = 1, non_blocking_transfer = True):
+>>>>>>> f50bf4c30e3ede8b810272bfb5c5e19934f88e70
 
             self.history = {'lr':[], 'loss':[]}
             self.bestLoss = None
@@ -230,12 +249,16 @@ class LRFinder(object):
                 if "initial_lr" in param_group:
                     raise RuntimeError ("Optimizer has already a scheduler attached to it.")
 
+<<<<<<< HEAD
         def _train_batch(self, 
                         train_iter,
                         accumulation_steps, 
                         non_blocking_transfer=True):
 
 
+=======
+        def _train_batch(self, train_iter, accumulation_steps, non_blocking_transfer=True):
+>>>>>>> f50bf4c30e3ede8b810272bfb5c5e19934f88e70
           self.model.train()
           total_loss = None  # for late initialization
 
@@ -286,18 +309,30 @@ class LRFinder(object):
 
           inputs = move(inputs, self.device, non_blocking=non_blocking)
           labels = move(labels, self.device, non_blocking=non_blocking)
+<<<<<<< HEAD
 
+=======
+>>>>>>> f50bf4c30e3ede8b810272bfb5c5e19934f88e70
           return inputs, labels
 
         def _validate(self, val_iter, non_blocking_transfer=True):
           # Set model to evaluation mode and disable gradient computation
           running_loss = 0
           self.model.eval()
+<<<<<<< HEAD
 
           with torch.no_grad():
               for inputs, labels in val_iter:
                   # Move data to the correct device
                   inputs, labels = self._move_to_device(inputs, labels, non_blocking=non_blocking_transfer)
+=======
+          with torch.no_grad():
+              for inputs, labels in val_iter:
+                  # Move data to the correct device
+                  inputs, labels = self._move_to_device(
+                      inputs, labels, non_blocking=non_blocking_transfer
+                  )
+>>>>>>> f50bf4c30e3ede8b810272bfb5c5e19934f88e70
 
                   if isinstance(inputs, tuple) or isinstance(inputs, list):
                       batch_size = inputs[0].size(0)
@@ -311,12 +346,16 @@ class LRFinder(object):
 
           return running_loss / len(val_iter.dataset)
 
+<<<<<<< HEAD
         def plot(self, 
                 skip_start=10, 
                 skip_end=5, 
                 log_lr=True,
                 show_lr=None, 
                 ax=None):
+=======
+        def plot(self, skip_start=10, skip_end=5, log_lr=True, show_lr=None, ax=None):
+>>>>>>> f50bf4c30e3ede8b810272bfb5c5e19934f88e70
           """Plots the learning rate range test.
           Arguments:
               skip_start (int, optional): number of batches to trim from the start.
@@ -346,7 +385,10 @@ class LRFinder(object):
           # properly so the behaviour is the expected
           lrs = self.history["lr"]
           losses = self.history["loss"]
+<<<<<<< HEAD
 
+=======
+>>>>>>> f50bf4c30e3ede8b810272bfb5c5e19934f88e70
           if skip_end == 0:
               lrs = lrs[skip_start:]
               losses = losses[skip_start:]
@@ -363,7 +405,10 @@ class LRFinder(object):
           ax.plot(lrs, losses)
           if log_lr:
               ax.set_xscale("log")
+<<<<<<< HEAD
 
+=======
+>>>>>>> f50bf4c30e3ede8b810272bfb5c5e19934f88e70
           ax.set_xlabel("Learning rate")
           ax.set_ylabel("Loss")
 

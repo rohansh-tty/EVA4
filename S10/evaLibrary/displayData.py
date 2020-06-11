@@ -24,6 +24,10 @@ def class_images(dataiterator):
   Returns a plot consisting of Random Images from all 10 classes.
   """
   num_classes = 10
+<<<<<<< HEAD
+=======
+  # display 10 images from each category.
+>>>>>>> f50bf4c30e3ede8b810272bfb5c5e19934f88e70
   images, labels = iter(dataiterator).next()
   r, c = 10, 10
   n = 5
@@ -74,6 +78,7 @@ def plot_image(img):
     plt.imshow(np.transpose(npimg, (1, 2, 0)))    # transposing npimg array
 
 
+<<<<<<< HEAD
 
 from google.colab import files
 def misclassified_ones(model, testLoader, data,filename):
@@ -84,6 +89,16 @@ def misclassified_ones(model, testLoader, data,filename):
     data(list): Incorrect Classes in Test() of Test_Train.py File
     filename(str): Return Image Save as
   """
+=======
+# Misclassified Images
+from google.colab import files
+def misclassifiedOnes(model, testLoader, data,filename):
+
+  #model: ModelName
+  #data: Incorrect Classes in Test() of Test_Train class
+  #filename: Pass on the filename with which you want to save misclassified images
+
+>>>>>>> f50bf4c30e3ede8b810272bfb5c5e19934f88e70
   classes = ('plane', 'car', 'bird', 'cat',
            'deer', 'dog', 'frog', 'horse', 'ship', 'truck') # classs names in the dataset
 
