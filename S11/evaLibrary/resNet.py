@@ -16,8 +16,8 @@ class BasicBlock(nn.Module):
                                stride=1, padding=1, bias=False)
         self.bn2 = nn.BatchNorm2d(planes)
 
-        self.shortcut = nn.Sequential()
-        if stride != 1 or in_planes != self.expansion*planes:
+        self.shortcut = nn.Sequential() # if no change in number of channels then self.shortcut is like empty
+        if stride != 1 or in_planes != self.expansion*planes: # this is like if there's change in channel number only then it's used I guess
             self.shortcut = nn.Sequential(
                 nn.Conv2d(in_planes, self.expansion*planes,
                           kernel_size=1, stride=stride, bias=False),
@@ -63,13 +63,14 @@ class Bottleneck(nn.Module):
         return out
 
 
+# This commenting is for ResNet18
 class ResNet(nn.Module):
-    def __init__(self, block, num_blocks, num_classes=10):
+    def __init__(self, block, num_blocks, num_classes=10): # block = BasicBlock, num_blocks = [2,2,2,2]
         super(ResNet, self).__init__()
-        self.in_planes = 64
+        self.in_planes = 64  # maybe this is the number of kernels at the start
 
         self.conv1 = nn.Conv2d(3, 64, kernel_size=3,
-                               stride=1, padding=1, bias=False)
+                               stride=1, padding=1, bias=False) # conv2 with incoming 3 channels
         self.bn1 = nn.BatchNorm2d(64)
         self.layer1 = self._make_layer(block, 64, num_blocks[0], stride=1)
         self.layer2 = self._make_layer(block, 128, num_blocks[1], stride=2)
@@ -99,7 +100,6 @@ class ResNet(nn.Module):
 
 def ResNet18():
     return ResNet(BasicBlock, [2, 2, 2, 2])
-
 
 
 def ResNet34():

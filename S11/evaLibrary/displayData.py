@@ -1,5 +1,5 @@
-
 #Visualization Functions
+from google.colab import files
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
@@ -7,18 +7,22 @@ import torch
 channel_means = (0.5, 0.5, 0.5)
 channel_stdevs = (0.5, 0.5, 0.5)
 
-
-def unnormalize(img):
-  img = img.numpy().astype(dtype=np.float32)
-
-  for i in range(img.shape[0]):
-    img[i] = (img[i]*channel_stdevs[i])+channel_means[i] # if not unnormalized then the resulting images will be dark and not visible
-  
-  return np.transpose(img, (1,2,0))
-
 class_names = ('airplane','automobile','bird','cat','deer','dog','frog','horse','ship','truck')
 
 
+def unnormalize(img):
+  """
+  Input: A Normal Image
+  Output: Returns the unnormalized Image
+  """
+  img = img.numpy().astype(dtype=np.float32)
+  for i in range(img.shape[0]):
+    img[i] = (img[i]*channel_stdevs[i])+channel_means[i] # if not unnormalized then the resulting images will be dark and not visible
+  return np.transpose(img, (1,2,0))
+
+
+
+# Plot Class Specific Images
 def class_images(dataiterator):
   """
   Returns a plot consisting of Random Images from all 10 classes.
@@ -42,29 +46,8 @@ def class_images(dataiterator):
   plt.show()
 
 
-# def imshow(img):
-#   img = img / 2 + 0.5  # unnormalize
-#   plt.imshow(np.transpose(img, (1, 2, 0)))  # convert from Tensor image
 
-
-# def randomImages(dataiterator, classes):
-#         images, labels = dataiterator.next()
-#         images = images.numpy()  # convert images to numpy for display
-
-#         # plot the images in the batch, along with the corresponding labels
-#         fig = plt.figure(figsize=(25, 4))
-#         # display 20 images
-#         for i in range(len(classes)):
-#           # for idx in np.arange(5):
-#             ax = fig.add_subplot(2, 20 / 2, i + 1, xticks=[], yticks=[])
-#             imshow(images[i])
-#             ax.set_title(classes[labels[i]])
-
-# randomImages(dataiter,classes)
-
-
-
-
+# Plot Random Image from Train Dataset
 def plot_image(img):
     """
     Plots random images from training dataset
@@ -75,7 +58,7 @@ def plot_image(img):
 
 
 
-from google.colab import files
+# Misclassified ones
 def misclassified_ones(model, testLoader, data,filename):
   """
   Arguments:
@@ -120,6 +103,8 @@ def misclassified_ones(model, testLoader, data,filename):
   # save the plot
   plt.savefig(filename)
   files.download(filename)
+
+
 
 
 # Correctly Classified Images

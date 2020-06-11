@@ -92,31 +92,58 @@ class GradCAM():
 
 
 
-def GRADCAM(images, device, labels, model, target_layers):
+def GRADCAM(images,
+            device, 
+            labels, 
+            model,
+            target_layers):
+  """
+  Arguments:-
+  images: Random Input Images 
+  device: Device set
+  labels: target_classes
+  model: Main CNN Model
+  target_layers: Iterable object consisting of Layers for GradCam Visualization
+  """  
   model.eval()
+
   # map input to device
   images = torch.stack(images).to(device)
+
   # set up grad cam
   gcam = GradCAM(model, target_layers)
+
   # forward pass
   probs, ids = gcam.forward(images)
+
   # outputs agaist which to compute gradients
   ids_ = torch.LongTensor(labels).view(len(images),-1).to(device)
+
   # backward pass
   gcam.backward(ids=ids_)
+
   layers = []
   for i in range(len(target_layers)):
     target_layer = target_layers[i]
     print("Generating Grad-CAM @{}".format(target_layer))
+
     # Grad-CAM
     layers.append(gcam.generate(target_layer=target_layer))
+
   # remove hooks when done
   gcam.remove_hook()
+  
   return layers, probs, ids
 
 
 
-def PLOT(gcam_layers, images, target_layers, image_size, unnormalize, tc, pc):
+def PLOT(gcam_layers,
+         images, 
+         target_layers, 
+         image_size, 
+         unnormalize,
+         tc, 
+         pc):
     """
     ***Arguments***:
     gcam_layers:

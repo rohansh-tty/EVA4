@@ -5,15 +5,25 @@ import torch
 
 
 class Test_Train():
-  def __init__(self, model, device, optimizer, criterion):
-
+  def __init__(self, 
+              model,
+              device,
+              optimizer,
+              criterion):
+    """
+    Args:-
+    model: Wrapped Model
+    device: Device set
+    optimizer: Wrapped optimizer
+    criterion: Wrapped Loss Function 
+    """
 
     self.model = model
     self.device = device
     self.optimizer = optimizer
     self.criterion = criterion
 
-# # This is to hold all the values and plot some graphs to extract few good insights.
+# This is to hold all the values and plot some graphs to extract few good insights.
     self.train_losses = []
     self.test_losses = []
     self.train_acc = []
@@ -23,7 +33,18 @@ class Test_Train():
     # when the test loss becomes min I will save the particular model
 
 
-  def train(self, trainloader, epoch, L1lambda=None):
+  def train(self, 
+            trainloader, 
+            epoch,
+            L1lambda=None):
+    """
+    Args:-
+    trainLoader: Dataloader for Train Dataset
+    epoch: Number of Epochs
+    L1lambda: L1lambda Value, by default set to None
+    """
+
+
     self.model.train()    # prepare model for training
     pbar = tqdm(trainloader)
     correct = 0
@@ -47,8 +68,6 @@ class Test_Train():
           loss = c_loss +  (L1lambda * l1_loss)
 
 
-
-      # Backpropagation
       loss.backward()   # backward pass: compute gradient of the loss with respect to model parameters
       self.optimizer.step()   # perform a single optimization step (parameter update)
 
@@ -60,12 +79,27 @@ class Test_Train():
 
       pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
     self.train_acc.append(100*correct/processed)
-      # scheduler.step()
+
+    # scheduler.step()
     self.train_epoch_end.append(self.train_acc[-1])
     self.train_losses.append(loss)
 
 
-  def test(self, testloader, filename, correct_samples, correctLabels, incorrect_samples):
+  def test(self, 
+          testloader, 
+          filename, 
+          correct_samples, 
+          correctLabels, 
+          incorrect_samples):
+      """
+      Args:
+      1. TestLoader: Dataloader for Test Dataset
+      2. filename: I don't remember why I added this?
+      3. correct_samples: Containers with Correctly Classified Images
+      4. correctLabels: Containers with Correct Labels
+      5. incorrect_samples: Containers with Incorrectly Classified Images
+      """
+      
       self.model.eval()  # prep model for evaluation
       test_loss = 0
       correct = 0
