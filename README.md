@@ -20,3 +20,4 @@ Till now 10 sessions are completed. I will briefly summarise what I have learned
 * Session 8: Receptive Fields & Network Architectures
 * Session 9: Data Augmentation
 * Session 10: Training & Learning Rate 
+* Session 11: SuperConvergence 
