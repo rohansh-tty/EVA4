@@ -2,6 +2,8 @@ import copy
 import os
 import torch
 from tqdm.autonotebook import tqdm
+import torch.optim as optim
+import torch.nn as nn 
 from torch.optim.lr_scheduler import _LRScheduler
 import matplotlib.pyplot as plt
 from torch.utils.data import DataLoader
@@ -91,34 +93,35 @@ class LRFinder(object):
                     device=None,
                     memory_cache = True, 
                     cache_dir = None):
-           """Learning Rate Finder Class.
+            """
+            Learning Rate Finder Class.
             Arguments:
               model: Base CNN Model.
               optimizer: Wrapped Optimizer.
               criterion: Loss Function implemented.  
               device: Assigned model on which the model computation takes place.    
-          """
-          
-          self.optimizer = optimizer # check whether the optimizer is attached to the scheduler
-          # self._check_for_scheduler()
+            """
+            
+            self.optimizer = optimizer # check whether the optimizer is attached to the scheduler
+            # self._check_for_scheduler()
 
-          self.model = model
-          self.criterion = criterion
-          self.history = {'lr':[], 'loss':[]}
-          self.bestLoss = None
-          self.memory_cache = memory_cache
+            self.model = model
+            self.criterion = criterion
+            self.history = {'lr':[], 'loss':[]}
+            self.bestLoss = None
+            self.memory_cache = memory_cache
 
-          # Save the original state of model & optimizer
-          self.model_device = next(self.model.parameters()).device
-          self.state_cacher = StateCacher(memory_cache, cache_dir= cache_dir)
-          self.state_cacher.store('Model', self.model.state_dict())
-          self.state_cacher.store('Optimizer', self.optimizer.state_dict())
+            # Save the original state of model & optimizer
+            self.model_device = next(self.model.parameters()).device
+            self.state_cacher = StateCacher(memory_cache, cache_dir= cache_dir)
+            self.state_cacher.store('Model', self.model.state_dict())
+            self.state_cacher.store('Optimizer', self.optimizer.state_dict())
 
-          # If device is none then change it to default model_device
-          if device:
-              self.device = device
-          else:
-              self.device = self.model_device
+            # If device is none then change it to default model_device
+            if device:
+                self.device = device
+            else:
+                self.device = self.model_device
 
         def reset(self):
             """ Restores Model & Optimizer to their initial states"""
@@ -489,3 +492,50 @@ class StateCacher(object):
         for k in self.cached:
             if os.path.exists(self.cached[k]):
                 os.remove(self.cached[k])
+
+
+LR_List = []
+Acc_List = []
+def lr_rangetest(device, 
+                model,
+                trainloader, 
+                criterion,  
+                minlr, 
+                maxlr, 
+                epochs,
+                weight_decay=0.05 
+                plot=True):
+    """
+    Args:-
+    """
+    lr = minlr
+
+    for e in range(epochs):
+        testModel = copy.deepcopy(model)
+        optimizer = optim.SGD(model.parameters(), lr = lr, momentum=0.9, weight_decay=weight_decay)
+        lr = lr + (maxlr-minlr)/epochs
+        testModel.train()
+        pbar = tqdm(trainLoader)
+        correct, processed = 0, 0
+        for batch_idx, (data, target) in enumerate(pbar):
+            data, target = data.to(device), target.to(device)
+            optimizer.zero_grad()
+            y_pred = testModel(data)
+            loss = criterion(y_pred, target)
+            loss.backward()
+            optimizer.step()
+
+            pred = y_pred.argmax(dim=1, keepdim=True)
+            correct = correct + pred.eq(target.view_as(pred)).sum().item()
+            processed = processed + len(data)
+            pbar.set_description(desc= f'epoch = {e+1} Lr = {optimizer.param_groups[0]["lr"]}  Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
+        Acc_List.append(100*correct/processed)
+        LR_List.append(optimizer.param_groups[0]['lr'])
+    
+    if plot:
+        with plt.style.context('fivethirtyeight'):
+            plt.plot(LR_List, Acc_List)
+            plt.xlabel('Learning Rate')
+            plt.ylabel('Accuracy')
+            plt.title('Learning Rate Range Test')
+            plt.show()
