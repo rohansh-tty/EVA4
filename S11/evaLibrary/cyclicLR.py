@@ -1,3 +1,13 @@
+import copy
+import os
+import torch
+from tqdm.autonotebook import tqdm
+import torch.optim as optim
+import torch.nn as nn 
+from torch.optim.lr_scheduler import _LRScheduler
+import matplotlib.pyplot as plt
+from torch.utils.data import DataLoader
+
 class CyclicLR:
     def __init__(self, max_lr, min_lr, stepsize, num_iterations):
         self.max_lr = max_lr
@@ -41,10 +51,51 @@ class CyclicLR:
 
 
 
-clr1 = CyclicLR(0.001, 0.0001, len(trainLoader), len(trainLoader)*10)
-clr1.cyclic_lr(plotGraph=True)
 
+LR_List = []
+Acc_List = []
+def lr_rangetest(device, 
+                model,
+                trainloader, 
+                criterion,  
+                minlr, 
+                maxlr, 
+                epochs,
+                weight_decay=0.05,
+                pltTest=True):
+    """
+    Args:-
+    """
+    lr = minlr
 
+    for e in range(epochs):
+        testModel = copy.deepcopy(model)
+        optimizer = optim.SGD(model.parameters(), lr = lr, momentum=0.9, weight_decay=weight_decay)
+        lr = lr + (maxlr-minlr)/epochs
+        testModel.train()
+        pbar = tqdm(trainloader)
+        correct, processed = 0, 0
+        for batch_idx, (data, target) in enumerate(pbar):
+            data, target = data.to(device), target.to(device)
+            optimizer.zero_grad()
+            y_pred = testModel(data)
+            loss = criterion(y_pred, target)
+            loss.backward()
+            optimizer.step()
 
-
+            pred = y_pred.argmax(dim=1, keepdim=True)
+            correct = correct + pred.eq(target.view_as(pred)).sum().item()
+            processed = processed + len(data)
+            print('EPOCH {n}:-'.format(n=e))
+            pbar.set_description(desc=f'LR={optimizer.param_groups[0]["lr"]}  Loss={loss.item()}  Batch_id={batch_idx}  Accuracy={100*correct/processed:0.2f}')
+        Acc_List.append(100*correct/processed)
+        LR_List.append(optimizer.param_groups[0]['lr'])
+    
+    if pltTest:
+        with plt.style.context('fivethirtyeight'):
+            plt.plot(LR_List, Acc_List)
+            plt.xlabel('Learning Rate')
+            plt.ylabel('Accuracy')
+            plt.title('Learning Rate Range Test')
+            plt.show()
 
