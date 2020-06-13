@@ -52,7 +52,7 @@ Task:
 7. Used NLLLoss() to calculate loss value.
 8. Ran the model for 24 Epochs 
 
-        * Highest Validation Accuracy: 89.20
+        * Highest Validation Accuracy: 89.20%
         
 9. Used One Cycle Policy where I started with lr = min lr at the First epoch and linearly increased it till max lr(sixth epoch). From there again decreased lr linearly.
 10. Plotted Cyclic Learning Rate for the Training phase, with Learning Rate linearly increasing from Epoch 1 to Epoch 5 i.e min lr to max lr and then later it gets lowered to a min lr.
@@ -95,7 +95,7 @@ Task:
 ![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/accplots.png)
 ![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/lossplots.png)
 
-## OneCycleLR Plt
+## OneCycleLR Plot
 ![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/onecycleLR.png)
 
 
