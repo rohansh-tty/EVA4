@@ -43,12 +43,12 @@ Task:
 
 ## **Model Features:**
 
-1. Used GPU as Device
-2. CNN Type: ![customNet]()
+1. Used GPU as Device.
+2. CNN Type: ![customNet](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/customNet.py)
 3. Total Params: 6,574,090
 4. Implemented MMDA, used Albumentations since it's easy to integrate with PyTorch.
 5. Also Trained the model a bit harder by adding Image Augmentation Techniques like RandomCrop, Flip & Cutout.  
-6. Max Learning Rate: Between 0.2 & 0.3
+6. Max Learning Rate: Between 0.02 & 0.03
 7. Used NLLLoss() to calculate loss value.
 8. Ran the model for 24 Epochs 
 
@@ -80,8 +80,13 @@ Task:
 
 10.![cyclicLR](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/cyclicLR.py): Consists helper functions related to CycliclR.
 
-## **Misclassified Images**
+
+## **Cyclic Plot**
 ![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/Misclassified%20Images.png)
+
+
+## **Misclassified Images**
+![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/clr_plot.png)
 ## **GradCam for Misclassified Images**
 ![](https://github.com/Gilf641/EVA4/blob/master/S10/Images/GradCamPlot.jpeg)
 
