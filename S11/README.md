@@ -64,11 +64,11 @@ Assignment:
 
 2.![AlbTrainTransforms.py](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/AlbTrainTransforms.py) : Applies required image transformation to Train dataset using Albumentations library.
 
-3.![customNet.py](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/customNet.py): Consists of main CNN Model.
+3.![customNet.py](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/customNet.py): Consists of main S11 CNN Model.
 
 4.![execute.py](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/execute.py): Scripts to Test & Train the model.
 
-5.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/DataLoaders.py): Scripts to load the dataloaders.
+5.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/DataLoaders.py): Scripts to load the datasets.
 
 6.![displayData.py](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/displayData.py): Consists of helper functions to plot images from dataset & misclassified images.
 
