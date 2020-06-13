@@ -503,7 +503,7 @@ def lr_rangetest(device,
                 minlr, 
                 maxlr, 
                 epochs,
-                weight_decay=0.05 
+                weight_decay=0.05,
                 plot=True):
     """
     Args:-
