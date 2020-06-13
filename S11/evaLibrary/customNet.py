@@ -1,3 +1,4 @@
+from torchsummary import summary
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -6,6 +7,7 @@ import torch.nn.functional as F
 
 class BasicBlock(nn.Module):
     expansion = 1
+
 
     def __init__(self, in_planes, planes, stride = 1):
         """
@@ -115,8 +117,9 @@ class customNet(nn.Module):
         outX = self.pool4(res2X)
         outX = outX.view(outX.size(0), -1)
         outX = self.linear(outX)
+        
 
-        return outX
+        return F.log_softmax(outX)
 
 
 def main11():
