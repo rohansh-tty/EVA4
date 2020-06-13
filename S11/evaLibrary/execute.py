@@ -9,6 +9,7 @@ class Test_Train():
               model,
               device,
               optimizer,
+              scheduler,
               criterion):
     """
     Args:-
@@ -22,6 +23,7 @@ class Test_Train():
     self.device = device
     self.optimizer = optimizer
     self.criterion = criterion
+    self.scheduler = scheduler
 
 # This is to hold all the values and plot some graphs to extract few good insights.
     self.train_losses = []
@@ -49,12 +51,14 @@ class Test_Train():
     pbar = tqdm(trainloader)
     correct = 0
     processed = 0
+    loss = 0
     for batch_idx, (data, target) in enumerate(pbar): # passing on data & target values to device
       data, target = data.to(self.device), target.to(self.device)
       self.optimizer.zero_grad()    # clear the gradients of all optimized variables
 
       # Predict
       y_pred = self.model(data)   # forward pass
+
 
       # Calculate loss
       c_loss = self.criterion(y_pred, target)
@@ -66,10 +70,11 @@ class Test_Train():
           for param in self.model.parameters():
             l1_loss += torch.sum(param.abs())
           loss = c_loss +  (L1lambda * l1_loss)
-
-
+      else:
+        loss = c_loss
       loss.backward()   # backward pass: compute gradient of the loss with respect to model parameters
       self.optimizer.step()   # perform a single optimization step (parameter update)
+      self.scheduler.step()
 
       # Update pbar-tqdm
 
@@ -79,8 +84,7 @@ class Test_Train():
 
       pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
     self.train_acc.append(100*correct/processed)
-
-    # scheduler.step()
+    
     self.train_epoch_end.append(self.train_acc[-1])
     self.train_losses.append(loss)
 
@@ -124,7 +128,7 @@ class Test_Train():
 
             # storing the entire result data as binary
             result = pred.eq(target.view_as(pred))
-            # scheduler.step()
+            # self.scheduler.step()
 
             # This is to extract incorrect samples/misclassified images
             if len(incorrect_samples) < 25:
@@ -164,9 +168,3 @@ def cross_entropy_loss():
         Cross entroy loss function
     """
     return torch.nn.CrossEntropyLoss()
-
-def model_summary(model, input_size=(3,32,32)):
-  """
-  Returns Summary of the model passed in as model
-  """
-  return summary(model, input_size)
