@@ -82,11 +82,11 @@ Task:
 
 
 ## **Cyclic Plot**
-![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/Misclassified%20Images.png)
-
+![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/clr_plot.png)
 
 ## **Misclassified Images**
-![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/clr_plot.png)
+![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/Misclassified%20Images.png)
+
 ## **GradCam for Misclassified Images**
 ![](https://github.com/Gilf641/EVA4/blob/master/S10/Images/GradCamPlot.jpeg)
 
