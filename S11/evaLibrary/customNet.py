@@ -57,7 +57,7 @@ class customNet(nn.Module):
         # Layer 2 
         self.conv3 = self.create_conv2d(128, 256, MaxPool=True)
 
-        # Layer 3 I guess
+        # Layer 3 
         self.conv4 = self.create_conv2d(256, 512, MaxPool=True)
 
         # chnage the in_planes from 128 to 512
