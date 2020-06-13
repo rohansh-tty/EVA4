@@ -37,7 +37,7 @@ Assignment:
         6. Target Accuracy: 90%. 
        
 
-**Assignment Solution**: ![S10 Assignment Solution]()
+**Assignment Solution**: ![S11 Assignment Solution]()
 
 
 
@@ -60,25 +60,25 @@ Assignment:
 
 ## **Library Documentation:**
 
-1.![AlbTestTransforms.py]() : Applies required image transformation to Test dataset using Albumentations library.
+1.![AlbTestTransforms.py](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/AlbTestTransforms.py) : Applies required image transformation to Test dataset using Albumentations library.
 
-2.![AlbTrainTransforms.py]() : Applies required image transformation to Train dataset using Albumentations library.
+2.![AlbTrainTransforms.py](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/AlbTrainTransforms.py) : Applies required image transformation to Train dataset using Albumentations library.
 
-3.![customNet.py](): Consists of main CNN Model.
+3.![customNet.py](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/customNet.py): Consists of main CNN Model.
 
-4.![execute.py](): Scripts to Test & Train the model.
+4.![execute.py](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/execute.py): Scripts to Test & Train the model.
 
-5.![DataLoaders.py](): Scripts to load the dataloaders.
+5.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/DataLoaders.py): Scripts to load the dataloaders.
 
-6.![displayData.py](): Consists of helper functions to plot images from dataset & misclassified images
+6.![displayData.py](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/displayData.py): Consists of helper functions to plot images from dataset & misclassified images.
 
-7.![rohan_library](): Imports all the required libraries at once.
+7.![rohan_library](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/rohan_library.py): Imports all the required libraries at once.
 
-8.![Gradcam](): Consists of Gradcam class & other related functions.
+8.![Gradcam](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/Gradcam.py): Consists of Gradcam class & other related functions.
 
-9.![LR Finder](): LR finder using FastAI Approach.
+9.![LR Finder](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/LR Finder.py): LR finder using FastAI Approach.
 
-10.![cyclicLR](): Consists helper functions related to CycliclR
+10.![cyclicLR](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/cyclicLR.py): Consists helper functions related to CycliclR.
 
 ## **Misclassified Images**
 ![]()
