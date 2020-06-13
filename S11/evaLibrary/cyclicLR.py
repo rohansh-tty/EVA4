@@ -9,7 +9,18 @@ import matplotlib.pyplot as plt
 from torch.utils.data import DataLoader
 
 class CyclicLR:
-    def __init__(self, max_lr, min_lr, stepsize, num_iterations):
+    def __init__(self, 
+                max_lr, 
+                min_lr, 
+                stepsize, 
+                num_iterations):
+        """
+        Arguments:-
+        max_lr =
+        min_lr = 
+        stepsize = 
+        num_iterations = 
+        """
         self.max_lr = max_lr
         self.min_lr = min_lr
         self.stepsize = stepsize
@@ -33,27 +44,31 @@ class CyclicLR:
             self.lr_list.append(current_lr)
         
         if plotGraph:
-            fig = plt.figure(figsize=(12,5))
-            
-            #Plot Title
-            plt.title('Cyclic LR Plot')
+            with plt.style.context('fivethirtyeight'):
+                fig = plt.figure(figsize=(12,5))
+                
+                #Plot Title
+                plt.title('Cyclic LR Plot')
 
-            plt.xlabel('Iterations')
-            plt.ylabel('Learning Rate')
+                plt.xlabel('Iterations')
+                plt.ylabel('Learning Rate')
 
-            plt.axhline(y=self.min_lr, label='min lr', color='r')
-            plt.text(0, self.min_lr, 'min lr')
+                plt.axhline(y=self.min_lr, label='min lr', color='r')
+                plt.text(0, self.min_lr, 'min lr')
 
-            plt.axhline(y=self.max_lr, label='max lr', color='r')
-            plt.text(0, self.max_lr, 'max lr')
+                plt.axhline(y=self.max_lr, label='max lr', color='r')
+                plt.text(0, self.max_lr, 'max lr')
 
-            plt.plot(self.lr_list)
+                plt.plot(self.lr_list)
+
+
 
 
 
 
 LR_List = []
 Acc_List = []
+Loss_List = []
 def lr_rangetest(device, 
                 model,
                 trainloader, 
@@ -65,17 +80,24 @@ def lr_rangetest(device,
                 pltTest=True):
     """
     Args:-
+    1. Device: Assigned Device
+    2. TrainLoader: Dataloader for train dataset
+    3. criterion: Wrapped Loss function
+    4. minlr: Minimum Learning Rate 
+    5. maxlr: Maximum Learning Rate
+    6. epochs: Number of Epochs you want your model to run
     """
     lr = minlr
-
-    for e in range(epochs):
-        testModel = copy.deepcopy(model)
-        optimizer = optim.SGD(model.parameters(), lr = lr, momentum=0.9, weight_decay=weight_decay)
-        lr = lr + (maxlr-minlr)/epochs
+    testModel = copy.deepcopy(model)
+    for e in range(1,epochs+1):
+        optimizer = optim.SGD(testModel.parameters(), lr = lr, momentum=0.95, weight_decay=0.005)
+        lr_step = (maxlr-minlr)/epochs
+        
         testModel.train()
         pbar = tqdm(trainloader)
         correct, processed = 0, 0
         for batch_idx, (data, target) in enumerate(pbar):
+            lr = lr + lr_step
             data, target = data.to(device), target.to(device)
             optimizer.zero_grad()
             y_pred = testModel(data)
@@ -86,16 +108,28 @@ def lr_rangetest(device,
             pred = y_pred.argmax(dim=1, keepdim=True)
             correct = correct + pred.eq(target.view_as(pred)).sum().item()
             processed = processed + len(data)
-            print('EPOCH {n}:-'.format(n=e))
-            pbar.set_description(desc=f'LR={optimizer.param_groups[0]["lr"]}  Loss={loss.item()}  Batch_id={batch_idx}  Accuracy={100*correct/processed:0.2f}')
+           
+            pbar.set_description(desc=f'EPOCH:- {e} \n LR={round(optimizer.param_groups[0]["lr"],4)}  Accuracy={100*correct/processed:0.2f}')
         Acc_List.append(100*correct/processed)
         LR_List.append(optimizer.param_groups[0]['lr'])
+        Loss_List.append(loss)
     
     if pltTest:
         with plt.style.context('fivethirtyeight'):
-            plt.plot(LR_List, Acc_List)
+            # fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(5, 3))
+            plt.subplot(2,1,1)
+            plt.plot(LR_List, Acc_List, '-gD')
             plt.xlabel('Learning Rate')
             plt.ylabel('Accuracy')
             plt.title('Learning Rate Range Test')
             plt.show()
+
+            plt.subplot(2,1,2)
+            plt.plot(LR_List, Loss_List, '-gD')
+            plt.xlabel('Learning Rate')
+            plt.ylabel('Loss')
+            plt.show()
+
+
+
 
