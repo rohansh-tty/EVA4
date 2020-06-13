@@ -1,7 +1,7 @@
 # S11 Assignment
 
 Task: 
-Assignment: 
+
 
     Assignment:
 
@@ -55,8 +55,8 @@ Assignment:
         * Highest Validation Accuracy: 
         
 9. Used One Cycle Policy where I started with lr = min lr at the First epoch and linearly increased it till max lr(sixth epoch). From there again decreased lr linearly.
-10. 
-11. Plotted GradCam for 25 Misclassified Images
+10. Plotted Cyclic Learning Rate for the Training phase, with Learning Rate linearly increasing from Epoch 1 to Epoch 5 i.e min lr to max lr and then later it gets lowered to a min lr.
+11. GradCam for 25 Misclassified Images.
 
 ## **Library Documentation:**
 
