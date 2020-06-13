@@ -76,7 +76,7 @@ Assignment:
 
 8.![Gradcam](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/Gradcam.py): Consists of Gradcam class & other related functions.
 
-9.![LR Finder](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/LR Finder.py): LR finder using FastAI Approach.
+9.![LR Finder](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/LR_Finder.py): LR finder using FastAI Approach.
 
 10.![cyclicLR](https://github.com/Gilf641/EVA4/blob/master/S11/evaLibrary/cyclicLR.py): Consists helper functions related to CycliclR.
 
