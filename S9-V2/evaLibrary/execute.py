@@ -40,8 +40,7 @@ class Test_Train():
             l1_loss += torch.sum(param.abs())
           loss += L1lambda * l1_loss
 
-      self.train_losses.append(loss)
-
+      
       # Backpropagation
       loss.backward()   # backward pass: compute gradient of the loss with respect to model parameters
       optimizer.step()   # perform a single optimization step (parameter update)
@@ -53,9 +52,10 @@ class Test_Train():
       processed += len(data)
 
       pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
-      self.train_acc.append(100*correct/processed)
-      scheduler.step()
-      self.train_epoch_end.append(self.train_acc[-1])
+    self.train_acc.append(100*correct/processed)
+    scheduler.step()
+    self.train_losses.append(loss)
+    self.train_epoch_end.append(self.train_acc[-1])
 
 
   def test(self, model, device, testloader,filename, criterion, correct_samples, correctLabels, incorrect_samples):
