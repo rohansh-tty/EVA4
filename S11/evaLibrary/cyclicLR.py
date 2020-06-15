@@ -16,7 +16,7 @@ class CyclicLR:
                 num_iterations):
         """
         Arguments:-
-        max_lr =
+        max_lr = amx
         min_lr = 
         stepsize = 
         num_iterations = 
