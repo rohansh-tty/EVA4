@@ -1,4 +1,4 @@
-from albumentations import Compose, RandomCrop, Normalize, HorizontalFlip, VerticalFlip, Resize,Rotate #, Cutout
+from albumentations import Compose, RandomCrop, Normalize, HorizontalFlip, VerticalFlip, Resize, Rotate,  Cutout, Flip
 from albumentations.pytorch import ToTensor
 import numpy as np
 
@@ -8,14 +8,11 @@ class train_transforms():
     def __init__(self):
         self.albTrainTransforms = Compose([  # Resize(256, 256),
             Rotate((-10.0, 10.0)),
-            HorizontalFlip(p=0.5),
-            VerticalFlip(p=0.5),
-            Normalize(
-                mean=[0.5, 0.5, 0.5],
-                std=[0.5, 0.5, 0.5]
-            ),
+            Flip(p=0.5),
+            Cutout(num_holes = 1, max_h_size = 8, max_w_size = 8, p = 1.0),
+            Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]),
             ToTensor()
-        ])# this is train transforms
+        ])
 
     print("REQUIRED LIBRARIES LOADED...")
 

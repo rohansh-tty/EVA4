@@ -149,7 +149,7 @@ def GRADCAM(images, device, labels, model, target_layers):
 def PLOT(gcam_layers, images, labels, target_layers, class_names, image_size, predicted, unnormalize):
     c = len(images)+1
     r = len(target_layers)+2
-    fig = plt.figure(figsize=(32,14))
+    fig = plt.figure(figsize=(20,14))
     fig.subplots_adjust(hspace=0.01, wspace=0.01)
     ax = plt.subplot(r, c, 1)
     ax.text(0.3,-0.5, "INPUT", fontsize=14)

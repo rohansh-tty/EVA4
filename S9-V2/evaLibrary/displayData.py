@@ -161,3 +161,24 @@ def correctlyClassifed(model, testLoader, data,filename):
   # save the plot
   plt.savefig(filename)
   files.download(filename)
+
+
+
+# Training & Validation Curves
+def plot_curve(elements, title, y_label = 'Accuracy', Figsize = (8,8)):
+    """
+    elements: Contains Training and Testing variables of the Model like Accuracy or Loss
+    title: Plot title
+    y_label: Y-axis Label, Accuracy by default
+    FigSize: Size of the Plot
+    """
+    with plt.style.context('fivethirtyeight'):
+        fig = plt.figure(figsize=Figsize)
+        ax = plt.subplot()
+        for elem in elements:
+            ax.plot(elem[0], label=elem[1])
+            ax.set(xlabel='Epochs', ylabel=y_label)
+            plt.title(title)
+        ax.legend()
+    plt.show()
+
