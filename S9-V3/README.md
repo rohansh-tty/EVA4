@@ -9,7 +9,7 @@ Task:
     Target Accuracy is 87%
     Submit answers to S9-Assignment-Solution. 
 
-**Assignment Solution**: ![S9 Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S9-V3/S9_AssignmentSolution.ipynb)
+**Assignment Solution**: ![S9 Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S9-V3/S9_AssignmentSolution(V3).ipynb)
 
 ## **Model Features:**
 
@@ -65,7 +65,7 @@ Task:
 ## **Misclassified Images**
 
 
-![]()
+![Misclassified Images](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Images/MisclassifiedImages.png)
 
 
 ## Model Comparision
