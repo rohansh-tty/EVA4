@@ -41,6 +41,7 @@ Task:
 * **Model Analysis:**
 1. Lot of fluctuations in Validation Loss values. 
 2. Both of the models are slightly Overfit.
+3. Also found less oscillation in Nesterov Model Performance.
  
 
 ## **Library Documentation:**
