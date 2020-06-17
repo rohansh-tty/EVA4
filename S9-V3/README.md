@@ -25,13 +25,13 @@ Task:
        
       **ResNet18 with Nesterov**
 
-        * Highest Train Accuracy: 93%(30th Epoch)
+        * Highest Train Accuracy: 91.22%(19th Epoch)
 
-        * Corresponding Test Accuracy: 88.50% 
+        * Corresponding Test Accuracy: 88.75% 
         
       **ResNet18 without Nesterov**
       
-        * Highest Train Accuracy: 93.73%(19th Epoch)
+        * Highest Train Accuracy: 93.73%(30th Epoch)
 
         * Corresponding Test Accuracy: 89.22% 
         
