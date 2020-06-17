@@ -17,50 +17,62 @@ Task:
 2. ResNet Variant: ResNet18
 3. Total Params: 11,173,962
 4. Implemented MMDA, used Albumentations since it's easy to integrate with PyTorch.
-5. Also Trained the model a bit harder by adding few Image Augmentation Techniques like Rotation, HorizonatalFlip & Vertical Flip.  
+5. Also Trained the model a bit harder by adding few Image Augmentation Techniques like PadIfNeeded, RandomCrop, Rotate and Cutout.  
 6. Used CrossEntropyLoss() to calculate loss value.
-7. Ran the model for 15 Epochs with 
+7. Used GhostBatchNormalization instead of Normal BatchNormalization.
+8. Compared two versions of ResNet18, one with Nesterov Momentum and one without.
+9. Ran both of them model for 30 Epochs with 
+       
+      **ResNet18 with Nesterov**
 
-        * Highest Train Accuracy: 92.56% 
+        * Highest Train Accuracy: 93%
 
-        * Corresponding Test Accuracy: 88.13% 
-8. Implemented GradCam using this as a ![reference](https://github.com/GunhoChoi/Grad-CAM-Pytorch)
+        * Corresponding Test Accuracy: 88.50% 
+        
+      **ResNet18 without Nesterov**
+      
+        * Highest Train Accuracy: 93.73%
+
+        * Corresponding Test Accuracy: 89.22% 
+        
+        
+10. Implemented GradCam using this as a ![reference](https://github.com/GunhoChoi/Grad-CAM-Pytorch)
 
 * **Model Analysis:**
 1. Lot of fluctuations in Validation Loss values. 
-2. Clearly an Overfit Model.
-
-* **Future Work**
-1. Fix Overfitting by adding some more training data.
-
+2. Both of the models are slightly Overfit.
+ 
 
 ## **Library Documentation:**
 
-1.![AlbTestTransforms.py](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/AlbTestTransforms.py) : Applies required image transformation to Test dataset using Albumentations library.
+1.![AlbTestTransforms.py](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/AlbTestTransforms.py) : Applies required image transformation to Test dataset using Albumentations library.
 
-2.![AlbTrainTransforms.py](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/AlbTrainTransforms.py) : Applies required image transformation to Train dataset using Albumentations library.
+2.![AlbTrainTransforms.py](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/AlbTrainTransforms.py) : Applies required image transformation to Train dataset using Albumentations library.
 
-3.![resNet.py](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/resNet.py): Consists of ResNet variants
+3.![resNet.py](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/resNet.py): Consists of ResNet variants
 
-4.![execute.py](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/execute.py): Scripts to Test & Train the model.
+4.![execute.py](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/execute.py): Scripts to Test & Train the model.
 
-5.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/DataLoaders.py): Scripts to load the dataloaders.
+5.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/DataLoaders.py): Scripts to load the dataloaders.
 
-6.![displayData.py](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/visualizeData.py): Consists of helper functions to plot images from dataset & misclassified images
+6.![displayData.py](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/visualizeData.py): Consists of helper functions to plot images from dataset & misclassified images
 
-7.![rohan_library](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/rohan_library.py): Imports all the required libraries at once.
+7.![rohan_library](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/rohan_library.py): Imports all the required libraries at once.
 
-8.![Gradcam](https://github.com/Gilf641/EVA4/blob/master/S9-V2/evaLibrary/Gradcam.py): Consists of Gradcam class & other related functions.
+8.![Gradcam](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/Gradcam.py): Consists of Gradcam class & other related functions.
 
 
 
 ## **Misclassified Images**
 
-![](https://github.com/Gilf641/EVA4/blob/master/S9-V2/Misclassfied.png)
+# 
+
+![](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Misclassfied.png)
 
 ## Model Comparision
 
-
+![with Nesterov](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Images/AccPlot(withNest30).png)
+![without Nesterov](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Images/AccPlot(withoutNest30).png
 
 
 ## Model Logs(without Nesterov Momentum)
