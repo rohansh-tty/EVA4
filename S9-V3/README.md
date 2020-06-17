@@ -65,7 +65,7 @@ Task:
 ## **Misclassified Images**
 
 
-![](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Misclassfied.png)
+![]()
 
 
 ## Model Comparision
