@@ -1,4 +1,4 @@
-# S9 Assignment
+# S9 Assignment( 3rd Version)
 
 Task: 
 
@@ -17,9 +17,9 @@ Task:
 2. ResNet Variant: ResNet18
 3. Total Params: 11,173,962
 4. Implemented MMDA, used Albumentations since it's easy to integrate with PyTorch.
-5. Also Trained the model a bit harder by adding few Image Augmentation Techniques like PadIfNeeded, RandomCrop, Rotate and Cutout.  
+5. Also Trained the model a bit harder by adding few Image Augmentation Techniques like **PadIfNeeded, RandomCrop, Rotate and Cutout**.  
 6. Used CrossEntropyLoss() to calculate loss value.
-7. Used GhostBatchNormalization instead of Normal BatchNormalization.
+7. Used **GhostBatchNormalization** instead of Normal BatchNormalization.
 8. Compared two versions of ResNet18, one with Nesterov Momentum and one without.
 9. Ran both of them model for 30 Epochs with 
        
@@ -55,25 +55,36 @@ Task:
 
 5.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/DataLoaders.py): Scripts to load the dataloaders.
 
-6.![displayData.py](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/visualizeData.py): Consists of helper functions to plot images from dataset & misclassified images
+6.![displayData.py](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/visualizeData.py): Consists of helper functions to plot images from dataset, misclassified images, accuracy and loss curves
 
 7.![rohan_library](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/rohan_library.py): Imports all the required libraries at once.
 
 8.![Gradcam](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/Gradcam.py): Consists of Gradcam class & other related functions.
 
 
-
 ## **Misclassified Images**
+
 
 ![](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Misclassfied.png)
 
+
 ## Model Comparision
+
 
 ![with Nesterov](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Images/AccPlot(withNest30).png)
 ![without Nesterov](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Images/AccPlot(withoutNest30).png)
 
 
 With accuracy as metric, I found that the model without Nesterov slightly performed better than one with Nesterov. Kinda confused here. 
+
+
+
+## GradCam Plot
+
+
+![](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Images/GradCam-Plot.png)
+
+
 
 ## Model Logs(without Nesterov Momentum)
   0%|          | 0/391 [00:00<?, ?it/s]
