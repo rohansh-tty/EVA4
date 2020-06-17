@@ -65,15 +65,15 @@ Task:
 
 ## **Misclassified Images**
 
-# 
-
 ![](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Misclassfied.png)
 
 ## Model Comparision
 
 ![with Nesterov](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Images/AccPlot(withNest30).png)
-![without Nesterov](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Images/AccPlot(withoutNest30).png
+![without Nesterov](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Images/AccPlot(withoutNest30).png)
 
+
+With accuracy as metric, I found that the model without Nesterov slightly performed better than one with Nesterov. Kinda confused here. 
 
 ## Model Logs(without Nesterov Momentum)
   0%|          | 0/391 [00:00<?, ?it/s]
