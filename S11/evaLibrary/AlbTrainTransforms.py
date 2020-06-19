@@ -20,7 +20,7 @@ class train_transforms():
             PadIfNeeded(min_height = 36, min_width = 36, border_mode = 0, p = 1.0),
             RandomCrop(height = 32, width = 32, p = 1.0),
             Flip(p=0.5),
-            Cutout(num_holes = 1, max_h_size = 8, max_w_size = 8, p = 1.0),
+            Cutout(num_holes = 2, max_h_size = 8, max_w_size = 8, p = 1.0),
             Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]),
             ToTensor()
         ])
