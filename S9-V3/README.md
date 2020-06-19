@@ -1,4 +1,4 @@
-# S9 Assignment
+# S9 Assignment( 3rd Version)
 
 Task: 
 
@@ -9,7 +9,7 @@ Task:
     Target Accuracy is 87%
     Submit answers to S9-Assignment-Solution. 
 
-**Assignment Solution**: ![S9 Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S9-V3/S9_AssignmentSolution.ipynb)
+**Assignment Solution**: ![S9 Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S9-V3/S9_AssignmentSolution(V3).ipynb)
 
 ## **Model Features:**
 
@@ -17,21 +17,21 @@ Task:
 2. ResNet Variant: ResNet18
 3. Total Params: 11,173,962
 4. Implemented MMDA, used Albumentations since it's easy to integrate with PyTorch.
-5. Also Trained the model a bit harder by adding few Image Augmentation Techniques like PadIfNeeded, RandomCrop, Rotate and Cutout.  
+5. Also Trained the model a bit harder by adding few Image Augmentation Techniques like **PadIfNeeded, RandomCrop, Rotate and Cutout**.  
 6. Used CrossEntropyLoss() to calculate loss value.
-7. Used GhostBatchNormalization instead of Normal BatchNormalization.
+7. Used **GhostBatchNormalization** instead of Normal BatchNormalization.
 8. Compared two versions of ResNet18, one with Nesterov Momentum and one without.
 9. Ran both of them model for 30 Epochs with 
        
       **ResNet18 with Nesterov**
 
-        * Highest Train Accuracy: 93%
+        * Highest Train Accuracy: 91.22%(19th Epoch)
 
-        * Corresponding Test Accuracy: 88.50% 
+        * Corresponding Test Accuracy: 88.75% 
         
       **ResNet18 without Nesterov**
       
-        * Highest Train Accuracy: 93.73%
+        * Highest Train Accuracy: 93.73%(30th Epoch)
 
         * Corresponding Test Accuracy: 89.22% 
         
@@ -41,6 +41,7 @@ Task:
 * **Model Analysis:**
 1. Lot of fluctuations in Validation Loss values. 
 2. Both of the models are slightly Overfit.
+3. Also found less oscillation in Nesterov Model Performance.
  
 
 ## **Library Documentation:**
@@ -55,25 +56,36 @@ Task:
 
 5.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/DataLoaders.py): Scripts to load the dataloaders.
 
-6.![displayData.py](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/visualizeData.py): Consists of helper functions to plot images from dataset & misclassified images
+6.![displayData.py](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/visualizeData.py): Consists of helper functions to plot images from dataset, misclassified images, accuracy and loss curves
 
 7.![rohan_library](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/rohan_library.py): Imports all the required libraries at once.
 
 8.![Gradcam](https://github.com/Gilf641/EVA4/blob/master/S9-V3/evaLibrary/Gradcam.py): Consists of Gradcam class & other related functions.
 
 
-
 ## **Misclassified Images**
 
-![](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Misclassfied.png)
+
+![Misclassified Images](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Images/MisclassifiedImages.png)
+
 
 ## Model Comparision
+
 
 ![with Nesterov](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Images/AccPlot(withNest30).png)
 ![without Nesterov](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Images/AccPlot(withoutNest30).png)
 
 
 With accuracy as metric, I found that the model without Nesterov slightly performed better than one with Nesterov. Kinda confused here. 
+
+
+
+## GradCam Plot
+
+
+![](https://github.com/Gilf641/EVA4/blob/master/S9-V3/Images/GradCam-Plot.png)
+
+
 
 ## Model Logs(without Nesterov Momentum)
   0%|          | 0/391 [00:00<?, ?it/s]
@@ -324,5 +336,256 @@ Loss=0.7604323625564575 Batch_id=390 Accuracy=93.73: 100%|███████�
 
 Test set: Average loss: 0.4899, Accuracy: 8922/10000 (89.22%)
 
+
+
+## Model Logs(with Nesterov Momentum)
+
+
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+<class 'int'>
+EPOCH:  1
+
+Loss=2.3699350357055664 Batch_id=390 Accuracy=47.15: 100%|██████████| 391/391 [00:56<00:00,  6.88it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+Validation loss has  decreased (inf --> 0.6691).  Saving model ...
+
+Test set: Average loss: 0.6691, Accuracy: 6064/10000 (60.64%)
+
+EPOCH:  2
+
+Loss=2.0163681507110596 Batch_id=390 Accuracy=64.45: 100%|██████████| 391/391 [00:58<00:00,  6.64it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 1.1463, Accuracy: 7084/10000 (70.84%)
+
+EPOCH:  3
+
+Loss=1.6731479167938232 Batch_id=390 Accuracy=71.92: 100%|██████████| 391/391 [00:58<00:00,  6.64it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+Validation loss has  decreased (0.6691 --> 0.4672).  Saving model ...
+
+Test set: Average loss: 0.4672, Accuracy: 7376/10000 (73.76%)
+
+EPOCH:  4
+
+Loss=1.7431747913360596 Batch_id=390 Accuracy=76.51: 100%|██████████| 391/391 [00:59<00:00,  6.61it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+Validation loss has  decreased (0.4672 --> 0.2319).  Saving model ...
+
+Test set: Average loss: 0.2319, Accuracy: 7627/10000 (76.27%)
+
+EPOCH:  5
+
+Loss=1.7749998569488525 Batch_id=390 Accuracy=78.83: 100%|██████████| 391/391 [00:59<00:00,  6.59it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.8950, Accuracy: 7947/10000 (79.47%)
+
+EPOCH:  6
+
+Loss=1.6893181800842285 Batch_id=390 Accuracy=81.20: 100%|██████████| 391/391 [00:59<00:00,  6.59it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+Validation loss has  decreased (0.2319 --> 0.1253).  Saving model ...
+
+Test set: Average loss: 0.1253, Accuracy: 8128/10000 (81.28%)
+
+EPOCH:  7
+
+Loss=1.5326945781707764 Batch_id=390 Accuracy=82.90: 100%|██████████| 391/391 [00:59<00:00,  6.61it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.6572, Accuracy: 8241/10000 (82.41%)
+
+EPOCH:  8
+
+Loss=1.4973945617675781 Batch_id=390 Accuracy=84.61: 100%|██████████| 391/391 [00:58<00:00,  6.63it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.3969, Accuracy: 8398/10000 (83.98%)
+
+EPOCH:  9
+
+Loss=1.3989313840866089 Batch_id=390 Accuracy=85.11: 100%|██████████| 391/391 [00:59<00:00,  6.62it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.8143, Accuracy: 8227/10000 (82.27%)
+
+EPOCH:  10
+
+Loss=1.2324738502502441 Batch_id=390 Accuracy=86.59: 100%|██████████| 391/391 [00:58<00:00,  6.63it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.5438, Accuracy: 8377/10000 (83.77%)
+
+EPOCH:  11
+
+Loss=1.2243186235427856 Batch_id=390 Accuracy=87.03: 100%|██████████| 391/391 [00:59<00:00,  6.63it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.2567, Accuracy: 8425/10000 (84.25%)
+
+EPOCH:  12
+
+Loss=1.1157817840576172 Batch_id=390 Accuracy=88.10: 100%|██████████| 391/391 [00:59<00:00,  6.63it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 1.1814, Accuracy: 8686/10000 (86.86%)
+
+EPOCH:  13
+
+Loss=1.2745795249938965 Batch_id=390 Accuracy=88.55: 100%|██████████| 391/391 [00:59<00:00,  6.62it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.3683, Accuracy: 8699/10000 (86.99%)
+
+EPOCH:  14
+
+Loss=1.0499476194381714 Batch_id=390 Accuracy=89.23: 100%|██████████| 391/391 [00:59<00:00,  6.63it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.3686, Accuracy: 8683/10000 (86.83%)
+
+EPOCH:  15
+
+Loss=1.0830906629562378 Batch_id=390 Accuracy=90.16: 100%|██████████| 391/391 [00:58<00:00,  6.63it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.9033, Accuracy: 8585/10000 (85.85%)
+
+EPOCH:  16
+
+Loss=1.0370086431503296 Batch_id=390 Accuracy=90.18: 100%|██████████| 391/391 [00:59<00:00,  6.62it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.6017, Accuracy: 8613/10000 (86.13%)
+
+EPOCH:  17
+
+Loss=1.1507266759872437 Batch_id=390 Accuracy=90.65: 100%|██████████| 391/391 [00:59<00:00,  6.62it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.3972, Accuracy: 8751/10000 (87.51%)
+
+EPOCH:  18
+
+Loss=0.8980541229248047 Batch_id=390 Accuracy=91.12: 100%|██████████| 391/391 [00:59<00:00,  6.62it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 1.3685, Accuracy: 8782/10000 (87.82%)
+
+EPOCH:  19
+
+Loss=1.1139020919799805 Batch_id=390 Accuracy=91.22: 100%|██████████| 391/391 [00:59<00:00,  6.61it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.6531, Accuracy: 8875/10000 (88.75%)
+
+EPOCH:  20
+
+Loss=1.2000693082809448 Batch_id=390 Accuracy=91.81: 100%|██████████| 391/391 [00:59<00:00,  6.62it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.8142, Accuracy: 8673/10000 (86.73%)
+
+EPOCH:  21
+
+Loss=0.9506387710571289 Batch_id=390 Accuracy=92.16: 100%|██████████| 391/391 [00:59<00:00,  6.62it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.7585, Accuracy: 8524/10000 (85.24%)
+
+EPOCH:  22
+
+Loss=1.1381409168243408 Batch_id=390 Accuracy=92.35: 100%|██████████| 391/391 [00:58<00:00,  6.63it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+Validation loss has  decreased (0.1253 --> 0.0566).  Saving model ...
+
+Test set: Average loss: 0.0566, Accuracy: 8779/10000 (87.79%)
+
+EPOCH:  23
+
+Loss=0.8508270978927612 Batch_id=390 Accuracy=92.74: 100%|██████████| 391/391 [00:58<00:00,  6.63it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.8362, Accuracy: 8859/10000 (88.59%)
+
+EPOCH:  24
+
+Loss=0.8322210311889648 Batch_id=390 Accuracy=93.26: 100%|██████████| 391/391 [00:59<00:00,  6.62it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.0993, Accuracy: 8778/10000 (87.78%)
+
+EPOCH:  25
+
+Loss=0.8555868268013 Batch_id=390 Accuracy=93.19: 100%|██████████| 391/391 [00:58<00:00,  6.65it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.1727, Accuracy: 8841/10000 (88.41%)
+
+EPOCH:  26
+
+Loss=0.8385084867477417 Batch_id=390 Accuracy=93.20: 100%|██████████| 391/391 [00:58<00:00,  6.63it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.3893, Accuracy: 8830/10000 (88.30%)
+
+EPOCH:  27
+
+Loss=0.858372151851654 Batch_id=390 Accuracy=93.60: 100%|██████████| 391/391 [00:58<00:00,  6.63it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.1799, Accuracy: 8872/10000 (88.72%)
+
+EPOCH:  28
+
+Loss=1.014775037765503 Batch_id=390 Accuracy=93.78: 100%|██████████| 391/391 [00:59<00:00,  6.61it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.2313, Accuracy: 8854/10000 (88.54%)
+
+EPOCH:  29
+
+Loss=0.7481760382652283 Batch_id=390 Accuracy=94.02: 100%|██████████| 391/391 [00:58<00:00,  6.63it/s]
+  0%|          | 0/391 [00:00<?, ?it/s]
+
+
+Test set: Average loss: 0.3202, Accuracy: 8862/10000 (88.62%)
+
+EPOCH:  30
+
+Loss=0.7946771383285522 Batch_id=390 Accuracy=93.89: 100%|██████████| 391/391 [00:59<00:00,  6.62it/s]
+
+
+Test set: Average loss: 0.2792, Accuracy: 8858/10000 (88.58%)
 
 
