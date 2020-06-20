@@ -89,7 +89,7 @@ Task:
 ![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/Misclassified%20Images.png)
 
 ## **GradCam for Misclassified Images**
-![](https://github.com/Gilf641/EVA4/blob/master/S10/Images/GradCamPlot.jpeg)
+![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/GradCamPlot.png)
 
 
 ## Model Performance on Train & Test Data
