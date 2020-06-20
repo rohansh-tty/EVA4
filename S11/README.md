@@ -98,7 +98,7 @@ Task:
 ![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/LossPlot-V3.png)
 
 ## OneCycleLR Plot
-![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/onecycleLR.png)
+![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/OCP.png)
 
 
 ## Model Logs
