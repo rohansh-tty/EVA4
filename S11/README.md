@@ -93,9 +93,9 @@ Task:
 
 
 ## Model Performance on Train & Test Data
-![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/accplots.png)
+![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/AccPlot-V3.png)
 
-![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/lossplots.png)
+![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/LossPlot-V3.png)
 
 ## OneCycleLR Plot
 ![](https://github.com/Gilf641/EVA4/blob/master/S11/Images/onecycleLR.png)
