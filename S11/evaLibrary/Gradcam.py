@@ -160,12 +160,12 @@ def PLOT(gcam_layers,
     fig = plt.figure(figsize=(32,25))
     fig.subplots_adjust(hspace=0.01, wspace=0.01)
     ax = plt.subplot(r, c, 1)
-    ax.text(0.3,-0.5, "INPUT", fontsize=10)
+    ax.text(0.3,-0.5, "INPUT", fontsize=14)
     plt.axis('off')
     for i in range(len(target_layers)):
       target_layer = target_layers[i]
       ax = plt.subplot(r, c, c*(i+1)+1)
-      ax.text(0.3,-0.5, target_layer, fontsize=10)
+      ax.text(0.3,-0.5, target_layer, fontsize=14)
       plt.axis('off')
       ax.set_aspect('equal')
 
@@ -173,7 +173,7 @@ def PLOT(gcam_layers,
         img = np.uint8(255*unnormalize(images[j].view(image_size)))
         if i==0:
           ax = plt.subplot(r, c, j+2)
-          ax.text(0, 0.2, f'pred={pc[j]}\nactual={tc[j]}', fontsize=8)
+          ax.text(0, 0.2, f'pred={pc[j]}\nactual={tc[j]}', fontsize=14)
           plt.axis('off')
           plt.subplot(r, c, c+j+2)
           plt.imshow(img, interpolation='bilinear')

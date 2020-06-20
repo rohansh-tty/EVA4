@@ -16,10 +16,10 @@ class CyclicLR:
                 num_iterations):
         """
         Arguments:-
-        max_lr = amx
-        min_lr = 
-        stepsize = 
-        num_iterations = 
+        max_lr = max lr
+        min_lr = min lr
+        stepsize = number of iterations in each step, with one cycle consisting of two steps
+        num_iterations = total number of iterations
         """
         self.max_lr = max_lr
         self.min_lr = min_lr
@@ -117,6 +117,7 @@ def lr_rangetest(device,
     if pltTest:
         with plt.style.context('fivethirtyeight'):
             # fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(5, 3))
+            plt.rcParams["figure.figsize"] = (10,6)
             plt.subplot(2,1,1)
             plt.plot(LR_List, Acc_List, '-gD')
             plt.xlabel('Learning Rate')
@@ -124,12 +125,11 @@ def lr_rangetest(device,
             plt.title('Learning Rate Range Test')
             plt.show()
 
+            plt.rcParams["figure.figsize"] = (10,6)
             plt.subplot(2,1,2)
             plt.plot(LR_List, Loss_List, '-gD')
             plt.xlabel('Learning Rate')
             plt.ylabel('Loss')
             plt.show()
-
-
 
 

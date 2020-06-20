@@ -8,7 +8,7 @@ class train_transforms():
     Transformations Applied:-
 
     1. PadIfNeeded: To pad the image by 4 pixels on each side, making the input image size = 40x40
-    2. RandomCrop: To crop out 32x32 portion of the input image(40x400)
+    2. RandomCrop: To crop out 32x32 portion of thes input image(40x400)
     3. Flip: Flip the input image horizontally or vertically at p = 0.50
     4. Cutout: Blocking a 8x8 portion of the input image at p = 1.0
     5. Normalize: Simply the normalizing the transformed image
