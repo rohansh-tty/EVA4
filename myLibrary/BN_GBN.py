@@ -92,8 +92,9 @@ class Net(nn.Module):
 # Different Version of Batch Normalized Model i.e without L1 & L2, with L1, with L2, with L1 & L2
 
 class BN_Models(Net):
-  def __init__(self,  device, trainloader, testloader, epochs=25):
+  def __init__(self, model, device, trainloader, testloader, epochs=25):
     super(BN_Models, self).__init__()
+    self.model = model
     self.epochs = epochs
     self.device = device
     self.trainloader = trainloader
