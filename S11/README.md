@@ -37,7 +37,7 @@ Task:
         6. Target Accuracy: 90%. 
        
 
-**Assignment Solution**: ![S11 Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S11/S11_AssignmentSolution.ipynb)
+**Assignment Solution**: ![S11 Assignment Solution](https://github.com/Gilf641/EVA4/blob/master/S11/S11_Assignment.ipynb)
 
 
 
