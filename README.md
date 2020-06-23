@@ -21,3 +21,4 @@ Till now 10 sessions are completed. I will briefly summarise what I have learned
 * Session 9: Data Augmentation
 * Session 10: Training & Learning Rate 
 * Session 11: SuperConvergence 
+* Session 12: Object Localization & Detection
