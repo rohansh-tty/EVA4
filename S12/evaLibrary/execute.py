@@ -5,19 +5,8 @@ import torch
 
 
 class Test_Train():
-  def __init__(self, 
-              model,
-              device,
-              optimizer,
-              scheduler,
-              criterion):
-    """
-    Args:-
-    model: Wrapped Model
-    device: Device set
-    optimizer: Wrapped optimizer
-    criterion: Wrapped Loss Function 
-    """
+  def __init__(self, model, device, optimizer, criterion, scheduler=True ):
+
 
     self.model = model
     self.device = device
@@ -25,7 +14,7 @@ class Test_Train():
     self.criterion = criterion
     self.scheduler = scheduler
 
-# This is to hold all the values and plot some graphs to extract few good insights.
+# # This is to hold all the values and plot some graphs to extract few good insights.
     self.train_losses = []
     self.test_losses = []
     self.train_acc = []
@@ -35,18 +24,7 @@ class Test_Train():
     # when the test loss becomes min I will save the particular model
 
 
-  def train(self, 
-            trainloader, 
-            epoch,
-            L1lambda=None):
-    """
-    Args:-
-    trainLoader: Dataloader for Train Dataset
-    epoch: Number of Epochs
-    L1lambda: L1lambda Value, by default set to None
-    """
-
-
+  def train(self, trainloader, epoch):
     self.model.train()    # prepare model for training
     pbar = tqdm(trainloader)
     correct = 0
@@ -59,51 +37,39 @@ class Test_Train():
       # Predict
       y_pred = self.model(data)   # forward pass
 
-
       # Calculate loss
-      c_loss = self.criterion(y_pred, target)
+      loss = self.criterion(y_pred, target)
 
-      #Implementing L1 Regularization
-      if L1lambda:
-        with torch.enable_grad():
-          l1_loss = 0.
-          for param in self.model.parameters():
-            l1_loss += torch.sum(param.abs())
-          loss = c_loss +  (L1lambda * l1_loss)
-      else:
-        loss = c_loss
+      # #Implementing L1 Regularization
+      # if L1lambda:
+      #   with torch.enable_grad():
+      #     l1_loss = 0.
+      #     for param in self.model.parameters():
+      #       l1_loss += torch.sum(param.abs())
+      #     loss = c_loss +  (L1lambda * l1_loss)
+
+
+
+      # Backpropagation
       loss.backward()   # backward pass: compute gradient of the loss with respect to model parameters
       self.optimizer.step()   # perform a single optimization step (parameter update)
-      self.scheduler.step()
+      if self.scheduler:
+        scheduler.step()
+
 
       # Update pbar-tqdm
-
       pred = y_pred.argmax(dim=1, keepdim=True)  # get the index of the max log-probability
       correct += pred.eq(target.view_as(pred)).sum().item()
       processed += len(data)
 
       pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
+   
     self.train_acc.append(100*correct/processed)
-    
     self.train_epoch_end.append(self.train_acc[-1])
     self.train_losses.append(loss)
 
 
-  def test(self, 
-          testloader, 
-          filename, 
-          correct_samples, 
-          correctLabels, 
-          incorrect_samples):
-      """
-      Args:
-      1. TestLoader: Dataloader for Test Dataset
-      2. filename: I don't remember why I added this?
-      3. correct_samples: Containers with Correctly Classified Images
-      4. correctLabels: Containers with Correct Labels
-      5. incorrect_samples: Containers with Incorrectly Classified Images
-      """
-      
+  def test(self, testloader, filename, correct_samples, correctLabels, incorrect_samples):
       self.model.eval()  # prep model for evaluation
       test_loss = 0
       correct = 0
@@ -128,7 +94,7 @@ class Test_Train():
 
             # storing the entire result data as binary
             result = pred.eq(target.view_as(pred))
-            # self.scheduler.step()
+            # scheduler.step()
 
             # This is to extract incorrect samples/misclassified images
             if len(incorrect_samples) < 25:
@@ -165,6 +131,13 @@ class Test_Train():
 
 def cross_entropy_loss():
     """Returns:
-        Cross entroy loss function
+        Cross entropy loss function
     """
     return torch.nn.CrossEntropyLoss()
+
+def model_summary(model, input_size=(3,32,32)):
+  """
+  Returns Summary of the model passed in as model
+  """
+  return summary(model, input_size)
+
