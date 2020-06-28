@@ -88,3 +88,10 @@ Task:
 
 Describe the contents of this JSON file in FULL details (you don't need to describe all 10 instances, anyone would work)
 
+File which helps in storing Data Structures & Objects in JavaScript Object Notation is called JSON File. It consists of key-value pairs similar to Python Dictionaries. 
+Now in this JSON file there are around 4 Keys/Attributes i.e Filename, Size, Regions and Attributes
+
+Example: 
+> "dog11.jpg5671":{"filename":"dog11.jpg","size":5671,"regions":[{"shape_attributes":{"name":"rect","x":97,"y":29,"width":82,"height":74},"region_attributes":{"Class":"Dog"}}],"file_attributes":{"caption":"","public_domain":"no","image_url":""}}
+
+
