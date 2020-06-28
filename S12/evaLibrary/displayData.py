@@ -3,11 +3,14 @@ from google.colab import files
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
+from DataPrep import xtractClassNames
 
 channel_means = (0.5, 0.5, 0.5)
 channel_stdevs = (0.5, 0.5, 0.5)
 
-class_names = ('airplane','automobile','bird','cat','deer','dog','frog','horse','ship','truck')
+
+
+
 
 
 def unnormalize(img):
@@ -58,7 +61,7 @@ def plot_image(img):
 
 
 
-# Misclassified ones
+# Misclassified ones(For CIFAR-10)
 def misclassified_ones(model, testLoader, data,filename):
   """
   Arguments:
@@ -98,6 +101,48 @@ def misclassified_ones(model, testLoader, data,filename):
       row_count += 1
     axs[row_count][idx % 5].axis('off')
     axs[row_count][idx % 5].set_title(f'Label: {classes[label]}\nPrediction: {classes[prediction]}')
+    axs[row_count][idx % 5].imshow(rgb_image)
+
+  # save the plot
+  plt.savefig(filename)
+  files.download(filename)
+
+
+# Misclassified ones(For ImageNet)
+def misclassified_ones(model, testLoader, data, filename, classes):
+  """
+  Arguments:
+    model(str): ModelName
+    testLoader: Data Loader for Test Images
+    data(list): Incorrect Classes in Test() of Test_Train.py File
+    filename(str): Return Image Save as
+  """
+  
+  dataiter = iter(testLoader)
+  count = 0
+
+  # Initialize plot
+  fig = plt.figure(figsize=(15,15))
+
+  row_count = -1
+  fig, axs = plt.subplots(5, 5, figsize=(12, 10))
+  fig.tight_layout()
+
+  for idx, result in enumerate(data):
+
+    # If 25 samples have been stored, break out of loop
+    if idx > 24:
+      break
+
+    rgb_image = np.transpose(result['image'], (1, 2, 0)) / 2 + 0.5
+    label = result['label'].item()
+    prediction = result['prediction'].item()
+
+    # Plot image
+    if idx % 5 == 0:
+      row_count += 1
+    axs[row_count][idx % 5].axis('off')
+    axs[row_count][idx % 5].set_title(f'Act: {classes[label]}\nPred: {classes[prediction]}', fontsize=8)
     axs[row_count][idx % 5].imshow(rgb_image)
 
   # save the plot
