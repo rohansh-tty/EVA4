@@ -39,6 +39,7 @@ Example:
 
 
 
+
 * Clustering Bounding Boxes with K=2
 ![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Images/K-means%202.png)
 
@@ -46,6 +47,5 @@ Example:
 
 
 * Clustering Bounding Boxes with K=3
-
 ![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Images/K-means%203.png)
 
