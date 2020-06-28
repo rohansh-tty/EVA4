@@ -26,8 +26,7 @@ Task:
 
 # Assignment A
 
-
-## **Model Features:**
+**Model Features:**
 
 1. Used GPU as Device.
 2. CNN Type: ResNet18
@@ -43,7 +42,7 @@ Task:
 9. GradCam for 25 Misclassified Images.
 
 
-## **Library Documentation:**
+**Library Documentation:**
 
 1.![AlbTransforms.py]() : Applies required image transformation to both Train & Test dataset using Albumentations library.
 
@@ -62,36 +61,6 @@ Task:
 8.![LR Finder.py](): LR finder using FastAI Approach.
 
 9.![cyclicLR.py](): Consists helper functions related to CycliclR.
-
-
-## **LR Finder Plot**
-
-![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-A/Images/LR%20finder.png)
-
-
-
-## **Misclassified Images**
-
-![](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-A/Images/Misclassified.png)
-
-
-
-
-**GradCam for Misclassified Images**
-![](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-A/Images/GradCam.png)
-
-
-
-
-
-**Model Performance on Train & Test Data**
-![](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-A/Images/AccPlot.png)
-
-
-
-
-![](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-A/Images/LossPlot.png)
-
 
 **Model Logs**
 * ![Model Logs](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-A/ModelLogs.md)
