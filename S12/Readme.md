@@ -93,8 +93,8 @@ Task:
 
 # Assignment B 
 
-![DogImages Folder](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-B/Dogs)
-![JSON File](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Dogs/dogsData.json)
+* ![DogImages Folder](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-B/Dogs)
+* ![JSON File](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Dogs/dogsData.json)
 
 
 **Describe the contents of this JSON file in FULL details (you don't need to describe all 10 instances, anyone would work)**
