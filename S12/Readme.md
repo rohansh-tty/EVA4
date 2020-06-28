@@ -132,7 +132,9 @@ Example:
 
 
 * Calculating IOU for K using this 
->min(width ,cx[i])* min(height , cy[i])/(height x width+ cx[i] x cy[i]- min(wid , cx[i])x min(hei ,cy[i]))
+>IOU = min(width ,cx[i])* min(height , cy[i])/(height x width+ cx[i] x cy[i]- min(wid , cx[i])x min(hei ,cy[i]))
+
+
 ![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-A/Images/IOU%20Over%20K.png)
 
 
