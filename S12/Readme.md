@@ -60,26 +60,24 @@ Task:
 9.![cyclicLR.py](): Consists helper functions related to CycliclR.
 
 
-## **Cyclic Plot**
-![]()
+## **LR Finder Plot**
+![](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-A/Images/LR finder.png)
 
 ## **Misclassified Images**
-![](https://github.com/Gilf641/EVA4/tree/master/S12/Images/Misclassified.png)
+![](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-A/Images/Misclassified.png)
 
 ## **GradCam for Misclassified Images**
-![](https://github.com/Gilf641/EVA4/tree/master/S12/Images/GradCam.png)
+![](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-A/Images/GradCam.png)
 
 
 ## Model Performance on Train & Test Data
-![](https://github.com/Gilf641/EVA4/tree/master/S12/Images/AccPlot.png)
+![](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-A/Images/AccPlot.png)
 
-![](https://github.com/Gilf641/EVA4/tree/master/S12/Images/LossPlot.png)
-
-## OneCycleLR Plot
-![]()
+![](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-A/Images/LossPlot.png)
 
 
-## ![Model Logs]()
+
+## ![Model Logs](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-A/ModelLogs.md)
 
 # Assignment B 
 
