@@ -61,7 +61,7 @@ Task:
 
 
 ## **LR Finder Plot**
-![](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-A/Images/LR finder.png)
+![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-A/Images/LR%20finder.png)
 
 ## **Misclassified Images**
 ![](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-A/Images/Misclassified.png)
