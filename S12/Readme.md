@@ -44,23 +44,23 @@ Task:
 
 **Library Documentation:**
 
-1.![AlbTransforms.py]() : Applies required image transformation to both Train & Test dataset using Albumentations library.
+1.![AlbTransforms.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/AlbTransforms.py) : Applies required image transformation to both Train & Test dataset using Albumentations library.
 
-2.![DataPrep.py](): Consists of Custom DataSet Class and some helper functions to apply transformations, extract classID etc.
+2.![DataPrep.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/DataPrep.py): Consists of Custom DataSet Class and some helper functions to apply transformations, extract classID etc.
 
-3.![resNet.py](): Consists of main ResNet model
+3.![resNet.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/resNet.py): Consists of main ResNet model
 
-4.![execute.py](): Scripts to Test & Train the model.
+4.![execute.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/execute.py): Scripts to Test & Train the model.
 
-5.![DataLoaders.py](): Scripts to load the datasets.
+5.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/DataLoaders.py): Scripts to load the datasets.
 
-6.![displayData.py](): Consists of helper functions to plot images from dataset & misclassified images.
+6.![displayData.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/displayData.py): Consists of helper functions to plot images from dataset & misclassified images.
 
-7.![Gradcam.py](): Consists of Gradcam class & other related functions.
+7.![Gradcam.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/Gradcam.py): Consists of Gradcam class & other related functions.
 
-8.![LR Finder.py](): LR finder using FastAI Approach.
+8.![LR Finder.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/LR_Finder.py): LR finder using FastAI Approach.
 
-9.![cyclicLR.py](): Consists helper functions related to CycliclR.
+9.![cyclicLR.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/cyclicLR.py): Consists helper functions related to CycliclR.
 
 **Plots & Curves**
 
