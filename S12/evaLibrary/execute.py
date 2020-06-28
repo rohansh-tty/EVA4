@@ -53,8 +53,8 @@ class Test_Train():
       # Backpropagation
       loss.backward()   # backward pass: compute gradient of the loss with respect to model parameters
       self.optimizer.step()   # perform a single optimization step (parameter update)
-      if self.scheduler:
-        scheduler.step()
+      # if self.scheduler:
+      #   scheduler.step(loss)
 
 
       # Update pbar-tqdm
@@ -63,8 +63,8 @@ class Test_Train():
       processed += len(data)
 
       pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
-   
     self.train_acc.append(100*correct/processed)
+    
     self.train_epoch_end.append(self.train_acc[-1])
     self.train_losses.append(loss)
 
@@ -112,6 +112,7 @@ class Test_Train():
 
 
 
+
       # save model if validation loss has decreased
       if test_loss <= self.test_loss_min:
           print('Validation loss has  decreased ({:.4f} --> {:.4f}).  Saving model ...'.format(self.test_loss_min,test_loss ))
@@ -131,7 +132,7 @@ class Test_Train():
 
 def cross_entropy_loss():
     """Returns:
-        Cross entropy loss function
+        Cross entroy loss function
     """
     return torch.nn.CrossEntropyLoss()
 
