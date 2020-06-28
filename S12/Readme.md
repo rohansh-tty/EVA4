@@ -94,4 +94,11 @@ Now in this JSON file there are around 4 Keys/Attributes i.e Filename, Size, Reg
 Example: 
 > "dog11.jpg5671":{"filename":"dog11.jpg","size":5671,"regions":[{"shape_attributes":{"name":"rect","x":97,"y":29,"width":82,"height":74},"region_attributes":{"Class":"Dog"}}],"file_attributes":{"caption":"","public_domain":"no","image_url":""}}
 
+1. First, the Image name which is same as original image name with size attached at the end. This is the main Key. 
+2. For this we have around 1 Value, which a dictionary consisting of 4 Keys i.e Filename, Size, Regions and File Attributes.
+3. FileName is again the Original Image Name. Simple
+4. Size is the Image Size.
+5. Region consists of two attributes Shape & Region Attribute. 
+> Shape Attribute consists of 4 elements, which refer to the Bounding Box dimension. It consists of X, Y, W & H. 
+    (X,Y) is the starting left (point/corner)coordinate of the bounding box, while W & H are width and height of the Bounding Box. Adding X to W & Y to H results in                 Bottom Right Coordinate of the Bounding Box.    
 
