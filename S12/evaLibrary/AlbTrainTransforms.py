@@ -15,15 +15,14 @@ class train_transforms():
     6. ToTensor: Converting the normalized image to Tensor
     """
 
-    def __init__(self):
-        self.albTrainTransforms = Compose([ 
-            PadIfNeeded(min_height = 36, min_width = 36, border_mode = 0, p = 1.0),
+    def __init__(self, transforms_list = [PadIfNeeded(min_height = 36, min_width = 36, border_mode = 0, p = 1.0),
             RandomCrop(height = 32, width = 32, p = 1.0),
             Flip(p=0.5),
             Cutout(num_holes = 2, max_h_size = 8, max_w_size = 8, p = 1.0),
             Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]),
             ToTensor()
-        ])
+        ]):
+        self.albTrainTransforms = Compose(transforms_list)
 
     def __call__(self, img):
         img = np.array(img)
