@@ -64,16 +64,16 @@ Task:
 ![]()
 
 ## **Misclassified Images**
-![]()
+![](https://github.com/Gilf641/EVA4/tree/master/S12/Images/Misclassified.png)
 
 ## **GradCam for Misclassified Images**
-![]()
+![](https://github.com/Gilf641/EVA4/tree/master/S12/Images/GradCam.png)
 
 
 ## Model Performance on Train & Test Data
-![]()
+![](https://github.com/Gilf641/EVA4/tree/master/S12/Images/AccPlot.png)
 
-![]()
+![](https://github.com/Gilf641/EVA4/tree/master/S12/Images/LossPlot.png)
 
 ## OneCycleLR Plot
 ![]()
