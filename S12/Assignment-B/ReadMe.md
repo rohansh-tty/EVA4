@@ -26,8 +26,11 @@ Example:
 
 
 
+
 * Using Elbow Method, best K is 2
 ![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Images/Elbow%20method.png)
+
+
 
 
 * Calculating IOU for K using this 
@@ -35,10 +38,14 @@ Example:
 ![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-A/Images/IOU%20Over%20K.png)
 
 
+
 * Clustering Bounding Boxes with K=2
 ![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Images/K-means%202.png)
 
 
+
+
 * Clustering Bounding Boxes with K=3
+
 ![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Images/K-means%203.png)
 
