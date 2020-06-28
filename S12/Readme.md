@@ -100,5 +100,7 @@ Example:
 4. Size is the Image Size.
 5. Region consists of two attributes Shape & Region Attribute. 
 > Shape Attribute consists of 4 elements, which refer to the Bounding Box dimension. It consists of X, Y, W & H. 
-    (X,Y) is the starting left (point/corner)coordinate of the bounding box, while W & H are width and height of the Bounding Box. Adding X to W & Y to H results in                 Bottom Right Coordinate of the Bounding Box.    
-
+    (X,Y) is the starting left (point/corner)coordinate of the bounding box, while W & H are width and height of the Bounding Box. Adding X to W & Y to H results in                 Bottom Right Coordinate of the Bounding Box. 
+    
+> While Region Attribute consists of Class as one of its key, which is equal to the assigned class for that particular object. 
+6. Lastly, the File Attributes consists of 3 different attributes viz Caption, Public_domain, image_url. Caption is related any text passed based on the image. Image_url is link to the particular image. 
