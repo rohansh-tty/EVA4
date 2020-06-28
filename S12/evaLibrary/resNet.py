@@ -65,7 +65,7 @@ class Bottleneck(nn.Module):
 
 # This commenting is for ResNet18
 class ResNet(nn.Module):
-    def __init__(self, block, num_blocks, num_classes=10): # block = BasicBlock, num_blocks = [2,2,2,2]
+    def __init__(self, block, num_blocks, num_classes=200): # block = BasicBlock, num_blocks = [2,2,2,2]
         super(ResNet, self).__init__()
         self.in_planes = 64  # maybe this is the number of kernels at the start
 
