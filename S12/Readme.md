@@ -21,7 +21,7 @@ Task:
 **Assignment A Solution**: ![S12 Assignment A Solution](https://github.com/Gilf641/EVA4/blob/master/S12/S12_AssignmentSolution.ipynb)
 
 **Assignment B Solution**: ![S12 Assignment B Solution](https://github.com/Gilf641/EVA4/blob/master/S12/S12_AssignmentB(K-Means%20Clustering).ipynb)
-* Details below ![]()
+
 
 
 # Assignment A
@@ -92,6 +92,9 @@ Task:
 * ![Model Logs](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-A/ModelLogs.md)
 
 # Assignment B 
+
+![DogImages Folder](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-B/Dogs)
+![JSON File](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Dogs/dogsData.json)
 
 
 **Describe the contents of this JSON file in FULL details (you don't need to describe all 10 instances, anyone would work)**
