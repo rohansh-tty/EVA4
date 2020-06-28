@@ -91,7 +91,7 @@ def lr_rangetest(device,
     testModel = copy.deepcopy(model)
     for e in range(1,epochs+1):
         optimizer = optim.SGD(testModel.parameters(), lr = lr, momentum=0.95, weight_decay=0.005)
-        lr_step = (maxlr-minlr)/epochs
+        lr_step = 0.1*(maxlr-minlr)/epochs
         
         testModel.train()
         pbar = tqdm(trainloader)
