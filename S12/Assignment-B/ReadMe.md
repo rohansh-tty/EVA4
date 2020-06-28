@@ -22,14 +22,23 @@ Example:
 **K-Means Clustering**
 
 * Data Distribution Scatter Plot
+![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Images/BBX-Data%20Distributio.png)
+
+
 
 * Using Elbow Method, best K is 2
+![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Images/Elbow%20method.png)
+
 
 * Calculating IOU for K using this 
 >min(width ,cx[i])* min(height , cy[i])/(height x width+ cx[i] x cy[i]- min(wid , cx[i])x min(hei ,cy[i]))
+![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-A/Images/IOU%20Over%20K.png)
+
 
 * Clustering Bounding Boxes with K=2
+![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Images/K-means%202.png)
+
 
 * Clustering Bounding Boxes with K=3
-
+![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Images/K-means%203.png)
 
