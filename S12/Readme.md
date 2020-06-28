@@ -113,6 +113,9 @@ Example:
 > **Shape Attribute** consists of 4 elements, which refer to the Bounding Box dimension. It consists of **X, Y, W** & ** 
     **(X,Y)** is the starting left (point/corner)coordinate of the bounding box, while W & H are width and height of the Bounding Box. Adding X to W & Y to H results in Bottom Right Coordinate of the Bounding Box. 
     
+![Bounding Box](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Images/WhatsApp%20Image%202020-06-28%20at%206.24.48%20PM.jpeg)    
+    
+    
 > While **Region Attribute** consists of **Class** as one of its key, which is equal to the assigned class for that particular object. 
 6. Lastly, the **File Attributes** consists of 3 different attributes viz *Caption, Public_domain, image_url*. Caption is related any text passed based on the image. Image_url is link to the particular image. 
 
@@ -132,8 +135,6 @@ Example:
 
 
 * Calculating IOU for K using this 
->IOU = min(width ,cx[i])* min(height , cy[i])/(height x width+ cx[i] x cy[i]- min(wid , cx[i])x min(hei ,cy[i]))
-
 
 ![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-A/Images/IOU%20Over%20K.png)
 
