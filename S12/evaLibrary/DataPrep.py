@@ -17,7 +17,7 @@ from tqdm import notebook
 # pass the above libs to rohan_library
 
 def TinyImageNetDataSet(splitRatio = 70, test_transforms = None, train_transforms = None):
-  classes = extract_classID(path = "tiny-imagenet-200/wnids.txt")
+  classes = xtractClassID(path = "tiny-imagenet-200/wnids.txt")
   data = TinyImageNet(classes, defPath="tiny-imagenet-200")
   
   totalLen = len(data)
