@@ -20,8 +20,8 @@ Task:
 
 **Assignment A Solution**: ![S12 Assignment A Solution](https://github.com/Gilf641/EVA4/blob/master/S12/S12_AssignmentSolution.ipynb)
 
-**Assignment B Solution**: ![S12 Assignment B Solution](https://github.com/Gilf641/EVA4/blob/master/S12/S12_AssignmentB(K-Means%20Clustering).ipynb)
-* Details below ![]()
+**Assignment B Solution**: ![S12 Assignment B Solution](https://github.com/Gilf641/EVA4/blob/master/S12/S12_AssignmentSolution(K-Means).ipynb)
+
 
 
 # Assignment A
@@ -44,23 +44,23 @@ Task:
 
 **Library Documentation:**
 
-1.![AlbTransforms.py]() : Applies required image transformation to both Train & Test dataset using Albumentations library.
+1.![AlbTransforms.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/AlbTransforms.py) : Applies required image transformation to both Train & Test dataset using Albumentations library.
 
-2.![DataPrep.py](): Consists of Custom DataSet Class and some helper functions to apply transformations, extract classID etc.
+2.![DataPrep.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/DataPrep.py): Consists of Custom DataSet Class and some helper functions to apply transformations, extract classID etc.
 
-3.![resNet.py](): Consists of main ResNet model
+3.![resNet.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/resNet.py): Consists of main ResNet model
 
-4.![execute.py](): Scripts to Test & Train the model.
+4.![execute.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/execute.py): Scripts to Test & Train the model.
 
-5.![DataLoaders.py](): Scripts to load the datasets.
+5.![DataLoaders.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/DataLoaders.py): Scripts to load the datasets.
 
-6.![displayData.py](): Consists of helper functions to plot images from dataset & misclassified images.
+6.![displayData.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/displayData.py): Consists of helper functions to plot images from dataset & misclassified images.
 
-7.![Gradcam.py](): Consists of Gradcam class & other related functions.
+7.![Gradcam.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/Gradcam.py): Consists of Gradcam class & other related functions.
 
-8.![LR Finder.py](): LR finder using FastAI Approach.
+8.![LR Finder.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/LR_Finder.py): LR finder using FastAI Approach.
 
-9.![cyclicLR.py](): Consists helper functions related to CycliclR.
+9.![cyclicLR.py](https://github.com/Gilf641/EVA4/blob/master/S12/evaLibrary/cyclicLR.py): Consists helper functions related to CycliclR.
 
 **Plots & Curves**
 
@@ -93,6 +93,9 @@ Task:
 
 # Assignment B 
 
+* ![DogImages Folder](https://github.com/Gilf641/EVA4/tree/master/S12/Assignment-B/Dogs)
+* ![JSON File](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Dogs/dogsData.json)
+
 
 **Describe the contents of this JSON file in FULL details (you don't need to describe all 10 instances, anyone would work)**
 
@@ -109,6 +112,9 @@ Example:
 5. **Region** consists of two attributes i.e **Shape** and **Region**
 > **Shape Attribute** consists of 4 elements, which refer to the Bounding Box dimension. It consists of **X, Y, W** & ** 
     **(X,Y)** is the starting left (point/corner)coordinate of the bounding box, while W & H are width and height of the Bounding Box. Adding X to W & Y to H results in Bottom Right Coordinate of the Bounding Box. 
+    
+![Bounding Box](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-B/Images/WhatsApp%20Image%202020-06-28%20at%206.24.48%20PM.jpeg)    
+    
     
 > While **Region Attribute** consists of **Class** as one of its key, which is equal to the assigned class for that particular object. 
 6. Lastly, the **File Attributes** consists of 3 different attributes viz *Caption, Public_domain, image_url*. Caption is related any text passed based on the image. Image_url is link to the particular image. 
@@ -129,7 +135,7 @@ Example:
 
 
 * Calculating IOU for K using this 
->min(width ,cx[i])* min(height , cy[i])/(height x width+ cx[i] x cy[i]- min(wid , cx[i])x min(hei ,cy[i]))
+
 ![](https://github.com/Gilf641/EVA4/blob/master/S12/Assignment-A/Images/IOU%20Over%20K.png)
 
 
