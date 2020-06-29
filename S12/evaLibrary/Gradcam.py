@@ -7,6 +7,7 @@ import numpy as np
 class GradCAM():
     """ Helper Class for extracting activations and
     registering gradients from target(intermediate) layers
+    model = Assigned Model
     target_layers = list of convolution layer index as shown in summary
     """
     def __init__(self, model, candidate_layers=None):
