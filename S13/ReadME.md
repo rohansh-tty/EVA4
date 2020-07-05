@@ -27,6 +27,18 @@ Assignment Task:
         Share the link of your YouTube video
         Share the link of your YouTube video on LinkedIn, Instagram, etc! You have no idea how much you'd love people complimenting you! 
 
+# ASSIGNMENT A
+
+* **IMPLEMENTATION**
+1. Ran the OpenCV-Yolo Colab Notebook
+2. Uploaded a couple of images with me holding a some COCO Objects and tested the same
+
+* Sample Image
+![](https://github.com/Gilf641/EVA4/blob/master/S13/Images/OpenCV-Yolo1.png)
+
+
+
+
 
 # ASSIGNMENT B
 ![Repo Link](https://github.com/Gilf641/YoloV3)
