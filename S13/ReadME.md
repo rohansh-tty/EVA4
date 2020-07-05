@@ -74,7 +74,8 @@ For example I have collected/got dataset from few GitHub repos and planning to b
 ![](https://github.com/Gilf641/EVA4/blob/master/S13/Assignment-B/Images/test_batch0.png)
 
 
-* **RESULTS**
+**RESULTS**
+
 ![](https://github.com/Gilf641/EVA4/blob/master/S13/Assignment-B/Images/Output.jpg)
 
 
