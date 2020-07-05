@@ -1,6 +1,6 @@
 # S13 Assignment
 
-**Yolo V2 & Yolo V3**
+**Yolo 2 & 3**
 
 
 Assignment Task: 
