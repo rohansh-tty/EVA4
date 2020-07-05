@@ -28,6 +28,7 @@ Assignment Task:
         Share the link of your YouTube video on LinkedIn, Instagram, etc! You have no idea how much you'd love people complimenting you! 
 
 # ASSIGNMENT A
+![Notebook Link](https://github.com/Gilf641/EVA4/blob/master/S13/Assignment-A/S13%20Assignment-A.ipynb)
 
 * **IMPLEMENTATION**
 1. Ran the OpenCV-Yolo Colab Notebook
@@ -43,6 +44,10 @@ Assignment Task:
 
 # ASSIGNMENT B
 ![Repo Link](https://github.com/Gilf641/YoloV3)
+
+
+![Notebook_Link](https://github.com/Gilf641/EVA4/blob/master/S13/Assignment-B/S13%20Assignment-B.ipynb)
+
 ---------
 
 * **MOTIVATION**
