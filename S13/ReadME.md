@@ -34,6 +34,7 @@ Assignment Task:
 2. Uploaded a couple of images with me holding a some COCO Objects and tested the same
 
 * Sample Image
+
 ![](https://github.com/Gilf641/EVA4/blob/master/S13/Images/OpenCV-Yolo1.png)
 
 
