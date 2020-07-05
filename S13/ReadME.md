@@ -65,6 +65,11 @@ For example I have collected/got dataset from few GitHub repos and planning to b
 ![Test Samples](https://github.com/Gilf641/EVA4/blob/master/S13/Images/train_batch0.png)
 
 
+* **RESULTS**
+
+![](https://github.com/Gilf641/EVA4/blob/master/S13/Images/Output.jpg)
+
+
 # Model Logs
 
 Model Summary: 225 layers, 6.25733e+07 parameters, 6.25733e+07 gradients
