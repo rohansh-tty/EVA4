@@ -44,7 +44,10 @@ For example I have collected/got dataset from few GitHub repos and planning to b
 
 * **SAMPLES**
 
-![Train Samples](https://github.com/Gilf641/EVA4/blob/master/S13/Images/train_batch0.png)
+1. Training Data
+![](https://github.com/Gilf641/EVA4/blob/master/S13/Images/train_batch0.png)
+
+
 
 ![Test Samples](https://github.com/Gilf641/EVA4/blob/master/S13/Images/train_batch0.png)
 
