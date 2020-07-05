@@ -1,6 +1,6 @@
 # S13 Assignment
 
-**Yolo V2 & Yolo V3**
+**Yolo 2 & 3**
 
 
 Assignment Task: 
@@ -28,18 +28,25 @@ Assignment Task:
         Share the link of your YouTube video on LinkedIn, Instagram, etc! You have no idea how much you'd love people complimenting you! 
 
 
-**MOTIVATION**
+# ASSIGNMENT B
+---------
+
+* **MOTIVATION**
 
 Waste Segregator Robo, which classifies and seperates Recyclable, Non Recyclable Waste Materials and dump them into respective Bins.
 For example I have collected/got dataset from few GitHub repos and planning to build this project.
 
-**IMPLEMENTATION**
+* **IMPLEMENTATION**
 1. For S13 B, I have Metal Cans as my class. Dataset includes Metal Cans, Caps, Aluminium Foils etc. Collected around 300-400 Images from this repo, rest from the Internet.
 2. Used this for Annotation. Link for the Annotation Tool
 3. Ran for 110 Epochs. 
 
 
-**SAMPLES**
+* **SAMPLES**
 
+1. Train Data
+![](https://github.com/Gilf641/EVA4/blob/master/S13/Images/train_batch0.png)
 
+2. Test Data
+![Test Samples](https://github.com/Gilf641/EVA4/blob/master/S13/Images/train_batch0.png)
 
