@@ -28,7 +28,7 @@ Assignment Task:
         Share the link of your YouTube video on LinkedIn, Instagram, etc! You have no idea how much you'd love people complimenting you! 
 
 
-# ASSIGNMENT B
+# ASSIGNMENT B![Repo Link](https://github.com/Gilf641/YoloV3)
 ---------
 
 * **MOTIVATION**
