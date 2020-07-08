@@ -22,3 +22,5 @@ Till now 10 sessions are completed. I will briefly summarise what I have learned
 * Session 10: Training & Learning Rate 
 * Session 11: SuperConvergence 
 * Session 12: Object Localization & Detection
+* Session 13: Yolo V2 & V3
+* Session 14: RCNN Family
