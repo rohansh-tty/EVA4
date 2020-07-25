@@ -27,6 +27,7 @@ The dataset consists of 6 parts,
     
 The dataset is created using only 100 Background and 100 Foreground Images. 
 
-
-
+![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/FGBG.png)
+![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/FGBG%20MASK.png)
+![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/DP%20MAP.png)
 
