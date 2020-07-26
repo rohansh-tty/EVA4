@@ -6,6 +6,10 @@ The problem  we're trying to solve is to estimate the depth of an object using s
 
 *And why can't we use the latter one, reason due to unavailability of good sized dataset.*
 
+
+![](https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn-images-1.medium.com%2Fmax%2F1000%2F1*8Dtmfv9cbYB84QXwPh9mow.png&imgrefurl=https%3A%2F%2Fmc.ai%2Fdepth-estimation-using-encoder-decoder-networks-and-self-supervised-learning%2F&tbnid=etGc7Ji2lr7pNM&vet=12ahUKEwjT6a3IqerqAhXV_3MBHYeCAacQMygLegUIARC_AQ..i&docid=RwgSIKR9aFyYCM&w=1000&h=311&q=depth%20estimation&client=firefox-b-d&ved=2ahUKEwjT6a3IqerqAhXV_3MBHYeCAacQMygLegUIARC_AQ)
+
+
 * **Some traditional geometry-based methods for Depth Estimation**
 
 1. Stereo Vision Matching
