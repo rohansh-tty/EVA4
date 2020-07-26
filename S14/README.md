@@ -138,5 +138,42 @@ Image Types and their Statistics
         Standard Deviation: (0.1026, 0.1026, 0.1026)
     
 
+## Dataset Creation Part
+
+Download BG & FG images
+
+    Create the directories BG and FG in the main directory.
+    Download 100 Office Images. Crop these images in an aspect ratio of 1:1 and maintain image size 224x224. Save these images in the BG directory.
+    Download 100 images containing humans/people walking, standing etc. Save these images in the FG directory. Now it's advised to download images with solid background which makes it easy to remove the background.
+
+Sample background images
 
 
+Making Foreground's Background Transparent
+
+Inorder to overlay Foreground Images randomly on top of Background Images, former one must have a transparent background
+
+For removing backgrounds, I used the open-source software GIMP - GNU Image Manipulation Program. After overlaying, the resulting image should be exported as PNG, because it conserves transparency. Steps for removing background using GIMP has been shown below:
+
+**Add A SMALL VIDEO**
+
+
+# Foreground Mask Creation
+
+**WHAT'S AN ALPHA CHANNEL?**
+
+
+   An alpha channel in the in foreground images which indicates the degree of transparency. After adding transparent backgrounds to these images in GIMP, the alpha parameter ranges from 0 (fully transparent) to 255 (fully opaque).
+    The alpha channel in foreground images has pixel value set to 0 wherever transparency is present.
+    After adding transparency to images in GIMP, the background color of the image is set to white (i.e. pixels values in RGB channel are equal to 255) which is hidden with the help of the alpha channel.
+
+Creating mask
+
+        Mask is created in such a way that the pixels where in the object is present are set to white, while the rest non-object part are set to black. The            pixels in the foreground image are set to 255 (white) where the object is present and rest of the pixels (background) are set to 0 (black).
+    
+
+**Sample foreground masks**
+
+# Overlaying foregrounds on backgrounds
+
+Random Foregrounds are overlayed on different Backgrounds at random positions. So for one Background Image, there'll be 200 Foregrounds and 20 random positions at which these Foregrounds will be overlayed on it. So for one background you'll have 4000 variants, and for 100 backgrounds, there'll be a total of 400000 BG_FG Images formed.
