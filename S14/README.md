@@ -181,7 +181,6 @@ Inorder to overlay Foreground Images randomly on top of Background Images, forme
 
 For removing backgrounds, I used the open-source software GIMP - GNU Image Manipulation Program. After overlaying, the resulting image should be exported as PNG, because it conserves transparency. Steps for removing background using GIMP has been shown below:
 
-**Add A SMALL VIDEO**
 
 
 ## Foreground Mask Creation
