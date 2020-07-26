@@ -96,7 +96,7 @@ This directory contains mask of BG_FG images. These are called background-foregr
 
 This directory contains depth map of BG_FG images generated from Dense Depth Model. These are called background-foreground depth maps.
 
-    Image Size: 224x224x1
+    Image Size: 224x224x3
     Number of Images: 400,000
     Naming Convention: bg_001_fg_001_001_depth_map_001.jpeg, bg_001_fg_001_002_depth_map_002.jpeg
 
@@ -134,8 +134,8 @@ Image Types and their Statistics
     Background-Foreground Depth Maps(DEPTH MAPS)
         Image Size: 224x224x3
         Number of Images: 400,000
-        Mean: 0.304, 0.304, 0.304
-        Standard Deviation: 0.1026, 0.1026, 0.1026
+        Mean: (0.304, 0.304, 0.304)
+        Standard Deviation: (0.1026, 0.1026, 0.1026)
     
 
 
