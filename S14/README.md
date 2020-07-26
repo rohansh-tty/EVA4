@@ -37,6 +37,8 @@ The problem  we're trying to solve is to estimate the depth of an object using s
 *They can be used to calculate depth values of sparse points. But these methods are heavily dependent on the image pairs or image sequences.*
 
 
+## Problem Statement
+
 ## Directory Structure
 
 The dataset consists of 6 parts,
