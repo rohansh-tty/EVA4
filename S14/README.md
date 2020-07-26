@@ -148,6 +148,7 @@ Download BG & FG images
 
 Sample background images
 
+![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/bg2.png)
 
 Making Foreground's Background Transparent
 
@@ -158,7 +159,7 @@ For removing backgrounds, I used the open-source software GIMP - GNU Image Manip
 **Add A SMALL VIDEO**
 
 
-# Foreground Mask Creation
+## Foreground Mask Creation
 
 **WHAT'S AN ALPHA CHANNEL?**
 
@@ -169,11 +170,33 @@ For removing backgrounds, I used the open-source software GIMP - GNU Image Manip
 
 Creating mask
 
-        Mask is created in such a way that the pixels where in the object is present are set to white, while the rest non-object part are set to black. The            pixels in the foreground image are set to 255 (white) where the object is present and rest of the pixels (background) are set to 0 (black).
+        Mask is created in such a way that the pixels where in the object is present are set to white, while the rest non-object part are set to black.The pixels in the foreground image are set to 255 (white) where the object is present and rest of the pixels (background) are set to 0 (black).
     
 
 **Sample foreground masks**
 
-# Overlaying foregrounds on backgrounds
 
-Random Foregrounds are overlayed on different Backgrounds at random positions. So for one Background Image, there'll be 200 Foregrounds and 20 random positions at which these Foregrounds will be overlayed on it. So for one background you'll have 4000 variants, and for 100 backgrounds, there'll be a total of 400000 BG_FG Images formed.
+![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/fgmask2.png)
+
+## Overlaying foregrounds on backgrounds
+
+Random Foregrounds are overlayed on different Backgrounds at random positions. So for one Background Image, there'll be 200 Foregrounds and 20 random positions at which these Foregrounds will be overlayed on it. At last, one background you'll have 4000 variants, and for 100 backgrounds, there'll be a total of 400000 BG_FG Images formed.
+
+
+**Sample BG_FG**
+
+
+![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/bgfg_2.png)
+
+
+## Depth map
+
+To create these depth map of the BG_FG images, I used ![DenseDepth Model](https://github.com/ialhashim/DenseDepth/blob/master/DenseDepth.ipynb). Implementation for the model inference was referenced from this repository.
+
+Since the depth maps are in grayscale, the number of channels for these images can be reduced to 1, but I haven't done that part yet.
+
+**Sample Depth Maps**
+
+![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/dpmap2.png)
+
+Note: Since we don't have a DepthCam, we rely on a pretrained DenseNet-201 model to generate depth maps.
