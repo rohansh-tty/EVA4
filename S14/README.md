@@ -138,9 +138,9 @@ Image Types and their Statistics
         Standard Deviation: (0.1026, 0.1026, 0.1026)
     
 
-## Dataset Creation Part
+# Dataset Creation Part
 
-Download BG & FG images
+## Download BG & FG images
 
     Create the directories BG and FG in the main directory.
     Download 100 Office Images. Crop these images in an aspect ratio of 1:1 and maintain image size 224x224. Save these images in the BG directory.
@@ -150,9 +150,9 @@ Sample background images
 
 ![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/bg2.png)
 
-Making Foreground's Background Transparent
+## Removal of Foreground Images Background
 
-Inorder to overlay Foreground Images randomly on top of Background Images, former one must have a transparent background
+Inorder to overlay Foreground Images randomly on top of Background Images, former one must have a transparent background.
 
 For removing backgrounds, I used the open-source software GIMP - GNU Image Manipulation Program. After overlaying, the resulting image should be exported as PNG, because it conserves transparency. Steps for removing background using GIMP has been shown below:
 
@@ -189,7 +189,7 @@ Random Foregrounds are overlayed on different Backgrounds at random positions. S
 ![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/bgfg_2.png)
 
 
-## Depth map
+## Creation of Depth Map
 
 To create these depth map of the BG_FG images, I used ![DenseDepth Model](https://github.com/ialhashim/DenseDepth/blob/master/DenseDepth.ipynb). Implementation for the model inference was referenced from this repository.
 
