@@ -203,4 +203,4 @@ Since the depth maps are in grayscale, the number of channels for these images c
 
 ![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/dpmap2.png)
 
-Note: Since we don't have a DepthCam, we rely on a pretrained DenseNet-201 model to generate depth maps.
+Note: Since we don't have a DepthCam, I relied on a pretrained DenseDepth model to generate depth maps.
