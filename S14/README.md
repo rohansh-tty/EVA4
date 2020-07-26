@@ -105,3 +105,38 @@ This directory contains depth map of BG_FG images generated from Dense Depth Mod
 
 
 
+# Data Statistics
+
+Dataset Size:  GB
+
+Number of Images: 1,200,100
+
+Image Types and their Statistics
+
+    Backgrounds(BG)
+        Image Size: 224x224x3
+        Number of Images: 100
+        Mean: (0.5177, 0.5439, 0.5617)
+        Standard Deviation: (0.2344, 0.2286, 0.229)
+
+    Background-Foregrounds(BG_FG)
+        Image Size: 224x224x3
+        Number of Images: 400,000
+        Mean: (0.513, 0.536, 0.5546)
+        Standard Deviation: (0.2355, 0.2317, 0.2326)
+
+    Background-Foreground Masks(BG_FG MASKS)
+        Image Size: 224x224x1
+        Number of Images: 400,000
+        Mean: 0.05207
+        Standard Deviation: 0.21686
+
+    Background-Foreground Depth Maps(DEPTH MAPS)
+        Image Size: 224x224x3
+        Number of Images: 400,000
+        Mean: 0.304, 0.304, 0.304
+        Standard Deviation: 0.1026, 0.1026, 0.1026
+    
+
+
+
