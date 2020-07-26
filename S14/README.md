@@ -27,7 +27,7 @@ The dataset consists of 6 parts,
     
 Total no of Images in this dataset is 1.2 Million. The dataset is created using only 100 Background and 100 Foreground Images. 
 
-Dataset Description:
+## Dataset Description:
 
 **1. BG**
 
