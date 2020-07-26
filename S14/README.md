@@ -9,15 +9,15 @@
 4. ![Data Stats](https://github.com/Gilf641/EVA4/tree/master/S14#data-statistics)
 5. ![Dataset Creation Part](https://github.com/Gilf641/EVA4/tree/master/S14#dataset-creation-part)
 
-    i. ![](https://github.com/Gilf641/EVA4/tree/master/S14#download-bg--fg-images)
+    i. ![Download BG & FG Images](https://github.com/Gilf641/EVA4/tree/master/S14#download-bg--fg-images)
     
-    ii. ![](https://github.com/Gilf641/EVA4/tree/master/S14#removal-of-foreground-images-background)
+    ii. ![Creating Transparent Backgrounds for Foreground Images](https://github.com/Gilf641/EVA4/tree/master/S14#creating-foregrounds-with-transparent-background)
     
-    iii. ![](https://github.com/Gilf641/EVA4/tree/master/S14#foreground-mask-creation)
+    iii. ![Foreground Mask Creation](https://github.com/Gilf641/EVA4/tree/master/S14#foreground-mask-creation)
     
-    iv. ![](https://github.com/Gilf641/EVA4/tree/master/S14#overlaying-foregrounds-on-backgrounds)
+    iv. ![Overlaying Foregrounds on Backgrounds](https://github.com/Gilf641/EVA4/tree/master/S14#overlaying-foregrounds-on-backgrounds)
     
-    v. ![](https://github.com/Gilf641/EVA4/tree/master/S14#creation-of-depth-map)
+    v. ![Generate Depth Maps](https://github.com/Gilf641/EVA4/tree/master/S14#generate-depth-maps)
 
 ## **What is Monocular Depth Estimation?**
 
