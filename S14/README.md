@@ -3,23 +3,23 @@
 
 * **Contents** 
 
-1. ![What is Monocular Depth Estimation]()
-2. ![Directory Structure]()
-3. ![Dataset Description]()
-4. ![Data Stats]()
-5. ![Dataset Creation Part]()
+1. ![What is Monocular Depth Estimation?](https://github.com/Gilf641/EVA4/tree/master/S14#What-is-Monocular-Depth-Estimation?)
+2. ![Directory Structure](https://github.com/Gilf641/EVA4/tree/master/S14#directory-structure)
+3. ![Dataset Description](https://github.com/Gilf641/EVA4/tree/master/S14#dataset-description)
+4. ![Data Stats](https://github.com/Gilf641/EVA4/tree/master/S14#data-statistics)
+5. ![Dataset Creation Part](https://github.com/Gilf641/EVA4/tree/master/S14#dataset-creation-part)
 
-    i. ![]()
+    i. ![](https://github.com/Gilf641/EVA4/tree/master/S14#download-bg--fg-images)
     
-    ii. ![]()
+    ii. ![](https://github.com/Gilf641/EVA4/tree/master/S14#removal-of-foreground-images-background)
     
-    iii. ![]()
+    iii. ![](https://github.com/Gilf641/EVA4/tree/master/S14#foreground-mask-creation)
     
-    iv. ![]()
+    iv. ![](https://github.com/Gilf641/EVA4/tree/master/S14#overlaying-foregrounds-on-backgrounds)
     
-    v. ![]()
+    v. ![](https://github.com/Gilf641/EVA4/tree/master/S14#creation-of-depth-map)
 
-* **What is Monocular Depth Estimation?**
+## **What is Monocular Depth Estimation?**
 
 The problem  we're trying to solve is to estimate the depth of an object using single image, instead of an image sequence or image pair. Therefore the name Monocular Depth Estimation 
 
@@ -37,7 +37,7 @@ The problem  we're trying to solve is to estimate the depth of an object using s
 *They can be used to calculate depth values of sparse points. But these methods are heavily dependent on the image pairs or image sequences.*
 
 
-# Directory Structure
+## Directory Structure
 
 The dataset consists of 6 parts,
 
@@ -128,7 +128,7 @@ This directory contains depth map of BG_FG images generated from Dense Depth Mod
 
 
 
-# Data Statistics
+## Data Statistics
 
 Dataset Size:  GB
 
@@ -173,7 +173,7 @@ Sample background images
 
 ![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/bg2.png)
 
-## Removal of Foreground Images Background
+## Creating Foregrounds with Transparent Background
 
 Inorder to overlay Foreground Images randomly on top of Background Images, former one must have a transparent background.
 
@@ -201,7 +201,7 @@ Creating mask
 
 ![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/fgmask2.png)
 
-## Overlaying foregrounds on backgrounds
+## Overlaying Foregrounds on Backgrounds
 
 Random Foregrounds are overlayed on different Backgrounds at random positions. So for one Background Image, there'll be 200 Foregrounds and 20 random positions at which these Foregrounds will be overlayed on it. At last, one background you'll have 4000 variants, and for 100 backgrounds, there'll be a total of 400000 BG_FG Images formed.
 
@@ -212,7 +212,7 @@ Random Foregrounds are overlayed on different Backgrounds at random positions. S
 ![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/bgfg_2.png)
 
 
-## Creation of Depth Map
+## Generate Depth Maps
 
 To create these depth map of the BG_FG images, I used ![DenseDepth Model](https://github.com/ialhashim/DenseDepth/blob/master/DenseDepth.ipynb). Implementation for the model inference was referenced from this repository.
 
