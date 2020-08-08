@@ -3,7 +3,9 @@
 Inspired by Simon Sinek, I always try to do things by asking 3 Questions, **WHY**, **HOW** & **WHAT**. 
 
 
+
 # **Why do we need Image Segmentation & Depth Estimation?**
+![](https://github.com/Gilf641/EVA4/blob/master/S15/images/final%20collage.png)
 
 Image Segmentation is applied almost everywhere, Healthcare, Video Surveilliance, Detection & Recognition Tasks etc. Depth Estimation is used in Augmented Reality, Robotics & Object Trajectory estimation. 
 
@@ -65,6 +67,8 @@ Dataset Description:
 
 **1. BG**
 
+![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/BG.png)
+
 This directory contains office images. These are my background images for this particular dataset.
 
     Image Size: 224x224x3
@@ -74,6 +78,8 @@ This directory contains office images. These are my background images for this p
 
 
 **2. FG**
+
+![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/FG.png)
 
 This directory contains transparent foreground images, in which you can see people walking, talking, posing together etc.
 Now for this set of images, I have applied Horizontal Flip. So the total count of FG Images is 200.
@@ -86,6 +92,8 @@ Now for this set of images, I have applied Horizontal Flip. So the total count o
 
 **3. FG MASK**
 
+![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/FG%20MASK.png)
+
 This directory consists of Foreground Masks. 
 
     Image Height: 110
@@ -96,6 +104,8 @@ This directory consists of Foreground Masks.
 
 
 **4. BG_FG**
+
+![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/FGBG.png)
 
 This directory contains images where random foregrounds are overlayed on different backgrounds at **n** random positions. These are called background-foreground images in short BG_FG.
 
@@ -108,6 +118,8 @@ This directory contains images where random foregrounds are overlayed on differe
 
 **5. BG_FG MASK**
 
+![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/FGBG%20MASK.png)
+
 This directory contains mask of BG_FG images. These are called background-foreground masks in short BG_FG Masks.
 
     Image Size: 224x224x1
@@ -115,6 +127,8 @@ This directory contains mask of BG_FG images. These are called background-foregr
     Naming Convention: I haven't decided yet!
 
 **6. BG_FG DEPTH MAP**
+
+![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/DP%20MAP.png)
 
 This directory contains depth map of BG_FG images generated from Dense Depth Model. These are called background-foreground depth maps.
 
