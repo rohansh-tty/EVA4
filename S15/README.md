@@ -393,7 +393,7 @@ This is the hardest part. I tried multiple things together, which made the Model
 
 ![](https://github.com/Gilf641/EVA4/blob/master/S15/images/max_ssim.gif)
 
-I couldn't properly evaluate my model and might need some more time to finish. Not sure what's wrong, asked everyone in my group to take a look at my code, debugged it myself for over a week or something, still my network is predicting blank masks, but depth estimation is average.
+I couldn't properly evaluate my model and might need some more time to finish. Not sure what's wrong, asked everyone in my group to take a look at my code, debugged it myself for over a week or something, still my network is predicting blank masks, but depth estimation is average. 
 
 
 ## Implementation 
