@@ -58,7 +58,7 @@ Total no of Images in this dataset is 1.2 Million. The dataset is created using 
 
 Dataset Description:
 
-*For detailed explanation, take a look at ![this](https://github.com/Gilf641/EVA4/tree/master/S14)
+*For detailed explanation, read ![this](https://github.com/Gilf641/EVA4/tree/master/S14)*
 
 **1. BG**
 
