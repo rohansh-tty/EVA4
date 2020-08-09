@@ -156,16 +156,37 @@ Common Augmentation across all 4 ImageTypes, Resize with Mandatory Normalization
 
 ## Choosing a good DNN Architecture
 
-First approach to solve this problem Encoder-Decoder Architecture. Like Encoder would help in extracting Image Context while Decoder will do the localization part for you(with the help of cropped background concatenation). So I picked up the plain and simple U-Net Architecture.
+* First Attempt
+
+I tried ResNet34 architecture to solve this problem. I knew it wouldn't work that well, but just wanted to understand how the results were and how it performed.
+The results were really bad and also to many model params, and I would often get OOM error on Colab. 
+
+* Second Attempt
+
+So I knew I had to change and started exploring various model architectures used for Image Segmentation. The most common one was UNet, basically it was an Encoder-Decoder Architecture, where Encoder would help in extracting Image Contect while Decoder will do the Localization part for you. And I picked up the Plain & Simple U-Net Architecture.
 
  The first priority that I had in mind was 'let-me-build-a-bad-model-first-later-customize-it'. This I had to do  to understand the nuances of this problem and also how the model behaved.
-
 
 The inputs and the outputs are not of same resolution. Inputs are of size 192x192 while the Outputs are 96x96. The model has an encoder-decoder architecture, where the model takes two inputs: BG and BG-FG and returns two outputs: Depth Map and Mask. The inputs are first individually processed through one encoder block each and then fed to a same network.
 
 
 
-## Choosing Loss Functions
+Training
+I had to be careful while working with COLAB, automatic runtime disconnection, OOM error etc. So I planned to train my model on small size datasets. Dataset size was b/w 30K-40K and I ran for 15-20 Epochs. 
+
+Short notes on Model Training
+
+    The model was trained on smaller resolution images first and then gradually the image resolution was increased.
+    DICE and IoU were used as evaluation metrics. DICE was calculated on mask outputs while IoU was calculated on depth outputs.
+    Reduce LR on Plateau with patience of 2 and min lr of 1e-3.
+    Auto model checkpointing which saved the model weights after every epoch.
+    Each model was trained in small sets of epochs, this was done to ensure that the model training does not suffer from sudden disconnection from Google Colab.
+
+
+
+## Model Evaluation
+
+This is the hardest part. I tried multiple things together, which made the Model Stats look horrendous. First, tried Plain BCEwithLogitsLoss(), wasn't good though. 
 
 
 
