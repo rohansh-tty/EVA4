@@ -30,14 +30,14 @@ Image Segmentation means classifying every pixel(objects in whole)  present in a
 
 ## **Contents**
 
-1. ![Problem Statement]()
-2. ![Dataset Creation]()
-3. ![Data Processing]()
-4. ![Choosing a good DNN Architecture]()
-5. ![Model Training]()
-6. ![Choosing Loss Functions]()
-7. ![Evaluating Model Performance]()
-8. ![Displaying Test Results]()
+1. ![Problem Statement](https://github.com/Gilf641/EVA4/tree/master/S15#problem-statement)
+2. ![Dataset Creation](https://github.com/Gilf641/EVA4/tree/master/S15#dataset-creation)
+3. ![Data Processing](https://github.com/Gilf641/EVA4/tree/master/S15#data-processing)
+4. ![Choosing a good DNN Architecture](https://github.com/Gilf641/EVA4/tree/master/S15#choosing-a-good-dnn-architecture)
+5. ![Model Evaluation](https://github.com/Gilf641/EVA4/tree/master/S15#model-evaluation)
+6. ![Displaying Test Results](https://github.com/Gilf641/EVA4/tree/master/S15#displaying-test-results)
+7. ![Implementation](https://github.com/Gilf641/EVA4/tree/master/S15#implementation)
+8. ![References](https://github.com/Gilf641/EVA4/tree/master/S15#references)
 
 
 ## Problem Statement
@@ -392,9 +392,6 @@ This is the hardest part. I tried multiple things together, which made the Model
 
 
 ![](https://github.com/Gilf641/EVA4/blob/master/S15/images/max_ssim.gif)
-
-
-## Evaluating Model Performance
 
 I couldn't properly evaluate my model and might need some more time to finish. Not sure what's wrong, asked everyone in my group to take a look at my code, debugged it myself for over a week or something, still my network is predicting blank masks, but depth estimation is average.
 
