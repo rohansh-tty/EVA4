@@ -9,7 +9,7 @@ Inspired by Simon Sinek, I always try to do things by asking 3 Questions, **WHY*
 
 Image Segmentation is applied almost everywhere, Healthcare, Video Surveilliance, Detection & Recognition Tasks etc. Depth Estimation is used in Augmented Reality, Robotics & Object Trajectory estimation. 
 
-Okay so why am I doing it? *Two Reasons...*
+Okay so why am I doing it?/Motivation *Two Reasons...*
 
 First,
 
@@ -38,12 +38,6 @@ Image Segmentation means classifying every pixel(objects in whole)  present in a
 6. ![Choosing Loss Functions]()
 7. ![Evaluating Model Performance]()
 8. ![Displaying Test Results]()
-
-## Foreword 
-
-    Designing Models require discipline
-    Every step you take must have a purpose
-    Trying too many things without order or without any notes is useless
 
 
 ## Problem Statement
