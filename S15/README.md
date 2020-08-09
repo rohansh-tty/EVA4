@@ -159,6 +159,213 @@ The results were really bad and also to many model params, and I would often get
 
 So I knew I had to change and started exploring various model architectures used for Image Segmentation. The most common one was UNet, basically it was an Encoder-Decoder Architecture, where Encoder would help in extracting Image Contect while Decoder will do the Localization part for you. And I picked up the Plain & Simple U-Net Architecture.
 
+
+
+        ----------------------------------------------------------------
+                Layer (type)               Output Shape         Param #
+        ================================================================
+                    Conv2d-1         [-1, 16, 192, 192]             880
+               BatchNorm2d-2         [-1, 16, 192, 192]              32
+                   Dropout-3         [-1, 16, 192, 192]               0
+                      ReLU-4         [-1, 16, 192, 192]               0
+                    Conv2d-5         [-1, 16, 192, 192]           2,320
+               BatchNorm2d-6         [-1, 16, 192, 192]              32
+                   Dropout-7         [-1, 16, 192, 192]               0
+                      ReLU-8         [-1, 16, 192, 192]               0
+                DoubleConv-9         [-1, 16, 192, 192]               0
+                MaxPool2d-10           [-1, 16, 96, 96]               0
+                   Conv2d-11           [-1, 32, 96, 96]           4,640
+              BatchNorm2d-12           [-1, 32, 96, 96]              64
+                  Dropout-13           [-1, 32, 96, 96]               0
+                     ReLU-14           [-1, 32, 96, 96]               0
+                   Conv2d-15           [-1, 32, 96, 96]           9,248
+              BatchNorm2d-16           [-1, 32, 96, 96]              64
+                  Dropout-17           [-1, 32, 96, 96]               0
+                     ReLU-18           [-1, 32, 96, 96]               0
+               DoubleConv-19           [-1, 32, 96, 96]               0
+               DownSample-20           [-1, 32, 96, 96]               0
+                MaxPool2d-21           [-1, 32, 48, 48]               0
+                   Conv2d-22           [-1, 64, 48, 48]          18,496
+              BatchNorm2d-23           [-1, 64, 48, 48]             128
+                  Dropout-24           [-1, 64, 48, 48]               0
+                     ReLU-25           [-1, 64, 48, 48]               0
+                   Conv2d-26           [-1, 64, 48, 48]          36,928
+              BatchNorm2d-27           [-1, 64, 48, 48]             128
+                  Dropout-28           [-1, 64, 48, 48]               0
+                     ReLU-29           [-1, 64, 48, 48]               0
+               DoubleConv-30           [-1, 64, 48, 48]               0
+               DownSample-31           [-1, 64, 48, 48]               0
+                MaxPool2d-32           [-1, 64, 24, 24]               0
+                   Conv2d-33          [-1, 128, 24, 24]          73,856
+              BatchNorm2d-34          [-1, 128, 24, 24]             256
+                  Dropout-35          [-1, 128, 24, 24]               0
+                     ReLU-36          [-1, 128, 24, 24]               0
+                   Conv2d-37          [-1, 128, 24, 24]         147,584
+              BatchNorm2d-38          [-1, 128, 24, 24]             256
+                  Dropout-39          [-1, 128, 24, 24]               0
+                     ReLU-40          [-1, 128, 24, 24]               0
+               DoubleConv-41          [-1, 128, 24, 24]               0
+               DownSample-42          [-1, 128, 24, 24]               0
+                MaxPool2d-43          [-1, 128, 12, 12]               0
+                   Conv2d-44          [-1, 128, 12, 12]         147,584
+              BatchNorm2d-45          [-1, 128, 12, 12]             256
+                  Dropout-46          [-1, 128, 12, 12]               0
+                     ReLU-47          [-1, 128, 12, 12]               0
+                   Conv2d-48          [-1, 128, 12, 12]         147,584
+              BatchNorm2d-49          [-1, 128, 12, 12]             256
+                  Dropout-50          [-1, 128, 12, 12]               0
+                     ReLU-51          [-1, 128, 12, 12]               0
+               DoubleConv-52          [-1, 128, 12, 12]               0
+               DownSample-53          [-1, 128, 12, 12]               0
+                 Upsample-54          [-1, 128, 24, 24]               0
+                   Conv2d-55          [-1, 128, 24, 24]         295,040
+              BatchNorm2d-56          [-1, 128, 24, 24]             256
+                  Dropout-57          [-1, 128, 24, 24]               0
+                     ReLU-58          [-1, 128, 24, 24]               0
+                   Conv2d-59           [-1, 64, 24, 24]          73,792
+              BatchNorm2d-60           [-1, 64, 24, 24]             128
+                  Dropout-61           [-1, 64, 24, 24]               0
+                     ReLU-62           [-1, 64, 24, 24]               0
+               DoubleConv-63           [-1, 64, 24, 24]               0
+                 UpSample-64           [-1, 64, 24, 24]               0
+                 Upsample-65           [-1, 64, 48, 48]               0
+                   Conv2d-66           [-1, 64, 48, 48]          73,792
+              BatchNorm2d-67           [-1, 64, 48, 48]             128
+                  Dropout-68           [-1, 64, 48, 48]               0
+                     ReLU-69           [-1, 64, 48, 48]               0
+                   Conv2d-70           [-1, 32, 48, 48]          18,464
+              BatchNorm2d-71           [-1, 32, 48, 48]              64
+                  Dropout-72           [-1, 32, 48, 48]               0
+                     ReLU-73           [-1, 32, 48, 48]               0
+               DoubleConv-74           [-1, 32, 48, 48]               0
+                 UpSample-75           [-1, 32, 48, 48]               0
+                 Upsample-76           [-1, 32, 96, 96]               0
+                   Conv2d-77           [-1, 32, 96, 96]          18,464
+              BatchNorm2d-78           [-1, 32, 96, 96]              64
+                  Dropout-79           [-1, 32, 96, 96]               0
+                     ReLU-80           [-1, 32, 96, 96]               0
+                   Conv2d-81           [-1, 16, 96, 96]           4,624
+              BatchNorm2d-82           [-1, 16, 96, 96]              32
+                  Dropout-83           [-1, 16, 96, 96]               0
+                     ReLU-84           [-1, 16, 96, 96]               0
+               DoubleConv-85           [-1, 16, 96, 96]               0
+                 UpSample-86           [-1, 16, 96, 96]               0
+                 Upsample-87         [-1, 16, 192, 192]               0
+                   Conv2d-88         [-1, 16, 192, 192]           4,624
+              BatchNorm2d-89         [-1, 16, 192, 192]              32
+                  Dropout-90         [-1, 16, 192, 192]               0
+                     ReLU-91         [-1, 16, 192, 192]               0
+                   Conv2d-92         [-1, 16, 192, 192]           2,320
+              BatchNorm2d-93         [-1, 16, 192, 192]              32
+                  Dropout-94         [-1, 16, 192, 192]               0
+                     ReLU-95         [-1, 16, 192, 192]               0
+               DoubleConv-96         [-1, 16, 192, 192]               0
+                 UpSample-97         [-1, 16, 192, 192]               0
+                   Conv2d-98          [-1, 1, 192, 192]              17
+                  OutConv-99          [-1, 1, 192, 192]               0
+               MaxPool2d-100           [-1, 16, 96, 96]               0
+                  Conv2d-101           [-1, 32, 96, 96]           4,640
+             BatchNorm2d-102           [-1, 32, 96, 96]              64
+                 Dropout-103           [-1, 32, 96, 96]               0
+                    ReLU-104           [-1, 32, 96, 96]               0
+                  Conv2d-105           [-1, 32, 96, 96]           9,248
+             BatchNorm2d-106           [-1, 32, 96, 96]              64
+                 Dropout-107           [-1, 32, 96, 96]               0
+                    ReLU-108           [-1, 32, 96, 96]               0
+              DoubleConv-109           [-1, 32, 96, 96]               0
+              DownSample-110           [-1, 32, 96, 96]               0
+               MaxPool2d-111           [-1, 32, 48, 48]               0
+                  Conv2d-112           [-1, 64, 48, 48]          18,496
+             BatchNorm2d-113           [-1, 64, 48, 48]             128
+                 Dropout-114           [-1, 64, 48, 48]               0
+                    ReLU-115           [-1, 64, 48, 48]               0
+                  Conv2d-116           [-1, 64, 48, 48]          36,928
+             BatchNorm2d-117           [-1, 64, 48, 48]             128
+                 Dropout-118           [-1, 64, 48, 48]               0
+                    ReLU-119           [-1, 64, 48, 48]               0
+              DoubleConv-120           [-1, 64, 48, 48]               0
+              DownSample-121           [-1, 64, 48, 48]               0
+               MaxPool2d-122           [-1, 64, 24, 24]               0
+                  Conv2d-123          [-1, 128, 24, 24]          73,856
+             BatchNorm2d-124          [-1, 128, 24, 24]             256
+                 Dropout-125          [-1, 128, 24, 24]               0
+                    ReLU-126          [-1, 128, 24, 24]               0
+                  Conv2d-127          [-1, 128, 24, 24]         147,584
+             BatchNorm2d-128          [-1, 128, 24, 24]             256
+                 Dropout-129          [-1, 128, 24, 24]               0
+                    ReLU-130          [-1, 128, 24, 24]               0
+              DoubleConv-131          [-1, 128, 24, 24]               0
+              DownSample-132          [-1, 128, 24, 24]               0
+               MaxPool2d-133          [-1, 128, 12, 12]               0
+                  Conv2d-134          [-1, 128, 12, 12]         147,584
+             BatchNorm2d-135          [-1, 128, 12, 12]             256
+                 Dropout-136          [-1, 128, 12, 12]               0
+                    ReLU-137          [-1, 128, 12, 12]               0
+                  Conv2d-138          [-1, 128, 12, 12]         147,584
+             BatchNorm2d-139          [-1, 128, 12, 12]             256
+                 Dropout-140          [-1, 128, 12, 12]               0
+                    ReLU-141          [-1, 128, 12, 12]               0
+              DoubleConv-142          [-1, 128, 12, 12]               0
+              DownSample-143          [-1, 128, 12, 12]               0
+                Upsample-144          [-1, 128, 24, 24]               0
+                  Conv2d-145          [-1, 128, 24, 24]         295,040
+             BatchNorm2d-146          [-1, 128, 24, 24]             256
+                 Dropout-147          [-1, 128, 24, 24]               0
+                    ReLU-148          [-1, 128, 24, 24]               0
+                  Conv2d-149           [-1, 64, 24, 24]          73,792
+             BatchNorm2d-150           [-1, 64, 24, 24]             128
+                 Dropout-151           [-1, 64, 24, 24]               0
+                    ReLU-152           [-1, 64, 24, 24]               0
+              DoubleConv-153           [-1, 64, 24, 24]               0
+                UpSample-154           [-1, 64, 24, 24]               0
+                Upsample-155           [-1, 64, 48, 48]               0
+                  Conv2d-156           [-1, 64, 48, 48]          73,792
+             BatchNorm2d-157           [-1, 64, 48, 48]             128
+                 Dropout-158           [-1, 64, 48, 48]               0
+                    ReLU-159           [-1, 64, 48, 48]               0
+                  Conv2d-160           [-1, 32, 48, 48]          18,464
+             BatchNorm2d-161           [-1, 32, 48, 48]              64
+                 Dropout-162           [-1, 32, 48, 48]               0
+                    ReLU-163           [-1, 32, 48, 48]               0
+              DoubleConv-164           [-1, 32, 48, 48]               0
+                UpSample-165           [-1, 32, 48, 48]               0
+                Upsample-166           [-1, 32, 96, 96]               0
+                  Conv2d-167           [-1, 32, 96, 96]          18,464
+             BatchNorm2d-168           [-1, 32, 96, 96]              64
+                 Dropout-169           [-1, 32, 96, 96]               0
+                    ReLU-170           [-1, 32, 96, 96]               0
+                  Conv2d-171           [-1, 16, 96, 96]           4,624
+             BatchNorm2d-172           [-1, 16, 96, 96]              32
+                 Dropout-173           [-1, 16, 96, 96]               0
+                    ReLU-174           [-1, 16, 96, 96]               0
+              DoubleConv-175           [-1, 16, 96, 96]               0
+                UpSample-176           [-1, 16, 96, 96]               0
+                Upsample-177         [-1, 16, 192, 192]               0
+                  Conv2d-178         [-1, 16, 192, 192]           4,624
+             BatchNorm2d-179         [-1, 16, 192, 192]              32
+                 Dropout-180         [-1, 16, 192, 192]               0
+                    ReLU-181         [-1, 16, 192, 192]               0
+                  Conv2d-182         [-1, 16, 192, 192]           2,320
+             BatchNorm2d-183         [-1, 16, 192, 192]              32
+                 Dropout-184         [-1, 16, 192, 192]               0
+                    ReLU-185         [-1, 16, 192, 192]               0
+              DoubleConv-186         [-1, 16, 192, 192]               0
+                UpSample-187         [-1, 16, 192, 192]               0
+                  Conv2d-188          [-1, 1, 192, 192]              17
+                 OutConv-189          [-1, 1, 192, 192]               0
+        ================================================================
+        Total params: 2,161,666
+        Trainable params: 2,161,666
+        Non-trainable params: 0
+        ----------------------------------------------------------------
+        Input size (MB): 0.84
+        Forward/backward pass size (MB): 289.41
+        Params size (MB): 8.25
+        Estimated Total Size (MB): 298.50
+        ----------------------------------------------------------------
+
+
+
  The first priority that I had in mind was 'let-me-build-a-bad-model-first-later-customize-it'. This I had to do  to understand the nuances of this problem and also how the model behaved.
 
 The inputs and the outputs are not of same resolution. Inputs are of size 192x192 while the Outputs are 96x96. The model has an encoder-decoder architecture, where the model takes two inputs: BG and BG-FG and returns two outputs: Depth Map and Mask. The inputs are first individually processed through one encoder block each and then fed to a same network.
