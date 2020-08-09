@@ -1,3 +1,4 @@
+import zipfile
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
@@ -77,3 +78,14 @@ def gridshow(file: list, num: int,  indices=None, imgsize=(20,3)):
         plt.imshow(img, cmap='gray', aspect='auto')
         
     plt.show()
+
+
+
+def zip_data(zipfile, path_to_zipfile, directory_to_extract):
+  print('Outside loop')
+  with zipfile.ZipFile(path_to_zipfile, 'r') as zip:
+    print('Extracting ZIP')
+    zip.extractall(directory_to_extract)
+  print("Zipfile extracted to", directory_to_extract)
+  return True
+  

@@ -5,7 +5,8 @@ import torch
 
 
 class Test_Train():
-  def __init__(self, model, device, optimizer, criterion, scheduler=True ):
+  def __init__(self, model, device, optimizer, criterion, 
+  scheduler=True ):
 
 
     self.model = model

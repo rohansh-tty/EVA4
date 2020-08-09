@@ -82,5 +82,3 @@ def lr_rangetest(device,
             plt.ylabel('Loss')
             plt.show()
 
-
-lr_rangetest(device, unet_model, testLoader, mask_criterion, 0.0001, 0.1, 100, weight_decay=0.05, pltTest=True)
