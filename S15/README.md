@@ -390,6 +390,12 @@ Short notes on Model Training
 
 This is the hardest part. I tried multiple things together, which made the Model Stats look horrendous.  Atlast I made my mind to use something basic BCEWithLogitsLoss for Mask & IoU loss for Depth Maps along with SSIM. I added SSIM because, it's an improv for MSE, which only focuses on Pixel Degradation as change in Structural Info, whereas MSE considers Mean Absolute Errors. Also I noticed SSIM working like a charm for Depth Estimation. 
 
+
+
+
+
+
+
 ## Evaluating Model Performance
 
 I couldn't properly evaluate my model and might need some more time to finish. Not sure what's wrong, asked everyone in my group to take a look at my code, debugged it myself for over a week or something, still my network is predicting blank masks, but depth estimation is average.
