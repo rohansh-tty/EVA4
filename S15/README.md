@@ -32,13 +32,12 @@ Image Segmentation means classifying every pixel(objects in whole)  present in a
 
 1. ![Problem Statement]()
 2. ![Dataset Creation]()
-3. ![Data Augmentation]()
-4. ![Data Processing]()
-5. ![Model Initialization]() 
-6. ![Model Training]()
-7. ![Choosing Loss Functions]()
-8. ![Evaluating Model Performance]()
-9. ![Displaying Test Results]()
+3. ![Data Processing]()
+4. ![Choosing a good DNN Architecture]()
+5. ![Model Training]()
+6. ![Choosing Loss Functions]()
+7. ![Evaluating Model Performance]()
+8. ![Displaying Test Results]()
 
 ## Foreword 
 
