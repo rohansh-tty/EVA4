@@ -391,9 +391,7 @@ Short notes on Model Training
 This is the hardest part. I tried multiple things together, which made the Model Stats look horrendous.  Atlast I made my mind to use something basic BCEWithLogitsLoss for Mask & IoU loss for Depth Maps along with SSIM. I added SSIM because, it's an improv for MSE, which only focuses on Pixel Degradation as change in Structural Info, whereas MSE considers Mean Absolute Errors. Also I noticed SSIM working like a charm for Depth Estimation. 
 
 
-
-
-
+![](https://github.com/Gilf641/EVA4/blob/master/S15/images/max_ssim.gif)
 
 
 ## Evaluating Model Performance
