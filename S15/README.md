@@ -398,7 +398,7 @@ I couldn't properly evaluate my model and might need some more time to finish. N
 
 ## Implementation 
 
-**MASK PREDICTION & DEPTH ESTIMATION
+**MASK PREDICTION & DEPTH ESTIMATION**
 
     Parameters - 2,161,666
     Optimiser - Adam/SGD
