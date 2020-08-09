@@ -407,9 +407,8 @@ I couldn't properly evaluate my model and might need some more time to finish. N
     Total No Of Epochs trained for - 10
     Total No of data used - 10k
 
-## Displaying Test Results
+Note: I'm really disappointed that I couldn't complete this assignment on time. I tried but may be with a wrong approach. Although the rest of the part is done, only model training & evaluation is left, which I guess is the main part. So here's the ![final notebook](https://github.com/Gilf641/EVA4/blob/master/S15/Office_Dataset_MODEST.ipynb)
 
 
-## References
 
 
