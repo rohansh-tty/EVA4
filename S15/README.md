@@ -58,6 +58,8 @@ Total no of Images in this dataset is 1.2 Million. The dataset is created using 
 
 Dataset Description:
 
+*For detailed explanation, take a look at ![this](https://github.com/Gilf641/EVA4/tree/master/S14)
+
 **1. BG**
 
 ![](https://github.com/Gilf641/EVA4/blob/master/S14/Images/BG.png)
@@ -130,6 +132,7 @@ This directory contains depth map of BG_FG images generated from Dense Depth Mod
     Naming Convention: bg_001_fg_001_001_depth_map_001.jpeg, bg_001_fg_001_002_depth_map_002.jpeg
 
 *bg_001_fg_001_001_depth_map_001 indicates the depth map of bg_001_fg_001_001.*
+
 
 
 ## Data Processing
@@ -373,28 +376,27 @@ The inputs and the outputs are not of same resolution. Inputs are of size 192x19
 
 
 Training
-I had to be careful while working with COLAB, automatic runtime disconnection, OOM error etc. So I planned to train my model on small size datasets. Dataset size was b/w 30K-40K and I ran for 15-20 Epochs. 
+I had to be careful while working with COLAB, automatic runtime disconnection, OOM error etc. So I planned to train my model on small size datasets. Dataset size was b/w 30K-40K and I ran for 15-20 Epochs. I used this ![file]() for training my model.
 
 Short notes on Model Training
 
     The model was trained on smaller resolution images first and then gradually the image resolution was increased.
-    DICE and IoU were used as evaluation metrics. DICE was calculated on mask outputs while IoU was calculated on depth outputs.
-    Reduce LR on Plateau with patience of 2 and min lr of 1e-3.
+    BCE and IoU were used as evaluation metrics. BCE was calculated on mask outputs while IoU was calculated on depth outputs.
+    Reduce LR on Plateau with patience of 2 and threshold 1e-3.
     Auto model checkpointing which saved the model weights after every epoch.
-    Each model was trained in small sets of epochs, this was done to ensure that the model training does not suffer from sudden disconnection from Google Colab.
-
 
 
 ## Model Evaluation
 
-This is the hardest part. I tried multiple things together, which made the Model Stats look horrendous. First, tried Plain BCEwithLogitsLoss(), wasn't good though. 
-
-
+This is the hardest part. I tried multiple things together, which made the Model Stats look horrendous.  Atlast I made my mind to use something basic BCEWithLogitsLoss for Mask & IoU loss for Depth Maps along with SSIM. I added SSIM because, it's an improv for MSE, which only focuses on Pixel Degradation as change in Structural Info, whereas MSE considers Mean Absolute Errors. Also I noticed SSIM working like a charm for Depth Estimation. 
 
 ## Evaluating Model Performance
 
+I couldn't properly evaluate my model and might need some more time to finish. Not sure what's wrong, asked everyone in my group to take a look at my code, debugged it myself for over a week or something, still my network is predicting blank masks, but depth estimation is average.
 
 ## Displaying Test Results
 
 
 ## References
+
+
