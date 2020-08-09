@@ -398,6 +398,18 @@ This is the hardest part. I tried multiple things together, which made the Model
 
 I couldn't properly evaluate my model and might need some more time to finish. Not sure what's wrong, asked everyone in my group to take a look at my code, debugged it myself for over a week or something, still my network is predicting blank masks, but depth estimation is average.
 
+
+## Implementation 
+
+**MASK PREDICTION & DEPTH ESTIMATION
+
+    Parameters - 2,161,666
+    Optimiser - Adam/SGD
+    Scheduler - Reduce Lr On Pleateau
+    Loss - BCE, IoU with SSIM
+    Total No Of Epochs trained for - 10
+    Total No of data used - 10k
+
 ## Displaying Test Results
 
 
