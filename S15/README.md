@@ -1,10 +1,10 @@
 # S15 Image Segmentation & Depth Estimation
 
-Inspired by Simon Sinek, I always try to do things by asking 3 Questions, **WHY**, **HOW** & **WHAT**. 
+Inspired by Simon Sinek, I always try to do things by asking 3 Questions, **WHY**, **HOW** & **WHAT**  	:dart:
 
 
 
-# **Why do we need Image Segmentation & Depth Estimation?**
+# **Why do we need Image Segmentation & Depth Estimation?** :man_shrugging:
 ![](https://github.com/Gilf641/EVA4/blob/master/S15/images/final%20collage.png)
 
 Image Segmentation is applied almost everywhere, Healthcare, Video Surveilliance, Detection & Recognition Tasks etc. Depth Estimation is used in Augmented Reality, Robotics & Object Trajectory estimation. 
